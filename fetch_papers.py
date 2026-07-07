@@ -44,7 +44,7 @@ WINDOW_HOURS = 48          # 时间窗：只保留最近 N 小时提交的论文
 MAX_RESULTS_PER_PAGE = 100 # 每页拉取数
 MAX_PAGES = 2              # 最多翻几页（配合服务器端窄化，2 页足够）
 TOP_N = 10                 # 最终保留篇数
-API = "http://export.arxiv.org/api/query"
+API = "https://export.arxiv.org/api/query"
 ATOM = "{http://www.w3.org/2005/Atom}"
 ARXIV = "{http://arxiv.org/schemas/atom}"
 # ----------------------------------------------------
