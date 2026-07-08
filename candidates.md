@@ -1,10 +1,10 @@
-# arXiv 候选论文 2026-07-07（共 3 篇）
+# arXiv 候选论文 2026-07-08（共 3 篇）
 
-## 1. ICME 2026 Grand Challenge on Cross-Scenario Defect Detection and Fine-Grained Severity Grading for High-Precision Manufacturing
-- arXiv: 2607.04675  |  分类: cs.CV  |  相关度: 5
-- 作者: Wei Sun, Weixia Zhang, Linhan Cao, Mingkai Lu, Xiongkuo Min, Xiaoping Zhang
-- 链接: http://arxiv.org/abs/2607.04675v1
-- 摘要原文: This paper presents the IEEE International Conference on Multimedia and Expo (ICME) 2026 Grand Challenge on Cross-Scenario Defect Detection and Fine-Grained Severity Grading for High-Precision Manufacturing. The challenge is motivated by two key limitations of existing industrial defect inspection systems: (1) current deep learning-based methods often suffer significant performance degradation when deployed in unseen production scenarios, and (2) most benchmarks neglect severity-aware assessment, which is critical for risk control and yield optimization. To address these limitations, we design two complementary tracks: Track 1 (Cross-Scenario Defect Detection) targets accurate defect detection, localization, and classification across diverse unseen production environments; Track 2 (Fine-Grained Severity Grading) requires assigning each detected defect an industry-standard severity level, including Acceptable, Marginal NG, NG, and Gross NG. We construct a large-scale industrial dataset of high-resolution microscopic images spanning seven representative defect categories, comprising over 3,800 images with pixel-level instance annotations for Track 1 and over 2,600 images with severity-grade labels for Track 2. The challenge attracted 86 registered participants with 130 submissions; during the final testing phase, 21 teams submitted results and 12 teams provided models with technical reports. The resulting benchmark, together with the diverse and effective solutions contributed by participating teams, sets a new standard for industrial defect analysis research.
+## 1. Attosecond metrology of bright quantum light
+- arXiv: 2607.06395  |  分类: quant-ph  |  相关度: 4
+- 作者: P. Stammer, J. Rivera-Dean, E. Pisanty, M. Lewenstein
+- 链接: http://arxiv.org/abs/2607.06395v1
+- 摘要原文: Attosecond metrology is the ability to measure ultrafast optical light-wave oscillations, yet its approach has been limited to classical fields. Hence, the influence of the fluctuations of a quantum field on attosecond measurements has remained unexplored. Here, we close this gap by showing that the attosecond streaking measurement of bright quantum light is sensitive to quantum fluctuations of the optical field on the attosecond timescale. The distinct sub-cycle modulations allow to extract the properties of the squeezed field quadrature in regimes where conventional state tomography approaches reach their limitation. With the full quantum optical attosecond streaking scheme developed here, we provide a certification method that can measure quantum squeezing below the shot noise limit, thereby overcoming the problem of tomographically measuring bright quantum light. This opens the way towards quantum optical metrology of field fluctuations with attosecond temporal resolution.
 
 ## 2. Calibration of systematic distortions in quantum emitter localization microscopy for deterministic nanophotonic fabrication
 - arXiv: 2607.05370  |  分类: physics.optics  |  相关度: 1
