@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-07",
-  "count": 3,
+  "date": "2026-07-08",
+  "count": 12,
   "papers": [
     {
       "arxiv_id": "2607.04675",
@@ -18,6 +18,152 @@
       "primary_category": "cs.CV",
       "link": "http://arxiv.org/abs/2607.04675v1",
       "score": 5
+    },
+    {
+      "arxiv_id": "2607.06395",
+      "title": "Attosecond metrology of bright quantum light",
+      "summary": "Attosecond metrology is the ability to measure ultrafast optical light-wave oscillations, yet its approach has been limited to classical fields. Hence, the influence of the fluctuations of a quantum field on attosecond measurements has remained unexplored. Here, we close this gap by showing that the attosecond streaking measurement of bright quantum light is sensitive to quantum fluctuations of the optical field on the attosecond timescale. The distinct sub-cycle modulations allow to extract the properties of the squeezed field quadrature in regimes where conventional state tomography approaches reach their limitation. With the full quantum optical attosecond streaking scheme developed here, we provide a certification method that can measure quantum squeezing below the shot noise limit, thereby overcoming the problem of tomographically measuring bright quantum light. This opens the way towards quantum optical metrology of field fluctuations with attosecond temporal resolution.",
+      "published": "2026-07-07T15:28:46Z",
+      "authors": [
+        "P. Stammer",
+        "J. Rivera-Dean",
+        "E. Pisanty",
+        "M. Lewenstein"
+      ],
+      "primary_category": "quant-ph",
+      "link": "http://arxiv.org/abs/2607.06395v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.06238",
+      "title": "PhyMRI-SR: Toward Physics-Aware MRI Image Super-Resolution",
+      "summary": "Magnetic resonance imaging (MRI) super-resolution is vital for improving diagnostic accessibility, yet most methods treat it as a deterministic mapping from a fixed low-resolution input to a high-resolution target. This overlooks a key property of MRI acquisition physics: spatial resolution and signal-to-noise ratio (SNR) are inherently coupled, making any given low-resolution scan merely one of many possible realizations under varying acquisition trade-offs. We rethink MRI super-resolution as a physics-aware reconstruction problem, in which the goal is to identify the optimal resolution-SNR configuration and then super-resolve it to obtain high-quality MRI results. A key implication of this formulation is that MRI resolution becomes dynamic rather than fixed. To handle such resolution-heterogeneous inputs, we adapt 2D Gaussian Splatting (2D GS) to MRI by formulating reconstruction as a coordinate-based, resolution-agnostic rendering problem. To further enhance fidelity, we introduce three innovations: (1) a prior-aware Gaussian representation that combines an Anatomical Structure Prior for tissue-specific kernel initialization with an Imaging System Prior that captures hardware characteristics via a covariance dictionary; (2) a physics-constrained signal modeling scheme that predicts intrinsic tissue parameters (proton density rho and effective relaxation rate R2) and synthesizes intensities through governing physical equations, ensuring biophysically plausible contrast; and (3) a meta-learning framework that alleviates paired-data scarcity by pretraining on simulated data and adapting to real-world conditions. Extensive experiments on dynamic-resolution datasets and standard benchmarks demonstrate that our method achieves state-of-the-art performance, highlighting its strong potential for clinical deployment.",
+      "published": "2026-07-07T13:06:01Z",
+      "authors": [
+        "Lihua Wei",
+        "Huatong Gao",
+        "Jia Gong",
+        "Zhiyu Tan",
+        "Hao Li",
+        "Jun Liu"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.06238v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.06003",
+      "title": "Engineering Disordered Many-particle Plasmonic Nanoclusters for Wafer-scale Uniform and Giant Electromagnetic Field Enhancement",
+      "summary": "Scalable plasmonic technologies face a critical trade-off: few-body architectures offer high enhancement but are sensitive to fabrication flaws, while scalable methods like solid-state dewetting yield large, low-enhancement gaps. We introduce a paradigm shift using a many-body plasmonic architecture inspired by statistical mechanics. By moving toward the continuum limit (N>>1), local geometric variations are statistically averaged out, effectively decoupling optical performance from microscopic disorder. We implement this concept via a lithography- and etching-free, multi-step dewetting strategy, creating wafer-scale nanoclusters. This process strategically forms a robust many-body system by introducing numerous small satellite nanoparticles between larger particles. Crucially, this design achieves a high collective enhancement that surpasses even optimized few-body systems, despite having larger individual gaps. Under optimized conditions, these substrates exhibit a surface-enhanced Raman scattering enhancement factor approaching 4 x 108 with unprecedented reproducibility (RSD of ~10%). This scalable, low-cost concept establishes a practical route toward reproducible wafer-scale nanophotonic platforms for sensing, spectroscopy, and quantum technologies.",
+      "published": "2026-07-07T08:46:34Z",
+      "authors": [
+        "Minjun Kim",
+        "Vasanthan Devaraj",
+        "Hyeon-Seok Seo",
+        "Seongjae Eom",
+        "Jeong-Su Lee",
+        "Donghan Lee"
+      ],
+      "primary_category": "physics.optics",
+      "link": "http://arxiv.org/abs/2607.06003v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.05702",
+      "title": "Robust Face Super-Resolution and Recognition Through Multi-Feature Aggregation in Diffusion Models",
+      "summary": "Images acquired in surveillance environments often suffer from conditions such as low resolution, variations in pose, irregular illumination, and occlusions. Due to the low quality of these images, face recognition algorithms often struggle. This major limitation can be addressed by employing super-resolution techniques that enhance the details of the image. However, due to the high degree of difficulty of the problem, most super-resolution algorithms tend to cause distortions in the image and in the individual's identity. Thus, additional information must be incorporated into the processing to improve recognition robustness. In this regard, surveillance cameras can capture multiple images, even at low quality, and the data extracted from these images, such as consecutive video frames, can significantly enhance both super-resolution and facial recognition. In this work, we introduce FASR++, a diffusion-model-based super-resolution algorithm. It leverages a reference low-resolution image and features extracted from multiple auxiliary low-quality images to generate a super-resolved output, minimizing distortions in the individual's identity. Our approach recovers facial features without explicitly providing soft attributes or computing a function gradient to guide the reconstruction process. FASR++ generates high-quality images that can considerably improve performance in face recognition tasks when used as a pre-processing step. We validate our approach on two standard face recognition datasets and attain state-of-the-art results for verification, face recognition, and image quality metrics such as PSNR, SSIM, and LPIPS.",
+      "published": "2026-07-06T23:49:55Z",
+      "authors": [
+        "Marcelo dos Santos",
+        "Rayson Laroca",
+        "João Carlos Raposo Neves",
+        "David Menotti"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.05702v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.04894",
+      "title": "ProCon: Projection-Consistency Memory for Training-Free Anomaly Detection",
+      "summary": "Memory-based anomaly detection is attractive because it localizes defects from normal images without training a decoder or synthesizing pseudo anomalies. However, most memory methods still use the memory bank as a nearest-neighbor lookup table: a test patch is treated as normal if it has one nearby normal anchor. This hard retrieval view is vulnerable to false-normal matches and does not test whether the patch is consistently supported by a local normal neighborhood. We propose ProCon, a training-free framework that turns memory retrieval into decoder-free reconstruction. ProCon softly projects each test patch onto nearby normal memory vectors and uses the projection residual as anomaly evidence. To stabilize this residual, it constructs seed-perturbed layer-wise memories, aggregates bank residuals by a median, and fuses depth-specific residual maps by layer consensus. ProCon requires no decoder training, backbone fine-tuning, learned fusion weights, or pseudo-anomaly supervision. Across MVTec-AD, VisA, and Real-IAD under the single-category evaluation protocol, ProCon achieves strong image- and pixel-level performance under seven standard metrics, including image AUROC scores of 99.8%, 99.2%, and 93.2%, respectively. Ablations show that the gains come from replacing hard retrieval with soft normal projection and stabilizing the residuals through memory and depth consensus. The code is available at https://github.com/jw-chae/Procon",
+      "published": "2026-07-06T10:23:24Z",
+      "authors": [
+        "Joongwon Chae",
+        "Lihui Luo",
+        "Yang Liu",
+        "Dongmei Yu",
+        "Peiwu Qin",
+        "Runming Wang"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.04894v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.06174",
+      "title": "Transmissive extreme ultraviolet metagrating",
+      "summary": "Extreme ultraviolet (EUV) radiation is a key tool for attosecond physics and lithography. However, strong material absorption limits the availability of transmissive optical elements at these wavelengths. Metaoptics exploit geometry to control the wavefront of transmitted light on the nanoscale and, due to their minimal thickness, promise to fill this gap. Here, we demonstrate the first EUV metaoptics for broadband applications: we design, fabricate, and experimentally investigate a blazed transmissive EUV metagrating and compare it with a focused-ion-beam-milled sawtooth-blazed grating serving as an in-situ reference. The metagrating achieves an angular dispersion of 0.04°/nm with a directionality (the ratio of the +1st and -1st diffraction order efficiency) of up to 5.8. The device shows phase-based operation up to 50 eV photon energy (down to 25 nm vacuum wavelength) and an octave-spanning bandwidth of 25 eV, doubling the previous spectral window addressable by metasurfaces. Comparing both gratings' performance reveals that, when accounting for fabrication constraints, EUV metasurfaces are competitive with free-form optics while offering scalability to large apertures and arbitrary phase profiles. Broadband transmissive operation removes the need for grazing incidence optics, defeating a major source of aberrations, and allows polarization-insensitive spectral analysis, enabling energy-resolved ultrafast spectroscopy in compact experimental configurations.",
+      "published": "2026-07-07T11:52:51Z",
+      "authors": [
+        "Anna Kulter",
+        "Tiago Regio Crispim",
+        "Lorenz Weiss",
+        "Alexander Sagar Grossek",
+        "David J. Grafinger",
+        "Zsuzsanna Pápa"
+      ],
+      "primary_category": "physics.optics",
+      "link": "http://arxiv.org/abs/2607.06174v1",
+      "score": 2
+    },
+    {
+      "arxiv_id": "2607.06408",
+      "title": "Temporal Modeling of Optically Variable Devices in Identity Documents",
+      "summary": "Robust remote verification of identity documents relies on analyzing faint, transparent security features like Optically Variable Devices (OVDs), or \"holograms\", within user-captured videos under uncontrolled conditions. Current systems, however, face critical limitations: existing methods often treat video frames in isolation, neglecting the intrinsic dynamic nature of OVDs and leaving systems vulnerable to swapping attacks, or focus on general holographic presence and lack the ability to verify specific OVD types. Moreover, the economic infeasibility of frame-by-frame video annotation makes supervised training impractical. In this work, we introduce two novel approaches for verifying the dynamic behavior of transparent OVDs protecting the holder's portrait, specifically designed for open-set scenarios where attack types are unknown during training. We demonstrate that these approaches can be trained without any attack samples in a self-supervised setting, surpassing previous state-of-the-art methods on public datasets while adhering strictly to industrial constraints. Our results confirm that modeling temporal dynamics is essential for defeating sophisticated attacks under realistic conditions, and underscores the promise of sequence modeling and anomaly detection for OVD verification. Code is available at https://github.com/EPITAResearchLab/pouliquen.26.icdar.",
+      "published": "2026-07-07T15:37:53Z",
+      "authors": [
+        "Glen Pouliquen",
+        "Joseph Chazalon",
+        "Guillaume Chiron",
+        "Oriol Ramos Terrades",
+        "Thierry Géraud",
+        "Ahmad Montaser Awal"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.06408v1",
+      "score": 1
+    },
+    {
+      "arxiv_id": "2607.05851",
+      "title": "Broadband microwave time-frequency analysis via stabilized period-one oscillation and recirculating frequency shifting with shared fiber loop",
+      "summary": "To address the need for time-frequency analysis (TFA) of broadband microwave signals and to overcome the reliance of existing schemes on large-bandwidth swept microwave sources, we propose a broadband microwave signal TFA approach based on stabilized period-one (P1) oscillation and recirculating frequency shifting (RFS). By employing a feedback loop, a stable swept optical signal is generated from the stabilized P1 oscillation of a semiconductor laser, and its sweep bandwidth is further extended by an RFS loop to achieve multi-fold bandwidth expansion. For system compactness, the feedback loop and RFS loop share a common long fiber. The combined operation produces a broadband swept optical signal, which, through stimulated Brillouin scattering-based frequency-to-time mapping, enables TFA and frequency measurement of broadband microwave signals. Experimental results demonstrate an instantaneous analysis bandwidth of up to 57 GHz, a frequency resolution of 60 MHz, and a maximum mean absolute frequency measurement error of 38.16 MHz.",
+      "published": "2026-07-07T05:15:08Z",
+      "authors": [
+        "Xianxin Zhang",
+        "Chi Jiang",
+        "Taixia Shi",
+        "Yang Chen"
+      ],
+      "primary_category": "physics.optics",
+      "link": "http://arxiv.org/abs/2607.05851v1",
+      "score": 1
+    },
+    {
+      "arxiv_id": "2607.05637",
+      "title": "Recovering Cloud Microstructures with Cascaded Diffusion Inversion",
+      "summary": "High-resolution satellite imagery is critical for observing fine-scale cloud structures that inform weather modification strategies like cloud seeding for rain-enhancement. However, the spatial resolution of current geostationary and polar-orbiting satellites is often insufficient for capturing small cloud features. Current super-resolution methodologies are suited for natural images and, therefore, struggle to generalize to satellite-captured spectral images of cloud cover. To address this, we propose a two-stage diffusion-based super-resolution framework to enhance the resolution of multi-spectral cloud microstructures by a factor of $4\\times$. Specifically, we use inverse diffusion to recover the high resolution properties from low resolution. Stage 1 utilizes real-world paired data to learn robust degradation handling and inter-sensor alignment, while Stage 2 employs a self-supervised internal downgrading of high resolution data to refine structural learning and texture synthesis. Our approach outperforms the state-of-the-art transformer and diffusion-based baselines in both reconstruction accuracy and visual quality. We demonstrate that the two-stage method better captures fine cloud microstructures (e.g. convective turrets and cloud gaps) that are crucial for effective cloud seeding decisions. Ablation studies confirm the complementary benefits of the two stages: Stage 1 excels in coarse structural fidelity, while Stage 2 contributes enhanced detail and realism. These results highlight a practical path toward improving cloud microphysics analysis and as a step towards utilizing AI for climate and sustainability. Our code and models are publicly available at: https://github.com/hananshafi/superresolution-cloud-microphysics.",
+      "published": "2026-07-06T20:57:39Z",
+      "authors": [
+        "Hanan Gani",
+        "Guy Pulik",
+        "Daniel Rosenfeld",
+        "Duncan Watson-Parris",
+        "Salman Khan"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.05637v1",
+      "score": 1
     },
     {
       "arxiv_id": "2607.05370",
