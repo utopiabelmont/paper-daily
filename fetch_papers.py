@@ -8,6 +8,10 @@
       → 输出 Top-N 的 JSON + Markdown，交给模型做总结。
 
 前提：routine 的云端环境需放行 export.arxiv.org（Network access 设为 Custom/Full）。
+
+注意：简报的“日期标签/文件名”按本地时区（JST, UTC+9）计算，避免凌晨运行时
+      UTC 还停留在前一天、导致文件名撞车被覆盖。抓论文的时间窗仍用 UTC 比对
+      （arXiv 的时间就是 UTC，别改）。
 """
 
 import json
@@ -18,6 +22,8 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 
 # ---------------- 配置区（按需修改）----------------
+LOCAL_TZ = timezone(timedelta(hours=9))   # 日本时区 JST（UTC+9），仅用于给简报打日期标签
+
 CATEGORIES = ["physics.optics", "eess.IV", "cs.CV", "eess.SP"]
 
 # 服务器端窄化：只有摘要/标题命中这些词的才返回，大幅减少无关结果
@@ -40,7 +46,7 @@ KEYWORDS = [
     "cnn", "convolutional", "deep learning", "machine learning",
 ]
 
-WINDOW_HOURS = 48          # 时间窗：只保留最近 N 小时提交的论文
+WINDOW_HOURS = 48          # 时间窗：只保留最近 N 小时提交的论文（按 UTC 比对）
 MAX_RESULTS_PER_PAGE = 100 # 每页拉取数
 MAX_PAGES = 2              # 最多翻几页（配合服务器端窄化，2 页足够）
 TOP_N = 10                 # 最终保留篇数
@@ -134,7 +140,7 @@ def main():
     collected.sort(key=lambda x: (x["score"], x["published"]), reverse=True)
     top = collected[:TOP_N]
 
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = datetime.now(LOCAL_TZ).strftime("%Y-%m-%d")   # 用本地(JST)日期打标签
     with open("papers.json", "w", encoding="utf-8") as f:
         json.dump({"date": today, "count": len(top), "papers": top},
                   f, ensure_ascii=False, indent=2)
@@ -152,7 +158,7 @@ def main():
     with open("candidates.md", "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
-    print(f"完成：{len(top)} 篇候选，已写入 papers.json 与 candidates.md")
+    print(f"完成：{len(top)} 篇候选（日期 {today}），已写入 papers.json 与 candidates.md")
 
 
 if __name__ == "__main__":
