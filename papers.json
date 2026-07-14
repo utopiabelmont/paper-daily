@@ -1,56 +1,168 @@
 {
-  "date": "2026-07-07",
-  "count": 3,
+  "date": "2026-07-15",
+  "count": 11,
   "papers": [
     {
-      "arxiv_id": "2607.04675",
-      "title": "ICME 2026 Grand Challenge on Cross-Scenario Defect Detection and Fine-Grained Severity Grading for High-Precision Manufacturing",
-      "summary": "This paper presents the IEEE International Conference on Multimedia and Expo (ICME) 2026 Grand Challenge on Cross-Scenario Defect Detection and Fine-Grained Severity Grading for High-Precision Manufacturing. The challenge is motivated by two key limitations of existing industrial defect inspection systems: (1) current deep learning-based methods often suffer significant performance degradation when deployed in unseen production scenarios, and (2) most benchmarks neglect severity-aware assessment, which is critical for risk control and yield optimization. To address these limitations, we design two complementary tracks: Track 1 (Cross-Scenario Defect Detection) targets accurate defect detection, localization, and classification across diverse unseen production environments; Track 2 (Fine-Grained Severity Grading) requires assigning each detected defect an industry-standard severity level, including Acceptable, Marginal NG, NG, and Gross NG. We construct a large-scale industrial dataset of high-resolution microscopic images spanning seven representative defect categories, comprising over 3,800 images with pixel-level instance annotations for Track 1 and over 2,600 images with severity-grade labels for Track 2. The challenge attracted 86 registered participants with 130 submissions; during the final testing phase, 21 teams submitted results and 12 teams provided models with technical reports. The resulting benchmark, together with the diverse and effective solutions contributed by participating teams, sets a new standard for industrial defect analysis research.",
-      "published": "2026-07-06T05:01:54Z",
+      "arxiv_id": "2607.10495",
+      "title": "NanoVSR: Towards Real-Time Video Super-Resolution on Edge Devices",
+      "summary": "Recent Video Super-Resolution (VSR) methods rely heavily on transformers and explicit optical flow, creating computational overhead and custom operations that hinder deployment on hardware accelerators like TensorRT. To address this, we introduce NanoVSR, a scalable, fully convolutional architecture designed for resource-constrained edge devices. Using structural reparameterization, NanoVSR collapses into standard convolutions during inference, ensuring seamless hardware compatibility and negligible runtime overhead. Furthermore, despite lacking explicit motion compensation, it maintains competitive restoration quality by implicitly learning spatio-temporal alignments through progressive training. Evaluated on the REDS4 benchmark, NanoVSR demonstrates an exceptional balance between accuracy and computational efficiency, significantly improving the trade-off for compact architectures. Our NanoVSR-644k baseline yields 28.64 dB PSNR while delivering 27.2 FPS on the NVIDIA Jetson Orin NX 16GB (25W), offering massive speed gains over heavier models. The scaled NanoVSR-1.7M variant reaches 29.15 dB with a throughput of 19.58 FPS, providing superior, edge-optimized upscaling. Code is available at https://github.com/filippawlicki/nanovsr.",
+      "published": "2026-07-11T22:01:26Z",
       "authors": [
-        "Wei Sun",
-        "Weixia Zhang",
-        "Linhan Cao",
-        "Mingkai Lu",
-        "Xiongkuo Min",
-        "Xiaoping Zhang"
+        "Filip Pawlicki",
+        "Marcel Kańduła",
+        "Marcin Pucek",
+        "Kamil Dobies"
       ],
       "primary_category": "cs.CV",
-      "link": "http://arxiv.org/abs/2607.04675v1",
+      "link": "http://arxiv.org/abs/2607.10495v1",
       "score": 5
     },
     {
-      "arxiv_id": "2607.05370",
-      "title": "Calibration of systematic distortions in quantum emitter localization microscopy for deterministic nanophotonic fabrication",
-      "summary": "Quantum photonic technologies greatly benefit from quantum light emitters with high brightness, indistinguishability, and reliable polarization characteristics. Achieving optimal performance relies on the accurate localization of emitters and their deterministic integration into tailored photonic structures with nanometer-scale accuracy. Although marker-based photoluminescence imaging techniques can achieve statistical fitting uncertainties below 10 nm, the ultimate integration yield is often limited by uncorrected systematic distortions in custom cryo-optical setups that compromise metrological accuracy. Here, we present an in situ calibration protocol that uses lithographically defined gold nanodisk arrays as references to calibrate optical distortions with a Zernike vector-field model. On held-out validation patterns beyond the calibration dataset, this correction reduces the residual systematic bias to 5.3 nm with a 2D scatter of 24.6 nm across the analyzed field of view. Furthermore, we demonstrate that applying this correction to the deterministic fabrication of circular mesa structures around semiconductor quantum dots reduces the variance in emission polarization by 49%, indicating improved registration accuracy. This calibration strategy offers a practical route to high-yield deterministic integration of quantum emitters into scalable quantum photonic circuits.",
-      "published": "2026-07-06T17:47:40Z",
+      "arxiv_id": "2607.11509",
+      "title": "CFR-Net:Collaborative Feature Refnement Network for Medical Image Anomaly Detection",
+      "summary": "Medical image anomaly detection remains challenging because networks pretrained on natural images often exhibit limited adaptability to medical images, where abnormal patterns appear as fine-grained local shifts, multi-scale contextual mismatches, and orientation-sensitive structural deviations. To address this, we propose the Collaborative Feature Refinement Network (CFR-Net), which combines shared teacher-student feature refinement before decoding with cross-space consistency after decoding. CFR-Net refines frozen teacher features and trainable student features using a Multi-Path Feature Refinement Module (MPFRM) with shared parameters, imposing common multi-path refinement rules on generic visual references and representations adapted to the medical domain, thereby mitigating domain discrepancy while modeling local, multi-scale, and orientation-sensitive feature characteristics. A variance-sensitive objective and dynamic ``homework set'' reorganization further support layer-adaptive consistency learning. Experiments on medical benchmarks show that CFR-Net achieves competitive anomaly classification and strong anomaly localization performance when trained on normal data.",
+      "published": "2026-07-13T12:59:21Z",
       "authors": [
-        "Chenxi Ma",
-        "Maximilian Heller",
-        "Timon Handrup",
-        "Yiteng Zhang",
-        "Tobias M. Krieger",
-        "Thomas Oberleitner"
+        "Zihan Nie",
+        "Muhao Xu",
+        "Wei Feng",
+        "Yuan Cui",
+        "Hua Wei",
+        "Sijie Niu"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.11509v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.11170",
+      "title": "TC-MAF: Train-Calibrated Bounded Multi-Evidence Fusion for Multimodal Industrial Anomaly Detection",
+      "summary": "Multimodal anomaly detection benefits from complementary RGB and 3D evidence, yet auxiliary RGB reconstruction is not equally reliable across product categories and class-wise test-time policy selection is usually unavailable. We propose TC-MAF, a base-anchored multi-evidence fusion design that combines a multimodal detector, complementary Dinomaly evidence, and a small cross-modal consistency cue under one fixed pixel-level fusion formula. A lightweight training-dispersion confidence (TDC) term scales auxiliary participation using only normal training statistics. On MVTec-3D, TC-MAF reaches 0.979 image-level AUROC and 0.990 pixel-level AUPRO, achieving the best mean results on both detection and localization among the compared multimodal methods. Systematic ablations show that the fusion structure itself is the dominant factor, while TDC provides a smaller but reproducible calibration gain over no calibration or arbitrary calibration. Additional experiments show that the same design remains effective under a pooled-statistics variant, auxiliary-branch and backbone substitutions, few-shot settings, a missing-3D setting, and cross-dataset evaluation on Eyecandies. Code is available at https://anonymous.4open.science/r/TC_MAF-C3BB.",
+      "published": "2026-07-13T07:07:54Z",
+      "authors": [
+        "Ming Deng",
+        "Sijin Sun",
+        "Xiaochuan Hu",
+        "Xing Wu"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.11170v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.11088",
+      "title": "CUST: Clustered Unit-level Similarity Transformer for Lightweight Image Super-Resolution",
+      "summary": "Recently, Vision Transformer (ViT)-based models have exhibited remarkable performance in image super-resolution. However, the quadratic computational complexity of ViTs with respect to spatial resolution severely constrains their efficiency, leading to high latency and massive memory consumption. To alleviate this, various window-based attention mechanisms have been proposed; yet, they inherently compromise the long-range dependency modeling that is the primary advantage of ViTs. To overcome these limitations, we propose the Clustered Unit-level Similarity Transformer (CUST), a novel architecture that efficiently integrates global and local information. Specifically, CUST enables each patch to aggregate and attend to similar patches within a broadened regional scope outside its local window, thereby capturing extensive contextual understanding. Furthermore, it employs overlapping attention windows to capture local dependencies, while explicitly extracting high-frequency details by computing the residual difference between the original features and their downsampled-upsampled counterparts. Comprehensive experiments demonstrate that our proposed model achieves a practical balance between computational efficiency and restoration performance. It achieves a lower memory footprint and faster inference speed compared to recent global context or lightweight models under realistic constraints. Code is available at [https://github.com/jwgdmkj/CUST].",
+      "published": "2026-07-13T04:56:57Z",
+      "authors": [
+        "Jeongsoo Kim"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.11088v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.11025",
+      "title": "Reference-Based Face Super-Resolution Using the Spatial Transformer",
+      "summary": "Face super-resolution is the task of increasing the resolution of an image containing a face thereby adding finer detail. It is a ubiquitous task in many computer vision applications and quite often the user isn't even aware that it is being performed. However, doing it with high fidelity is challenging as it is an ill-posed problem. In this paper we present a reference-based solution for face super-resolution that uses higher resolution reference images to aid in the task. We show an alignment module based on the spatial transformer that is considerably more stable than the popular deformable convolutions. We also show an aggregation function that can take good quality information from the reference images when available or suppress the function when such information is unavailable. Finally, we show that our relatively smaller model can achieve state of the art results on multiple datasets. The source code is available at https://github.com/varun-jois/FSRST.",
+      "published": "2026-07-13T02:44:27Z",
+      "authors": [
+        "Varun Ramesh Jois",
+        "Antonella DiLillo",
+        "James Storer"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.11025v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.10544",
+      "title": "Physics-inspired Pseudo Anomaly Generation and Prototype Feature Guidance for 3D Anomaly Detection",
+      "summary": "3D point cloud anomaly detection plays a vital role in industrial manufacturing, yet it faces significant challenges due to the scarcity and high acquisition cost of real anomalous samples. The inherently anomaly-free training data further hinders detection methods from effectively learning discriminative features between normal and abnormal instances. To address these issues, we propose PA3AD, a novel framework that introduces a physics-inspired pseudo-anomaly generation strategy to create physically plausible anomalous samples from normal data. Additionally, we incorporate prototype features via a weight-sharing mechanism to guide the model in capturing the distribution shifts between normal and anomalous samples. Specifically, PA3AD introduces two key innovations to tackle the scarcity of real anomalies. First, a physics-inspired module generates diverse pseudo-anomalous point clouds from normal data via multi-physics modeling. Second, momentum-updated prototypes and a difference-aware fusion block capture stable normal representations and their discrepancies with pseudo-anomalies. This design effectively learns distribution shifts, achieving superior detection performance. Extensive experiments on the Anomaly-ShapeNet and Real3D-AD datasets demonstrate that our method consistently outperforms existing state-of-the-art approaches. Our code will be made publicly available at https://github.com/NingxiaoJian/PA3AD.",
+      "published": "2026-07-12T03:11:49Z",
+      "authors": [
+        "Jian Ning",
+        "Qin Zou",
+        "Linchun Wu",
+        "Yuanhao Yue",
+        "Kunmo Li",
+        "Shoubin Chen"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.10544v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.11768",
+      "title": "Spacer-Mediated Gold Nanocube Arrays for Edge-Localized Excitonic Enhancement in Monolayer MoS2",
+      "summary": "Plasmonic nanostructures offer an effective route for enhancing light-matter interaction in atomically thin semiconductors, whose optical response is intrinsically limited by their sub-nanometer active thickness. Here, we numerically investigate excitonic enhancement in monolayer (ML) Molybdenum Disulfide (MoS2) coupled to size-tuned gold (Au) nanocube arrays separated by thin aluminum oxide (Al2O3) and hexagonal boron nitride (h-BN) spacer layers. By varying the nanocube side length, the localized surface plasmon resonance is tuned across the visible spectral range to modulate the A- and B-excitonic transitions of monolayer MoS2. We show that the nanocube-size-dependent spectral redshift can be further controlled through the spacer material and thickness, enabling systematic tuning of the near-field distribution, carrier generation rate, quantum yield, and radiative decay enhancement. Localized plasmonic confinement yields excitation-rate enhancements of up to 4.35 at B-excitonic transition (605 nm) and 3.66 at A-excitonic transition (650 nm), while the radiative decay-rate enhancement exceeds 80, leading to 350-fold photoluminescence enhancement. Although both A- and B-excitonic channels are enhanced simultaneously, their relative contributions depend on nanocube size, spacer material, and spacer thickness, indicating wavelength-dependent excitonic modulation rather than strict exciton-selective switching. These findings establish Au nanocube arrays as a simple, scalable, and tunable plasmonic platform for enhancing excitonic carrier generation and emission in ML MoS2.",
+      "published": "2026-07-13T16:26:36Z",
+      "authors": [
+        "Abdullah Efe Yildiz",
+        "Emre Ozan Polat"
       ],
       "primary_category": "physics.optics",
-      "link": "http://arxiv.org/abs/2607.05370v1",
+      "link": "http://arxiv.org/abs/2607.11768v1",
       "score": 1
     },
     {
-      "arxiv_id": "2607.05247",
-      "title": "Vision Pretraining for Dense Spatial Perception",
-      "summary": "Dense spatial perception is essential for physical intelligence, where visual systems are expected to recover structured, metric, and actionable representations from pixel observations. Modern visual foundation models tend to prioritize semantic invariance, often at the expense of detailed spatial understanding. In this work, we study vision pretraining through a boundary-centric lens, motivated by the premise that boundaries and shape discontinuities offer essential cues for perceiving geometric properties. Concretely, we propose masked boundary modeling, a self-supervised paradigm that dynamically learns sub-pixel boundary representations and subsequently leverages the discovered boundary-bearing tokens as masked targets to facilitate dense visual token learning. By scaling this framework, we develop LingBot-Vision and demonstrate its efficacy across a diverse set of downstream vision tasks with DINOv3 as a strong baseline. Remarkably, LingBot-Vision drives the progression from LingBot-Depth 1.0 to LingBot-Depth 2.0 for depth completion, and thereby yields enhanced depth estimation, a key pillar for embodied artificial intelligence. Our findings reveal that boundary modeling goes beyond simple line segments and instead serves as a scalable pretraining principle for learning spatially structured visual representations.",
-      "published": "2026-07-06T15:56:14Z",
+      "arxiv_id": "2607.11671",
+      "title": "Analytical Theory of Photon Tunneling and Near-Field Heat Transfer Between Dissimilar Materials",
+      "summary": "Near-field radiative heat transfer can exceed the blackbody limit through evanescent-mode coupling across nanoscale gaps. This enhancement underpins applications including thermophotovoltaic energy conversion, electroluminescent cooling, thermal rectification, and photon absorption in plasmon-assisted photodetection. These systems most often involve photon- or heat-exchange between dissimilar interfaces, particularly between a semiconductor and a metal. Despite the prevalence of this asymmetric configuration, no closed-form description of its near-field interaction exists. Here, we derive a closed-form analytical description of photon tunneling that clarifies the roles of material properties, namely the plasma frequency, optical loss, and semiconductor absorption, in the thermal exchange. We show that the dominant in-plane wave vector of the radiative heat transfer is an approximate average of the corresponding values for two symmetric reference systems: a plasmonic-plasmonic cavity and a semiconductor-semiconductor cavity. These results establish a compact analytical framework for near-field heat transfer between dissimilar materials.",
+      "published": "2026-07-13T15:12:35Z",
       "authors": [
-        "Zelin Fu",
-        "Bin Tan",
-        "Changjiang Sun",
-        "Shaohui Liu",
-        "Kecheng Zheng",
-        "Yinghao Xu"
+        "Kartika N. Nimje",
+        "Mariano Pascale",
+        "Georgia T. Papadakis"
+      ],
+      "primary_category": "physics.optics",
+      "link": "http://arxiv.org/abs/2607.11671v1",
+      "score": 1
+    },
+    {
+      "arxiv_id": "2607.11494",
+      "title": "A diode nanocavity for fast, efficient and tunable emission of highly entangled photon pairs and Fourier-transform-limited single photons",
+      "summary": "Deterministic sources of entangled photon pairs and indistinguishable photons are expected to play a key role in photonic quantum technologies. Semiconductor quantum dots are promising candidates due to their on-demand emission and compatibility with nanophotonic structures. However, current implementations face trade-offs between extraction efficiency, Purcell enhancement, as well as charge noise that causes blinking and degrades indistinguishability. Here we demonstrate a tunable nano-optoelectronic device based on a quantum dot embedded in a p-i-n diode circular-Bragg-grating-resonator and featuring extraction efficiencies up to 0.55(6) and Purcell-factor of $\\sim$8. The device generates wavelength-tunable entangled photon pairs with suppressed blinking and raw (corrected) concurrence > 0.89 (0.91) over a range of 1.6 nm. The very same source also emits single, nearly Fourier-limited and highly indistinguishable photons with raw (corrected) $\\mathcal{V}_{\\text{HOM}}$ = 0.951(4) (0.988(6)). These results demonstrate a viable platform for semiconductor quantum photonics.",
+      "published": "2026-07-13T12:48:27Z",
+      "authors": [
+        "Ievgen Brytavskyi",
+        "Thomas Oberleitner",
+        "Christian Weidinger",
+        "Maximilian Aigner",
+        "Gabriel Undeutsch",
+        "Tobias Steindl"
+      ],
+      "primary_category": "quant-ph",
+      "link": "http://arxiv.org/abs/2607.11494v1",
+      "score": 1
+    },
+    {
+      "arxiv_id": "2607.10826",
+      "title": "3D-DefectBench: A Controlled Factorial Study of Vision-Language Model Evaluation Pipelines for Fine-Grained 3D Generation Defects",
+      "summary": "Automated evaluation is essential for scaling generative 3D systems, where exhaustive human review is costly and slow. However, the reliability of an automated judge depends on the entire evaluation pipeline, not only the underlying vision-language model (VLM), but also how assets are rendered, what visual evidence is provided, how the task is specified, and how human reference labels are constructed. We introduce 3D-DefectBench, a benchmark and framework for systematic analysis of VLM-based 3D defect detection pipelines. It complements holistic ratings and pairwise preferences with nine fine-grained binary defects spanning geometry, texture, and prompt adherence, providing actionable diagnostics for generator development and judge evaluation. Using a balanced factorial design, we vary four pipeline factors, VLM, camera protocol, visual input, and prompt schema, across 84 inference designs and approximately 3.2 million scored defect decisions, followed by staged validation on a broader set of frontier models. Model choice is the largest determinant of agreement with human labels, but the remaining factors also affect performance, interact with model selection, and can change the best configuration. Within the evaluated design space, a compact six-view RGB protocol performs comparably to denser multi-view settings and inputs augmented with depth or surface normals, making it a strong cost-effective default. Under this standardized pipeline, the best of 12 VLM judges still lag behind trained human labelers, while texture agreement drops sharply when expert-consensus labels are replaced by noisier silver labels. These findings show that automated judges should be evaluated as complete pipelines and calibrated across human reference regimes, rather than benchmarked only as standalone models. We release labels, prompts, predictions, and Croissant metadata on Hugging Face.",
+      "published": "2026-07-12T16:41:24Z",
+      "authors": [
+        "Zhenyu Zhao",
+        "Nanshan Jia",
+        "Jihyeon Je",
+        "Yifu Tang",
+        "Alvin Chan",
+        "Michael Spedden"
       ],
       "primary_category": "cs.CV",
-      "link": "http://arxiv.org/abs/2607.05247v1",
+      "link": "http://arxiv.org/abs/2607.10826v1",
+      "score": 1
+    },
+    {
+      "arxiv_id": "2607.10666",
+      "title": "Answer-Conditioned Chain-of-Thought Distillation for Few-Shot Industrial Vision with Small VLMs",
+      "summary": "Deploying AI-based visual inspection in manufacturing is hard because requirements change often, new defect types appear, and large labeled datasets are rarely available. We propose answer-conditioned chain-of-thought (CoT) distillation for rapidly adapting small vision-language models (VLMs) to new industrial tasks using minimal labeled data. A frontier VLM receives each training image along with its correct label and generates a justified visual explanation. A 3B-parameter model is then fine-tuned on these reasoning-augmented examples via LoRA. By conditioning on correct answers, we ensure all training reasoning is directed toward the correct conclusion, which is critical because frontier models score as low as 24.1% on our hardest task. We validate on four industrial classification tasks spanning three image modalities using only 18 to 30 labeled images per task. Across 4 seeds per task (32 training runs), our method outperforms direct fine-tuning on all 16 seed-task combinations, with mean improvements of +1.7 to +4.4 percentage points. A controlled equal-budget experiment confirms the improvement comes from reasoning quality, not additional training steps. An unconditioned baseline demonstrates that with out answer-conditioning, wrong reasoning degrades performance by 17.8 percentage points. On weld radiograph classification, the fine-tuned 3B model outperforms GPT-4.1 by 10.0pp using just 24 training images.",
+      "published": "2026-07-12T09:23:05Z",
+      "authors": [
+        "Shubham Rao"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.10666v1",
       "score": 1
     }
   ]
