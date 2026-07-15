@@ -1,57 +1,182 @@
 {
-  "date": "2026-07-07",
-  "count": 3,
+  "date": "2026-07-16",
+  "count": 12,
   "papers": [
     {
-      "arxiv_id": "2607.04675",
-      "title": "ICME 2026 Grand Challenge on Cross-Scenario Defect Detection and Fine-Grained Severity Grading for High-Precision Manufacturing",
-      "summary": "This paper presents the IEEE International Conference on Multimedia and Expo (ICME) 2026 Grand Challenge on Cross-Scenario Defect Detection and Fine-Grained Severity Grading for High-Precision Manufacturing. The challenge is motivated by two key limitations of existing industrial defect inspection systems: (1) current deep learning-based methods often suffer significant performance degradation when deployed in unseen production scenarios, and (2) most benchmarks neglect severity-aware assessment, which is critical for risk control and yield optimization. To address these limitations, we design two complementary tracks: Track 1 (Cross-Scenario Defect Detection) targets accurate defect detection, localization, and classification across diverse unseen production environments; Track 2 (Fine-Grained Severity Grading) requires assigning each detected defect an industry-standard severity level, including Acceptable, Marginal NG, NG, and Gross NG. We construct a large-scale industrial dataset of high-resolution microscopic images spanning seven representative defect categories, comprising over 3,800 images with pixel-level instance annotations for Track 1 and over 2,600 images with severity-grade labels for Track 2. The challenge attracted 86 registered participants with 130 submissions; during the final testing phase, 21 teams submitted results and 12 teams provided models with technical reports. The resulting benchmark, together with the diverse and effective solutions contributed by participating teams, sets a new standard for industrial defect analysis research.",
-      "published": "2026-07-06T05:01:54Z",
+      "arxiv_id": "2607.12245",
+      "title": "Rough Path Signature-Guided Geometry Augmentation for Few-Shot Industrial Surface Defect Detection",
+      "summary": "Few-shot industrial defect detection remains difficult for standard supervised detectors, which achieve poor performance on boundary-dominated industrial defects. This paper proposes rough path signature-guided geometry augmentation (RPS-GA), a geometry-aware approach in which Canny edge contours are treated as ordered planar paths whose truncated second-order signature responses, especially the antisymmetric Lévy-area term, are aggregated into a spatial map that highlights boundary-related structure through two fusion operators, SIG-AUG and SGAA. The approach is evaluated on NEU-DET and PCB-Defect under a few-shot protocol with 5, 10, 20, or 50 labeled images per class, using an unmodified YOLOv8n detector throughout. Compared with the baseline, RPS-GA delivers large gains when supervision is limited, although the margin shrinks as more labels become available. On NEU-DET, SIG-AUG raises 10-shot mAP@0.5 from 0.341 to 0.583, whereas on PCB-Defect, SGAA improves 10-shot mAP@0.5 from 0.086 to 0.299 and yields usable detection at 5-shot where the baseline fails entirely. These trends are confirmed by multi-seed evaluation across independent random partitions. Overall, the results indicate that second-order path-signature geometry offers a practical way to strengthen few-shot industrial defect detection without meta-learning or detector redesign.",
+      "published": "2026-07-14T01:14:58Z",
       "authors": [
-        "Wei Sun",
-        "Weixia Zhang",
-        "Linhan Cao",
-        "Mingkai Lu",
-        "Xiongkuo Min",
-        "Xiaoping Zhang"
+        "Jiaqi Kuang"
       ],
       "primary_category": "cs.CV",
-      "link": "http://arxiv.org/abs/2607.04675v1",
+      "link": "http://arxiv.org/abs/2607.12245v1",
+      "score": 7
+    },
+    {
+      "arxiv_id": "2607.12866",
+      "title": "Statistical Non-linear Reconstruction Loss for Image Anomaly Detection",
+      "summary": "Reconstruction-based methods are a cornerstone of unsupervised image anomaly detection, but they remain vulnerable to \\emph{outlier leakage}, where standard mean squared error (MSE) loss drives the model to faithfully reconstruct anomalous patterns. We propose a Non-linear Reconstruction Loss that applies a sigmoid-based squashing function to suppress high-magnitude features, preventing outliers from dominating optimization while preserving sensitivity to normal patterns. In addition, we introduce a statistical calibration scheme that selects the scaling factor $k$ from the confidence interval (CI) of the normal feature distribution, enabling data-driven control of the suppression strength. Our approach achieves competitive or superior anomaly detection performance compared to state-of-the-art methods, reaching 99.0\\% Image-AUROC and 97.3\\% Pixel-AUROC on MVTec-AD, and 95.3\\% Image-AUROC and 99.0\\% Pixel-AUROC on VisA. These results indicate that non-linear gradient suppression is an effective mechanism for mitigating outlier leakage and improving anomaly localization in unified industrial inspection settings. The implementation is available at https://github.com/mintii13/Statistical-Non-linear-Reconstruction-Loss.git.",
+      "published": "2026-07-14T15:18:24Z",
+      "authors": [
+        "Nguyen Minh Tri",
+        "Hoang Khuong Duy",
+        "Huynh Cong Viet Ngu"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.12866v1",
       "score": 5
     },
     {
-      "arxiv_id": "2607.05370",
-      "title": "Calibration of systematic distortions in quantum emitter localization microscopy for deterministic nanophotonic fabrication",
-      "summary": "Quantum photonic technologies greatly benefit from quantum light emitters with high brightness, indistinguishability, and reliable polarization characteristics. Achieving optimal performance relies on the accurate localization of emitters and their deterministic integration into tailored photonic structures with nanometer-scale accuracy. Although marker-based photoluminescence imaging techniques can achieve statistical fitting uncertainties below 10 nm, the ultimate integration yield is often limited by uncorrected systematic distortions in custom cryo-optical setups that compromise metrological accuracy. Here, we present an in situ calibration protocol that uses lithographically defined gold nanodisk arrays as references to calibrate optical distortions with a Zernike vector-field model. On held-out validation patterns beyond the calibration dataset, this correction reduces the residual systematic bias to 5.3 nm with a 2D scatter of 24.6 nm across the analyzed field of view. Furthermore, we demonstrate that applying this correction to the deterministic fabrication of circular mesa structures around semiconductor quantum dots reduces the variance in emission polarization by 49%, indicating improved registration accuracy. This calibration strategy offers a practical route to high-yield deterministic integration of quantum emitters into scalable quantum photonic circuits.",
-      "published": "2026-07-06T17:47:40Z",
+      "arxiv_id": "2607.12858",
+      "title": "LARAD: Layout-Aware Road Anomaly Detection via Spatial-Logic Reasoning",
+      "summary": "Accurate open-world obstacle detection is critical for autonomous driving. Current anomaly segmentation methods suffer from a fundamental blind spot: they over-rely on texture novelty to identify out-of-distribution (OoD) objects while ignoring contextual spatial logic. Furthermore, mitigating the resulting false positives often requires cascading massive vision models, introducing unacceptable inference latency. To address these issues, we propose Layout-Aware Road Anomaly Detection (LARAD), shifting the paradigm from appearance matching to spatial-logic reasoning. First, we introduce the Spatial-Logic Violation Synthesis (SLVS) pipeline, which generates training samples that are texture-consistent yet spatially invalid, forcing the model to learn contextual violations. Second, we augment a standard closed-set segmentation network with a lightweight, OoD-guided attention branch. Extensive experiments demonstrate that LARAD significantly enhances robustness against logical anomalies and establishes a new state-of-the-art, all while retaining the high efficiency of a single-model architecture.",
+      "published": "2026-07-14T15:09:00Z",
       "authors": [
-        "Chenxi Ma",
-        "Maximilian Heller",
-        "Timon Handrup",
-        "Yiteng Zhang",
-        "Tobias M. Krieger",
-        "Thomas Oberleitner"
-      ],
-      "primary_category": "physics.optics",
-      "link": "http://arxiv.org/abs/2607.05370v1",
-      "score": 1
-    },
-    {
-      "arxiv_id": "2607.05247",
-      "title": "Vision Pretraining for Dense Spatial Perception",
-      "summary": "Dense spatial perception is essential for physical intelligence, where visual systems are expected to recover structured, metric, and actionable representations from pixel observations. Modern visual foundation models tend to prioritize semantic invariance, often at the expense of detailed spatial understanding. In this work, we study vision pretraining through a boundary-centric lens, motivated by the premise that boundaries and shape discontinuities offer essential cues for perceiving geometric properties. Concretely, we propose masked boundary modeling, a self-supervised paradigm that dynamically learns sub-pixel boundary representations and subsequently leverages the discovered boundary-bearing tokens as masked targets to facilitate dense visual token learning. By scaling this framework, we develop LingBot-Vision and demonstrate its efficacy across a diverse set of downstream vision tasks with DINOv3 as a strong baseline. Remarkably, LingBot-Vision drives the progression from LingBot-Depth 1.0 to LingBot-Depth 2.0 for depth completion, and thereby yields enhanced depth estimation, a key pillar for embodied artificial intelligence. Our findings reveal that boundary modeling goes beyond simple line segments and instead serves as a scalable pretraining principle for learning spatially structured visual representations.",
-      "published": "2026-07-06T15:56:14Z",
-      "authors": [
-        "Zelin Fu",
-        "Bin Tan",
-        "Changjiang Sun",
-        "Shaohui Liu",
-        "Kecheng Zheng",
-        "Yinghao Xu"
+        "Shiyi Mu",
+        "Xujie Chen",
+        "Shugong Xu"
       ],
       "primary_category": "cs.CV",
-      "link": "http://arxiv.org/abs/2607.05247v1",
-      "score": 1
+      "link": "http://arxiv.org/abs/2607.12858v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.12807",
+      "title": "Spatial-Frequency Cued Generative Fixed-Filter Active Noise Control Based on Deep Learning in Reverberant Environments",
+      "summary": "Generative fixed-filter active noise control (GFANC) effectively attenuates noise with diverse frequency characteristics through the combination of sub control filters. However, it does not incorporate the spatial information of the noise source, which limits its performance, particularly in reverberant environments. To address this limitation, this paper proposes a novel spatial-frequency cued GFANC (SF-GFANC) method that exploits both three-dimensional (3D) spatial and frequency information of the noise source. Specifically, a multi-task convolutional recurrent neural network (CRNN) is designed to estimate the source distance, elevation angle, and azimuth angle as spatial cues, while predicting the combination weights of sub control filters as frequency cues. These spatial-frequency cues jointly guide the generation of the appropriate control filter. In addition, a theoretical analysis of the optimal control filter in reverberant environments is presented, highlighting the importance of 3D spatially conditioned control filter design. Evaluations using both simulated and measured acoustic paths demonstrate that the CRNN is robust to unseen acoustic environments and noise types. Furthermore, the results confirm that SF-GFANC outperforms representative ANC algorithms when handling noise sources across diverse 3D locations and frequency characteristics in reverberant environments.",
+      "published": "2026-07-14T14:21:25Z",
+      "authors": [
+        "Boxiang Wang",
+        "Haowen Li",
+        "Dongyuan Shi",
+        "Junwei Ji",
+        "Ziyi Yang",
+        "Zhengding Luo"
+      ],
+      "primary_category": "eess.AS",
+      "link": "http://arxiv.org/abs/2607.12807v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.12753",
+      "title": "RFMSR: Residual Flow Matching for Image Super-Resolution",
+      "summary": "Image super-resolution (ISR) has witnessed remarkable progress with diffusion models and flow matching. The dominant text-to-image (T2I) based approaches leverage large-scale foundation models as generative priors, achieving impressive perceptual quality but at the cost of massive model sizes and prohibitive training expenses. Recent flow-matching-based vision-only approaches have made significant strides; however, they adopt standard flow formulations that transport from a pure Gaussian prior to the data distribution, discarding the rich structural information already present in the low-quality (LQ) input. Furthermore, existing single-step acceleration techniques often forfeit the model's multi-step inference capability. In this paper, we propose Residual Flow Matching for Image Super-Resolution (RFMSR), a vision-only framework that centers the source distribution at the LQ latent, reducing transport distance and preserving structural priors throughout the flow trajectory. We further introduce a two-phase training strategy: Phase I pretrains the velocity field via conditional flow matching, while Phase II applies end-to-end supervision to the single-step prediction while retaining the velocity loss across all timesteps, achieving high-quality single-step generation without sacrificing multi-step refinement. Extensive experiments demonstrate that RFMSR achieves comparable or even superior perceptual quality compared to state-of-the-art (SOTA) methods. The source code is available at https://github.com/Faze-Hsw/RFMSR.",
+      "published": "2026-07-14T13:19:36Z",
+      "authors": [
+        "Shuwei Huang",
+        "Tianyao Luo",
+        "Jicheng Liu",
+        "Daizong Liu",
+        "Pan Zhou"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.12753v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.12653",
+      "title": "Quantum metrology with undetected mid-infrared photons for applied non-destructive testing",
+      "summary": "Metrology with undetected photons is an emerging technique that leverages quantum effects and photon correlations (entanglement) to retrieve valuable information in a target spectral range (e.g., mid-infrared, mid-IR) using measurements in an easily accessible domain (e.g., visible, near-IR). The underlying quantum process of spontaneous parametric down-conversion (SPDC) is utilized to generate non-degenerate correlated signal and idler photons to serve as detection and probing photons, respectively. Sensing with undetected photons enables important advantages, such as ultra-low probe powers, room-temperature operation, and shot-noise-limited detection. In this contribution, we apply a quantum nonlinear interferometer based on an SPDC source to perform applied mid-IR spectroscopy, mid-IR microscopy, and mid-IR optical coherence tomography (OCT) as among the most promising techniques for quantum-based routine non-destructive testing. Moreover, we characterize the system, benchmark it against classical systems, and provide a prospective outlook for this new technology.",
+      "published": "2026-07-14T11:37:40Z",
+      "authors": [
+        "Paul Gattinger",
+        "Andreas W. Schell",
+        "Maja Buchegger",
+        "Markus Brandstetter",
+        "Ivan Zorin"
+      ],
+      "primary_category": "quant-ph",
+      "link": "http://arxiv.org/abs/2607.12653v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.12325",
+      "title": "Peak-Decomposition-Free Inverse Metrology of Hyperspectral Moiré Photoluminescence",
+      "summary": "Hyperspectral photoluminescence (PL) of moiré transition-metal dichalcogenide heterobilayers encodes spatially varying exciton landscapes, but extracting that information is hampered by the ambiguity of multi-peak spectral decomposition. Here we develop a peak-decomposition-free inverse framework for quantitative optical metrology of effective disorder coordinates. From the raw cube $I(x,y,E)$ we construct physically motivated descriptor maps -- centroid energy, dominant emission energy, spectral width, low/high spectral-weight ratio, and dominant--centroid offset. Their spatial autocorrelation hierarchy and covariance structure form a robust descriptor fingerprint of multi-scale disorder-sensitive spectral statistics. By matching these descriptor summary statistics to a minimal smooth-plus-trap generative model through a grid-Bayesian inverse, we infer effective disorder coordinates $\\Thetaeff=\\{\\Ws,\\xis,\\Wt,\\nt\\}$ with explicit uncertainties. Using synthetic PL cubes generated from controlled multi-scale landscapes, we recover the well-identified smooth-disorder coordinates and constrain the trap sector up to a strength--density degeneracy. We report this degeneracy explicitly as an intrinsic identifiability limit rather than a deficiency of the method, and map four canonical disorder regimes onto a disorder-coordinate diagram. The descriptor statistics are stable against shot noise and pixel pitch, and behave predictably under optical-resolution and energy-window changes. The same pipeline ingests experimental cubes without modification, making it directly applicable to two-dimensional and moiré materials. Our results establish descriptor-based hyperspectral PL as a practical, minimal-assumption route to optical disorder diagnostics and provide the validated core of a reusable analysis workflow (\\texttt{HyperPL-Diag}) for moiré exciton systems.",
+      "published": "2026-07-14T04:11:27Z",
+      "authors": [
+        "Katsunori Wakabayashi"
+      ],
+      "primary_category": "physics.optics",
+      "link": "http://arxiv.org/abs/2607.12325v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.11509",
+      "title": "CFR-Net:Collaborative Feature Refnement Network for Medical Image Anomaly Detection",
+      "summary": "Medical image anomaly detection remains challenging because networks pretrained on natural images often exhibit limited adaptability to medical images, where abnormal patterns appear as fine-grained local shifts, multi-scale contextual mismatches, and orientation-sensitive structural deviations. To address this, we propose the Collaborative Feature Refinement Network (CFR-Net), which combines shared teacher-student feature refinement before decoding with cross-space consistency after decoding. CFR-Net refines frozen teacher features and trainable student features using a Multi-Path Feature Refinement Module (MPFRM) with shared parameters, imposing common multi-path refinement rules on generic visual references and representations adapted to the medical domain, thereby mitigating domain discrepancy while modeling local, multi-scale, and orientation-sensitive feature characteristics. A variance-sensitive objective and dynamic ``homework set'' reorganization further support layer-adaptive consistency learning. Experiments on medical benchmarks show that CFR-Net achieves competitive anomaly classification and strong anomaly localization performance when trained on normal data.",
+      "published": "2026-07-13T12:59:21Z",
+      "authors": [
+        "Zihan Nie",
+        "Muhao Xu",
+        "Wei Feng",
+        "Yuan Cui",
+        "Hua Wei",
+        "Sijie Niu"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.11509v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.11170",
+      "title": "TC-MAF: Train-Calibrated Bounded Multi-Evidence Fusion for Multimodal Industrial Anomaly Detection",
+      "summary": "Multimodal anomaly detection benefits from complementary RGB and 3D evidence, yet auxiliary RGB reconstruction is not equally reliable across product categories and class-wise test-time policy selection is usually unavailable. We propose TC-MAF, a base-anchored multi-evidence fusion design that combines a multimodal detector, complementary Dinomaly evidence, and a small cross-modal consistency cue under one fixed pixel-level fusion formula. A lightweight training-dispersion confidence (TDC) term scales auxiliary participation using only normal training statistics. On MVTec-3D, TC-MAF reaches 0.979 image-level AUROC and 0.990 pixel-level AUPRO, achieving the best mean results on both detection and localization among the compared multimodal methods. Systematic ablations show that the fusion structure itself is the dominant factor, while TDC provides a smaller but reproducible calibration gain over no calibration or arbitrary calibration. Additional experiments show that the same design remains effective under a pooled-statistics variant, auxiliary-branch and backbone substitutions, few-shot settings, a missing-3D setting, and cross-dataset evaluation on Eyecandies. Code is available at https://anonymous.4open.science/r/TC_MAF-C3BB.",
+      "published": "2026-07-13T07:07:54Z",
+      "authors": [
+        "Ming Deng",
+        "Sijin Sun",
+        "Xiaochuan Hu",
+        "Xing Wu"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.11170v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.11088",
+      "title": "CUST: Clustered Unit-level Similarity Transformer for Lightweight Image Super-Resolution",
+      "summary": "Recently, Vision Transformer (ViT)-based models have exhibited remarkable performance in image super-resolution. However, the quadratic computational complexity of ViTs with respect to spatial resolution severely constrains their efficiency, leading to high latency and massive memory consumption. To alleviate this, various window-based attention mechanisms have been proposed; yet, they inherently compromise the long-range dependency modeling that is the primary advantage of ViTs. To overcome these limitations, we propose the Clustered Unit-level Similarity Transformer (CUST), a novel architecture that efficiently integrates global and local information. Specifically, CUST enables each patch to aggregate and attend to similar patches within a broadened regional scope outside its local window, thereby capturing extensive contextual understanding. Furthermore, it employs overlapping attention windows to capture local dependencies, while explicitly extracting high-frequency details by computing the residual difference between the original features and their downsampled-upsampled counterparts. Comprehensive experiments demonstrate that our proposed model achieves a practical balance between computational efficiency and restoration performance. It achieves a lower memory footprint and faster inference speed compared to recent global context or lightweight models under realistic constraints. Code is available at [https://github.com/jwgdmkj/CUST].",
+      "published": "2026-07-13T04:56:57Z",
+      "authors": [
+        "Jeongsoo Kim"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.11088v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.11025",
+      "title": "Reference-Based Face Super-Resolution Using the Spatial Transformer",
+      "summary": "Face super-resolution is the task of increasing the resolution of an image containing a face thereby adding finer detail. It is a ubiquitous task in many computer vision applications and quite often the user isn't even aware that it is being performed. However, doing it with high fidelity is challenging as it is an ill-posed problem. In this paper we present a reference-based solution for face super-resolution that uses higher resolution reference images to aid in the task. We show an alignment module based on the spatial transformer that is considerably more stable than the popular deformable convolutions. We also show an aggregation function that can take good quality information from the reference images when available or suppress the function when such information is unavailable. Finally, we show that our relatively smaller model can achieve state of the art results on multiple datasets. The source code is available at https://github.com/varun-jois/FSRST.",
+      "published": "2026-07-13T02:44:27Z",
+      "authors": [
+        "Varun Ramesh Jois",
+        "Antonella DiLillo",
+        "James Storer"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.11025v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.12167",
+      "title": "Long baseline optical interferometric imaging with active phase stabilization",
+      "summary": "Astronomical observations allow us to better our understanding of the universe. As we observe smaller and more distance features, we run into the diffraction limit of our observation system. This limit is a function of the wavelength observed and the size of the primary aperture used. We can synthesize a larger primary aperture by implementing interferometry. Long baseline optical interferometry would lead to significant improvements in astronomical imaging resolution. Building optical interferometers with free space baselines becomes significantly more difficult as the baseline increases. A promising alternative is to use optical fiber to connect telescopes. Fiber-based interferometers are much more susceptible to phase noise than their free-space counterparts due to inhomogeneities in the fiber medium. This leads to significant degradation of interferometric signals used for astronomical measurements. We implement phase stabilization techniques used in quantum communications to stabilize an optical interferometer with a 170km pseudo-baseline. We use a quantum optimal measurement technique with this interferometer to resolve the extent of a source four times smaller than the diffraction limit of the system within 1.5% error. These results bring the potential for a full-scale on-sky long baseline interferometer significantly closer. A 350km baseline optical interferometer at 1550nm would allow us to resolve sub microarcsecond features in the universe.",
+      "published": "2026-07-13T21:22:40Z",
+      "authors": [
+        "Joshua J. Collier",
+        "Leuca Patmore",
+        "John S. Wallis",
+        "Elrina Hartman",
+        "Benjamin P. Dix-Matthews",
+        "David R. Gozzard"
+      ],
+      "primary_category": "physics.optics",
+      "link": "http://arxiv.org/abs/2607.12167v1",
+      "score": 2
     }
   ]
 }
