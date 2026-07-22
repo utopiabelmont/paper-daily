@@ -1,56 +1,183 @@
 {
-  "date": "2026-07-07",
-  "count": 3,
+  "date": "2026-07-23",
+  "count": 12,
   "papers": [
     {
-      "arxiv_id": "2607.04675",
-      "title": "ICME 2026 Grand Challenge on Cross-Scenario Defect Detection and Fine-Grained Severity Grading for High-Precision Manufacturing",
-      "summary": "This paper presents the IEEE International Conference on Multimedia and Expo (ICME) 2026 Grand Challenge on Cross-Scenario Defect Detection and Fine-Grained Severity Grading for High-Precision Manufacturing. The challenge is motivated by two key limitations of existing industrial defect inspection systems: (1) current deep learning-based methods often suffer significant performance degradation when deployed in unseen production scenarios, and (2) most benchmarks neglect severity-aware assessment, which is critical for risk control and yield optimization. To address these limitations, we design two complementary tracks: Track 1 (Cross-Scenario Defect Detection) targets accurate defect detection, localization, and classification across diverse unseen production environments; Track 2 (Fine-Grained Severity Grading) requires assigning each detected defect an industry-standard severity level, including Acceptable, Marginal NG, NG, and Gross NG. We construct a large-scale industrial dataset of high-resolution microscopic images spanning seven representative defect categories, comprising over 3,800 images with pixel-level instance annotations for Track 1 and over 2,600 images with severity-grade labels for Track 2. The challenge attracted 86 registered participants with 130 submissions; during the final testing phase, 21 teams submitted results and 12 teams provided models with technical reports. The resulting benchmark, together with the diverse and effective solutions contributed by participating teams, sets a new standard for industrial defect analysis research.",
-      "published": "2026-07-06T05:01:54Z",
+      "arxiv_id": "2607.17401",
+      "title": "Does Super-Resolution Preserve Defect Evidence? A Low-False-Call Benchmark for Semiconductor Inspection",
+      "summary": "Super-resolution can make inspection images appear sharper without preserving the evidence needed to detect a defect. We study this failure mode with a benchmark that separates reconstruction from detection and evaluates both at a predeclared low false-positive rate. Ten end-to-end repetitions combine independently generated line/space and contact-hole images with model training, calibration, clean controls, weak defects, and a held-out defect morphology. Every reconstruction is scored by the same local residual detector, while direct and jointly trained detectors form a separate comparison track. Reconstruction fidelity and inspection utility diverge: the two learned reconstruction models attain the highest structural similarity yet detect fewer defect pixels than bicubic interpolation in every paired repetition. A direct DeepLabV3 detector reaches $0.1984\\pm0.0385$ recall at $0.000174\\pm0.000084$ false-positive rate and satisfies the held-out feasibility criterion in all ten repetitions. An illustrative joint model, DPU-WaferSR, passes independent clean calibration but exceeds the held-out limit in all ten repetitions, demonstrating that calibration success does not guarantee transfer. Weak-defect recall remains near zero for every feasible method. Applying the unchanged policies to 4,591 public Carinthia-S masks further reveals large method-dependent shifts on real SEM texture. These results support a simple conclusion: super-resolution for inspection should be judged by preserved task evidence and operating-point transfer, not reconstruction quality alone.",
+      "published": "2026-07-19T20:22:55Z",
       "authors": [
-        "Wei Sun",
-        "Weixia Zhang",
-        "Linhan Cao",
-        "Mingkai Lu",
-        "Xiongkuo Min",
-        "Xiaoping Zhang"
+        "Shaoliang Yang",
+        "Jun Wang"
       ],
       "primary_category": "cs.CV",
-      "link": "http://arxiv.org/abs/2607.04675v1",
+      "link": "http://arxiv.org/abs/2607.17401v1",
+      "score": 8
+    },
+    {
+      "arxiv_id": "2607.18779",
+      "title": "CGMap: A Geospatially Aware Deep Learning Framework for Crop Gap Mapping Using UAV",
+      "summary": "In India, crop germination is primarily monitored by visual inspection and manual counting, which are prone to errors, despite their crucial role in determining eventual yield potential. This paper highlights a deep learning based pipeline which uses object detection methods and drone imagery to assess and provide a precise count of sugarcane germination in fields. The approch uses a pre-trained AI model to find germinated plant sampling and identify gaps, also known as ``bald spots'', which restricts field productivity. The techniques used here relies on the YOLOV8 architecture, which was trained on a carefully selected dataset of UAV photos taken in various agroclimatic zones of India. Here, we bring upon a novel orientation-normalization technique that uses minimum Spanning Trees (MST) to account for variations in planting geometry, allowing for dependable row and column extraction across a variety of field layouts. By converting detected seedlings into spatial point clouds, emergence gaps can be inferred from the anticipated spacing between plants. A geospatial germination map exported in Well-Known Text (WKT) format is the end result, and it can be easily incorporated into GIS platforms used by sugar mills and agronomists to direct transplant initiatives. Timely interventions based on the insights provided by the algorithm can significantly increase yield, resulting in higher profits. Hence, support proper allocation of resources, avoid wastage, and enhance long-term sustainability.",
+      "published": "2026-07-21T07:01:01Z",
+      "authors": [
+        "Karan Sharma",
+        "Rajiv Ranjan",
+        "Dinesh Kumar",
+        "Shashank Tamaskar"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.18779v1",
       "score": 5
     },
     {
-      "arxiv_id": "2607.05370",
-      "title": "Calibration of systematic distortions in quantum emitter localization microscopy for deterministic nanophotonic fabrication",
-      "summary": "Quantum photonic technologies greatly benefit from quantum light emitters with high brightness, indistinguishability, and reliable polarization characteristics. Achieving optimal performance relies on the accurate localization of emitters and their deterministic integration into tailored photonic structures with nanometer-scale accuracy. Although marker-based photoluminescence imaging techniques can achieve statistical fitting uncertainties below 10 nm, the ultimate integration yield is often limited by uncorrected systematic distortions in custom cryo-optical setups that compromise metrological accuracy. Here, we present an in situ calibration protocol that uses lithographically defined gold nanodisk arrays as references to calibrate optical distortions with a Zernike vector-field model. On held-out validation patterns beyond the calibration dataset, this correction reduces the residual systematic bias to 5.3 nm with a 2D scatter of 24.6 nm across the analyzed field of view. Furthermore, we demonstrate that applying this correction to the deterministic fabrication of circular mesa structures around semiconductor quantum dots reduces the variance in emission polarization by 49%, indicating improved registration accuracy. This calibration strategy offers a practical route to high-yield deterministic integration of quantum emitters into scalable quantum photonic circuits.",
-      "published": "2026-07-06T17:47:40Z",
+      "arxiv_id": "2607.17458",
+      "title": "Super-resolution imaging enabled by higher-order Bessel Gaussian beams in nanoscale optical structures",
+      "summary": "In conventional optical microscopy, accessing subwavelength information is classically constrained by the Abbe diffraction limit which remains a significant challenge in nanophotonics. To overcome this limitation, we introduce a scheme that generates a tightly confined near-field focal spot under non-diffracting Bessel beam illumination, employing a series of high refractive-index nanoscale structures. Furthermore, the utilization of higher-order Bessel beams enables additional resolution enhancement beyond the diffraction limit. Our results demonstrate a subwavelength resolution of (lambda/53) with a pyramidal nanostructure. To elucidate the factors governing the focusing behavior, we systematically investigate the influence of different geometrical parameters related to the incident Bessel beam on the focusing performance and shows that these factors critically determine the stability and spatial profile of the focal spot. These findings highlight the potential of the proposed approach for various applications in super-resolution imaging and quantum technology.",
+      "published": "2026-07-20T01:18:05Z",
       "authors": [
-        "Chenxi Ma",
-        "Maximilian Heller",
-        "Timon Handrup",
-        "Yiteng Zhang",
-        "Tobias M. Krieger",
-        "Thomas Oberleitner"
+        "Apoorva D",
+        "M Ummal Momeen"
       ],
       "primary_category": "physics.optics",
-      "link": "http://arxiv.org/abs/2607.05370v1",
-      "score": 1
+      "link": "http://arxiv.org/abs/2607.17458v1",
+      "score": 5
     },
     {
-      "arxiv_id": "2607.05247",
-      "title": "Vision Pretraining for Dense Spatial Perception",
-      "summary": "Dense spatial perception is essential for physical intelligence, where visual systems are expected to recover structured, metric, and actionable representations from pixel observations. Modern visual foundation models tend to prioritize semantic invariance, often at the expense of detailed spatial understanding. In this work, we study vision pretraining through a boundary-centric lens, motivated by the premise that boundaries and shape discontinuities offer essential cues for perceiving geometric properties. Concretely, we propose masked boundary modeling, a self-supervised paradigm that dynamically learns sub-pixel boundary representations and subsequently leverages the discovered boundary-bearing tokens as masked targets to facilitate dense visual token learning. By scaling this framework, we develop LingBot-Vision and demonstrate its efficacy across a diverse set of downstream vision tasks with DINOv3 as a strong baseline. Remarkably, LingBot-Vision drives the progression from LingBot-Depth 1.0 to LingBot-Depth 2.0 for depth completion, and thereby yields enhanced depth estimation, a key pillar for embodied artificial intelligence. Our findings reveal that boundary modeling goes beyond simple line segments and instead serves as a scalable pretraining principle for learning spatially structured visual representations.",
-      "published": "2026-07-06T15:56:14Z",
+      "arxiv_id": "2607.19157",
+      "title": "Direct Spatiotemporal Imaging of Charge Carrier Dynamics in Operative Semiconductor Devices",
+      "summary": "Understanding charge carrier dynamics within electronic devices is crucial, as it governs both the internal evolution of signals and the externally measurable current. Yet, direct imaging of these dynamics remains elusive: existing approaches are often indirect or inherently perturbative. Here, we introduce Carrier Dynamics by Pockels Imaging (CDPI), a sensitive, quantitative, and non-invasive method that enables direct access to internal charge dynamics. By probing the local electric field, CDPI visualizes photogenerated electron clouds in real space while simultaneously correlating their evolution with both conduction and displacement currents, thereby establishing a unified picture of carrier transport. The technique provides direct insight into fundamental mechanisms \\textemdash including drift, diffusion, carrier-carrier interactions, trapping and detrapping \\textemdash as well as the spatiotemporal evolution of carrier cloud morphology. Demonstrated in CdTe radiation detectors with micrometre-scale spatial resolution and nanosecond temporal resolution, CDPI is broadly applicable to systems exhibiting appreciable electro-optic responses. Beyond conventional semiconductors, the approach extends to organic, perovskite, and two-dimensional optoelectronic materials, offering a new paradigm for directly linking internal carrier dynamics to device-level functionality.",
+      "published": "2026-07-21T14:57:28Z",
       "authors": [
-        "Zelin Fu",
-        "Bin Tan",
-        "Changjiang Sun",
-        "Shaohui Liu",
-        "Kecheng Zheng",
-        "Yinghao Xu"
+        "Adriano Cola",
+        "Antonio Valletta",
+        "Isabella Farella",
+        "Vaclav Dědič",
+        "Lorenzo Dominici"
+      ],
+      "primary_category": "physics.optics",
+      "link": "http://arxiv.org/abs/2607.19157v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.19082",
+      "title": "Wavefront Parallelization for Efficient Learned Image Compression",
+      "summary": "Autoregressive context models are foundational for learned image compression,but they suffer from slow serial inference. Existing acceleration methods such as checkerboard context require architectural changes and retraining, thus are inapplicable to pre-trained models. We propose a completely training-free inference-time acceleration algorithm inspired by wavefront parallelism in video coding standards. Our method reorganizes inference into an optimal ``staggered'' wavefront order, minimizing sequential steps while maintaining exact autoregressive dependencies. Experimental results show our approach accelerates pre-trained autoregressive models (e.g., Cheng et al.) by more than $13\\times$ while preserving the original rate-distortion performance. We also demonstrate that faster decoding is possible by trading off precise context dependencies. Source code will be available at https://github.com/tokkiwa/compressai-wavefront.",
+      "published": "2026-07-21T13:18:13Z",
+      "authors": [
+        "Shimon Murai",
+        "Fangzheng Lin",
+        "Kasidis Arunruangsirilert",
+        "Jiro Katto"
+      ],
+      "primary_category": "eess.IV",
+      "link": "http://arxiv.org/abs/2607.19082v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.19077",
+      "title": "Context-structured Video Anomaly Detection with Large Vision-Language Models",
+      "summary": "Training video anomaly detectors is challenging due to the difficulty and cost of annotating diverse and rare abnormal events. Although recent large vision-language models enable training-free inference, existing approaches mostly rely on holistic inference over sampled video and may miss context-specific anomaly cues. In this paper, we present CSI-VAD, a training-free video anomaly detector that identifies abnormal events across diverse contexts. The key idea is to decompose each video into three distinct contexts (environment, objects, time) and perform context-specific inference in separate branches. Because we ground anomaly judgments solely in context-specific visual cues, we do not require predefined text prompts describing abnormal events or dataset-specific tuning. Experiments on UCF-Crime and UBnormal show that CSI-VAD consistently improves over the direct holistic baseline and achieves competitive performance against existing methods, showing the advantage of structured context decomposition for training-free video anomaly detection.",
+      "published": "2026-07-21T13:08:14Z",
+      "authors": [
+        "Dongjun Kim",
+        "Changjae Oh",
+        "Andrea Cavallaro",
+        "Jeonghoon Mo"
       ],
       "primary_category": "cs.CV",
-      "link": "http://arxiv.org/abs/2607.05247v1",
+      "link": "http://arxiv.org/abs/2607.19077v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.19032",
+      "title": "IMMoE: Incomplete Multi-View Anomaly Detection via Mixture of View Experts Fusion",
+      "summary": "Existing Multi-view Anomaly Detection (MAD) methods assume that all views are completely available and model each view separately. However, in real industrial scenarios, information in the view may be missing due to faults such as occlusion, which leads to the performance degradation of existing methods due to the lack of a multi-view consistency prior. To address this, we explored a more challenging task: Incomplete Multi-View Anomaly Detection (IMVAD), in which some areas of each view were masked. We proposed a pipeline for automatically generating the IMVAD dataset and generated the \\textbf{RIMAD} dataset based on the Real-IAD dataset through this pipeline. In addition, in order to effectively utilize the information of multiple views in the absence of view information, we propose \\textbf{IMMoE}, which consists of two key modules: (1) Multi-View Expert Fusion (MVEF) effectively fuses multi-view information through a multi-view expert network and guides the reconstruction of a single view; (2) Local Anomaly Enhancement Encoder (LAEE) effectively prevents the model from overfitting the mask region by applying dropout to local features. Our method achieves state-of-the-art performance on both the RIMAD and Real-IAD datasets, especially on RIMAD, we have increased the pixel-level and image-level metrics by 11.8\\% and 2.8\\%, respectively. Our source code is available at https://github.com/HULEI7/IMMoE",
+      "published": "2026-07-21T12:19:33Z",
+      "authors": [
+        "Lei Hu"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.19032v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.18856",
+      "title": "Think Sparse, Predict Dense: Continuous Thought Machines for Image Super-Resolution",
+      "summary": "Continuous Thought Machines introduce an internal temporal dimension in which neuron-level histories and synchronization-derived representations evolve over a sequence of thought ticks. Extending this mechanism to dense visual prediction is non-trivial, because tasks such as image super-resolution require spatial evidence to remain available at every output location rather than being compressed into a single global representation. In the proposed window-level use of CTM, the thought dynamics produce a compact summary representation for each local window. DQ-CTM transforms this compact thought representation into window-aligned dense queries through a structured low-rank, parameter-efficient compact-to-dense query mechanism. Each position within a window receives its own query, while shared thought dynamics progressively refine the dense representation across ticks. In its super-resolution instantiation, termed ThinkSR, encoded feature maps are partitioned into local visual windows without token pooling, restored to the original feature field after shared refinement, and decoded into a high-resolution image. Preliminary experiments under a fixed four-tick training horizon reveal a progressive reconstruction trajectory. PSNR-Y increases from 28.1045 dB at $T=0$ to 30.2817 dB at $T=4$, while PSNR-RGB increases from 26.6271 dB to 28.7781 dB and the mean $\\ell_1$ error decreases from 0.034602 to 0.023545. All 100 evaluated images improve from $T=1$ to $T=4$. These initial results establish the feasibility of sparse latent thought for dense spatial reconstruction and motivate broader continuous-thought architectures for dense vision.",
+      "published": "2026-07-21T08:45:23Z",
+      "authors": [
+        "Zekai Shi"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.18856v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.18850",
+      "title": "OPD-IAD: From Language Judgment to Industrial Anomaly Detection via On-Policy Self-Distillation",
+      "summary": "Large vision-language models (LVLMs) have recently shown strong potential for industrial anomaly detection (IAD) by providing image-level anomaly judgments and interpretable defect reasoning. However, current LVLM-based IAD methods still struggle to produce precise pixel-level anomaly maps from generated language judgments. We aim to achieve precise pixel-level localization while using language as guidance rather than letting it dominate the visual response. Specifically, we propose \\textbf{OPD-IAD}, an evidence-privileged dense on-policy self-distillation framework for LVLM-based IAD. OPD-IAD distills privileged defect evidence onto the model's own on-policy judgment trajectory, enabling the final generated judgment to be learned under dense supervision rather than treated only as a textual answer. The resulting judgment serves as a semantic condition for dense anomaly perception. To turn this condition into dense visual evidence, we introduce \\textbf{Language-guided Visual Anchoring}, which uses a judgment reforward to re-encode the image and question under the final-judgment condition into semantic anchors and contrasts them with dense visual features through a contrastive heatmap head to generate anomaly maps. The language judgment therefore provides compact semantic guidance, while dense visual features remain the basis for pixel-level scoring, allowing language to guide anomaly localization without letting language quality directly dictate the pixel-level response. Extensive experiments show that OPD-IAD achieves the best overall performance among LVLM-based IAD methods, leading on most image-level, pixel-level, and QA metrics.",
+      "published": "2026-07-21T08:37:01Z",
+      "authors": [
+        "Shuimu Chen",
+        "Jing Jin",
+        "Nan Su",
+        "Hongbo Xu",
+        "Zebang Cheng",
+        "Wenming Yang"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.18850v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.18142",
+      "title": "O-VAD: Industrial Video Anomaly Detection through Object-Centric Tracking and Reasoning",
+      "summary": "Industrial Video Anomaly Detection (IVAD) aims to identify anomalous objects and events in an industrial process, which is crucial for modern manufacturing and quality control systems. Existing VLM-based anomaly reasoning methods are capable of detecting open-ended anomalies in general domains. However, their performance declines in industrial settings characterized by intricate object transformations, strict physics, and procedural constraints. To tackle the complexity of such interaction-intensive detection, we introduce a training-free agentic framework for anomaly detection free of domain-specific knowledge, emphasizing object state evolution like humans inspectors. It is designed to track spatial-temporal dynamics and underlying transformations of detected objects over time, and then reason over the object-wise temporal state trajectories to identify abnormal objects in grounded frames. Our method overcomes limitations of prior approaches that rely on retraining on normal clips or injecting domain knowledge as context for test-time inference. Extensive experiments on three IVAD datasets demonstrate that our method outperforms frontier VLMs, agentic frameworks, and traditional VAD methods fine-tuned on the respective datasets, while providing interpretable reports over anomaly processes and types.",
+      "published": "2026-07-20T16:36:00Z",
+      "authors": [
+        "Mei Yuan",
+        "Qi Long",
+        "Qifeng Wu",
+        "Zhenyang Li",
+        "Yizhou Zhao",
+        "Lei Wang"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.18142v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.17612",
+      "title": "Rarity-Aware Discrete Diffusion with Spatially Consistent Decoding for Photo-Realistic Image Super-Resolution",
+      "summary": "Continuous diffusion models have become the dominant paradigm for photo-realistic image Super-Resolution (SR), but they typically formulate reconstruction as continuous signal-level denoising and incorporate semantic priors through external conditioning modules. This makes it less direct to exploit the unified token-based scaling paradigm of modern multimodal models. Autoregressive models provide a more native semantic representation by modeling images as discrete visual tokens, yet their causal decoding is inefficient for high-resolution reconstruction. Discrete diffusion offers a promising middle ground by enabling non-causal, parallel prediction over visual tokens. However, directly adapting discrete diffusion to SR remains non-trivial due to two task-specific challenges: (1) the long-tailed distribution of visual tokens, which under-represents rare but perceptually critical textures; and (2) spatially inconsistent parallel decoding, which may introduce isolated artifacts. To address these issues, we propose DiMOO-SR, a rarity-aware multimodal discrete diffusion framework for photo-realistic image SR. During training, Inverse Frequency Sampling (IFS) prioritizes under-represented but information-rich tokens. During inference, Spatial Consistency Ranking (SCR) refines token confidence using local neighborhood agreement to improve structural coherence. Extensive experiments on widely used real-world SR benchmarks demonstrate that DiMOO-SR achieves competitive perceptual quality with only a few parallel decoding steps, highlighting the potential of discrete diffusion for generative image super-resolution. The code will be released upon publication.",
+      "published": "2026-07-20T07:01:01Z",
+      "authors": [
+        "Ao Li",
+        "Yapeng Du",
+        "Yi Xin",
+        "Lei Zhu",
+        "Le Zhang",
+        "Guangtao Zhai"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.17612v1",
+      "score": 4
+    },
+    {
+      "arxiv_id": "2607.19315",
+      "title": "ERank in Latent Space as an Image-Complexity and Richness Measure",
+      "summary": "We propose the effective rank (ERank) of the channel covariance of an image's deep feature map as a per-sample, label-free measure of visual richness, computed from a single forward pass through a frozen pretrained encoder. ERank counts how many decorrelated channel directions an image activates, and we characterize its properties, including its behavior under noise. Empirically, ERank orders images from plain to visually rich, correlates with codec bitrate, sharpness, and edge density, and correlates with human complexity annotations on IC9600 with $r = 0.72$. As a data-selection criterion, removing low-ERank samples improves super-resolution and removing high-ERank samples improves OCR, in both pretraining and finetuning, while selection does not help classification, segmentation, or denoising. ERank is thus a cheap richness signal, useful exactly when task difficulty is governed by input richness.",
+      "published": "2026-07-21T17:32:44Z",
+      "authors": [
+        "Maksim Smirnov",
+        "Grigory Kononov",
+        "Anastasiia Linich",
+        "Egor Surkov",
+        "Egor Shvetsov"
+      ],
+      "primary_category": "cs.CV",
+      "link": "http://arxiv.org/abs/2607.19315v1",
       "score": 1
     }
   ]
