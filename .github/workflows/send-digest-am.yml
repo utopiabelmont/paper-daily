@@ -1,0 +1,44 @@
+name: Send AM crossover digest
+
+on:
+  push:
+    paths:
+      - 'digests_am/*.md'
+  workflow_dispatch:
+
+jobs:
+  email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pushed ref
+        uses: actions/checkout@v4
+
+      - name: Pick the newest digest
+        id: pick
+        run: |
+          FILE=$(ls -1 digests_am/*.md 2>/dev/null | sort | tail -n 1)
+          if [ -z "$FILE" ]; then
+            echo "没有找到 digests_am/*.md，退出。"
+            exit 1
+          fi
+          echo "file=$FILE" >> "$GITHUB_OUTPUT"
+          echo "date=$(basename "$FILE" .md)" >> "$GITHUB_OUTPUT"
+          {
+            echo "BODY<<__EOF__"
+            cat "$FILE"
+            echo "__EOF__"
+          } >> "$GITHUB_ENV"
+
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: ${{ secrets.MAIL_USERNAME }}
+          to: ${{ secrets.MAIL_TO }}
+          subject: 每日交叉方向简报 ${{ steps.pick.outputs.date }}
+          body: ${{ env.BODY }}
+          attachments: ${{ steps.pick.outputs.file }}
