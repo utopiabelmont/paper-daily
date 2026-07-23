@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>论文图卡 {{DATE}}</title>
+<style>
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#FAF9F5;
+     color:#2C2C2A;max-width:780px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.date{color:#888780;font-size:13px;margin-bottom:20px}
+.card{background:#fff;border:1px solid #E3E1D9;border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.pill{background:#E6F1FB;color:#0C447C;border-radius:12px;padding:2px 10px}
+.meta a{color:#185FA5;text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.en{color:#888780;font-size:12px;margin-bottom:10px}
+.q{background:#F1EFE8;color:#444441;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:10px}
+.methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.m{flex:1;min-width:140px;background:#EEEDFE;color:#3C3489;border-radius:8px;
+   padding:8px 10px;font-size:13px;font-weight:600}
+.m span{display:block;font-weight:400;font-size:12px;color:#534AB7;margin-top:2px}
+.res{border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.res span{display:block;font-weight:400;font-size:12px;margin-top:2px}
+.res.good{background:#E1F5EE;color:#085041}.res.good span{color:#0F6E56}
+.res.warn{background:#FAECE7;color:#712B13}.res.warn span{color:#993C1D}
+.res.bad{background:#FCEBEB;color:#791F1F}.res.bad span{color:#A32D2D}
+.conc{background:#FAEEDA;color:#633806;border-radius:8px;padding:8px 12px;font-size:13px;margin-top:2px}
+.news{background:#E6F1FB;color:#0C447C;border-radius:8px;padding:8px 12px;font-size:13px}
+.foot{color:#B4B2A9;font-size:12px;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>每日论文图卡</h1>
+<div class="date">{{DATE}}</div>
+<!--CARDS-->
+<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论</div>
+</body>
+</html>
