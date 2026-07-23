@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>论文图卡 2026-07-24</title>
+<style>
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#FAF9F5;
+     color:#2C2C2A;max-width:780px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.date{color:#888780;font-size:13px;margin-bottom:20px}
+.card{background:#fff;border:1px solid #E3E1D9;border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.pill{background:#E6F1FB;color:#0C447C;border-radius:12px;padding:2px 10px}
+.meta a{color:#185FA5;text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.en{color:#888780;font-size:12px;margin-bottom:10px}
+.q{background:#F1EFE8;color:#444441;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:10px}
+.methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.m{flex:1;min-width:140px;background:#EEEDFE;color:#3C3489;border-radius:8px;
+   padding:8px 10px;font-size:13px;font-weight:600}
+.m span{display:block;font-weight:400;font-size:12px;color:#534AB7;margin-top:2px}
+.res{border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.res span{display:block;font-weight:400;font-size:12px;margin-top:2px}
+.res.good{background:#E1F5EE;color:#085041}.res.good span{color:#0F6E56}
+.res.warn{background:#FAECE7;color:#712B13}.res.warn span{color:#993C1D}
+.res.bad{background:#FCEBEB;color:#791F1F}.res.bad span{color:#A32D2D}
+.conc{background:#FAEEDA;color:#633806;border-radius:8px;padding:8px 12px;font-size:13px;margin-top:2px}
+.news{background:#E6F1FB;color:#0C447C;border-radius:8px;padding:8px 12px;font-size:13px}
+.foot{color:#B4B2A9;font-size:12px;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>每日论文图卡</h1>
+<div class="date">2026-07-24</div>
+<div class="card">
+  <div class="meta"><span class="pill">physics.optics · 相关度5</span>
+    <a href="http://arxiv.org/abs/2607.19630v1">arXiv 原文</a></div>
+  <h2>借助光学涡旋衍射对光学空心陷阱进行可控定位与操纵</h2>
+  <div class="en">Controllable localization and manipulation of optical hollow traps by means of optical-vortex diffraction</div>
+  <div class="q">研究问题：如何以机械可达的精度可控地移动光学涡旋核，实现空心陷阱的精密定位？</div>
+  <div class="methods">
+    <div class="m">涡旋衍射建模<span>拉盖尔-高斯光束</span></div>
+    <div class="m">屏边缘位置调控<span>弱衍射扰动区</span></div>
+    <div class="m">解析＋数值分析<span>拓扑荷/波前</span></div>
+  </div>
+  <div class="res good">定位精度<span>1微米调屏即得亚纳米级涡旋核移动</span></div>
+  <div class="conc">结论：屏边缘微调即可亚纳米控涡旋核，与傅里叶光学中涡旋衍射及亚微米边缘定位方向高度契合。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">cs.CV · 相关度5</span>
+    <a href="http://arxiv.org/abs/2607.18779v1">arXiv 原文</a></div>
+  <h2>CGMap：面向无人机作物缺苗测绘的地理感知深度学习框架</h2>
+  <div class="en">CGMap: A Geospatially Aware Deep Learning Framework for Crop Gap Mapping Using UAV</div>
+  <div class="q">研究问题：如何用无人机影像自动、精确地检测甘蔗出苗与缺苗"秃斑"？</div>
+  <div class="methods">
+    <div class="m">YOLOv8检测<span>多气候区训练</span></div>
+    <div class="m">MST朝向归一化<span>适配种植几何</span></div>
+    <div class="m">点云推间隙<span>导出WKT地图</span></div>
+  </div>
+  <div class="res good">应用产出<span>地理出苗图可直接接入GIS指导补植</span></div>
+  <div class="conc">结论：将检测转为空间点云推断缺苗，行列提取与亚像素间隙推断思路可迁移至工业检测的规则阵列定位。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">eess.SP · 相关度4</span>
+    <a href="http://arxiv.org/abs/2607.20011v1">arXiv 原文</a></div>
+  <h2>面向网络流量异常检测的漂移感知强化学习小波去噪</h2>
+  <div class="en">Drift-Aware RL-based Wavelet Denoising for Network-Traffic Anomaly Detection</div>
+  <div class="q">研究问题：统计漂移下静态小波去噪失配，如何自适应地为下游检测保留有用结构？</div>
+  <div class="methods">
+    <div class="m">四检测器门控<span>PH/方差比/JS/AD</span></div>
+    <div class="m">PPO选小波配置<span>混合动作空间</span></div>
+    <div class="m">下游效用奖励<span>非重构保真</span></div>
+  </div>
+  <div class="res good">性能对比<span>多漂移与信噪比下优于经典去噪族</span></div>
+  <div class="conc">结论：以任务效用而非重构精度驱动小波去噪，为傅里叶/小波域信号预处理提供了自适应新范式。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">physics.optics · 相关度4</span>
+    <a href="http://arxiv.org/abs/2607.19157v1">arXiv 原文</a></div>
+  <h2>工作态半导体器件中电荷载流子动力学的直接时空成像</h2>
+  <div class="en">Direct Spatiotemporal Imaging of Charge Carrier Dynamics in Operative Semiconductor Devices</div>
+  <div class="q">研究问题：如何非侵入地直接成像工作器件内部电荷载流子的时空动力学？</div>
+  <div class="methods">
+    <div class="m">泡克尔斯成像CDPI<span>探测局部电场</span></div>
+    <div class="m">电流关联<span>传导＋位移电流</span></div>
+    <div class="m">实空间可视化<span>光生电子云</span></div>
+  </div>
+  <div class="res good">分辨率<span>CdTe中达微米空间/纳秒时间分辨</span></div>
+  <div class="conc">结论：电光成像实现载流子动力学直读，其亚微米级空间定位思路与精密电场/边缘成像方向相通。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">eess.IV · 相关度4</span>
+    <a href="http://arxiv.org/abs/2607.19082v1">arXiv 原文</a></div>
+  <h2>面向高效学习图像压缩的波前并行化</h2>
+  <div class="en">Wavefront Parallelization for Efficient Learned Image Compression</div>
+  <div class="q">研究问题：不改架构、不重训，如何加速预训练自回归图像压缩的串行推理？</div>
+  <div class="methods">
+    <div class="m">波前并行重排<span>借鉴视频编码</span></div>
+    <div class="m">交错顺序<span>保精确依赖</span></div>
+    <div class="m">免训练推理期<span>可用预训练模型</span></div>
+  </div>
+  <div class="res good">加速比<span>提速13倍以上且率失真不变</span></div>
+  <div class="conc">结论：以波前并行免训练加速自回归推理，对光学成像重建的高吞吐流水线部署有借鉴意义。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">cs.CV · 相关度4</span>
+    <a href="http://arxiv.org/abs/2607.19077v1">arXiv 原文</a></div>
+  <h2>基于大型视觉-语言模型的上下文结构化视频异常检测</h2>
+  <div class="en">Context-structured Video Anomaly Detection with Large Vision-Language Models</div>
+  <div class="q">研究问题：免训练 VLM 整体推理易漏上下文异常线索，如何结构化提升检测？</div>
+  <div class="methods">
+    <div class="m">三上下文分解<span>环境/物体/时间</span></div>
+    <div class="m">分支独立推理<span>免文本提示</span></div>
+    <div class="m">视觉线索接地<span>免数据集调参</span></div>
+  </div>
+  <div class="res good">检测效果<span>UCF-Crime/UBnormal稳定优于整体基线</span></div>
+  <div class="conc">结论：结构化上下文分解提升免训练异常检测，其分支解耦思路可用于工业多要素缺陷判读。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">cs.CV · 相关度4</span>
+    <a href="http://arxiv.org/abs/2607.19032v1">arXiv 原文</a></div>
+  <h2>IMMoE：基于视图专家混合融合的不完整多视图异常检测</h2>
+  <div class="en">IMMoE: Incomplete Multi-View Anomaly Detection via Mixture of View Experts Fusion</div>
+  <div class="q">研究问题：工业中视图因遮挡缺失时，如何仍保持多视图一致性做异常检测？</div>
+  <div class="methods">
+    <div class="m">多视图专家融合<span>MVEF引导重建</span></div>
+    <div class="m">局部增强编码<span>LAEE防过拟合</span></div>
+    <div class="m">RIMAD数据集<span>自动生成流水线</span></div>
+  </div>
+  <div class="res good">指标提升<span>RIMAD像素级/图像级+11.8%/+2.8%达SOTA</span></div>
+  <div class="conc">结论：视图缺失下仍稳健的多视图融合，对工业检测中多角度成像缺陷定位有直接参考价值。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">cs.CV · 相关度4</span>
+    <a href="http://arxiv.org/abs/2607.18856v1">arXiv 原文</a></div>
+  <h2>稀疏思考、稠密预测：用于图像超分辨率的连续思维机</h2>
+  <div class="en">Think Sparse, Predict Dense: Continuous Thought Machines for Image Super-Resolution</div>
+  <div class="q">研究问题：如何把压缩为全局表示的连续思维机扩展到需逐位置空间证据的超分？</div>
+  <div class="methods">
+    <div class="m">窗口级CTM<span>每窗紧凑摘要</span></div>
+    <div class="m">DQ-CTM稠密查询<span>低秩参数高效</span></div>
+    <div class="m">ThinkSR超分<span>共享思考精化</span></div>
+  </div>
+  <div class="res good">渐进重建<span>PSNR-Y从28.10升至30.28dB，百图全改善</span></div>
+  <div class="conc">结论：稀疏潜在思考驱动稠密重建，为亚像素级图像细节恢复提供了新的空间预测机制。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">cs.CV · 相关度4</span>
+    <a href="http://arxiv.org/abs/2607.18850v1">arXiv 原文</a></div>
+  <h2>OPD-IAD：经由在线策略自蒸馏从语言判断到工业异常检测</h2>
+  <div class="en">OPD-IAD: From Language Judgment to Industrial Anomaly Detection via On-Policy Self-Distillation</div>
+  <div class="q">研究问题：VLM 能给图像级判断，如何据此产出精确像素级工业异常图？</div>
+  <div class="methods">
+    <div class="m">在线策略自蒸馏<span>稠密监督判断</span></div>
+    <div class="m">语言引导视觉锚定<span>判断再前向</span></div>
+    <div class="m">对比热图头<span>像素级评分</span></div>
+  </div>
+  <div class="res good">综合性能<span>多数图像级/像素级/QA指标领先同类</span></div>
+  <div class="conc">结论：语言引导但视觉主导的像素级定位，契合工业检测中亚微米缺陷精确定位需求。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">physics.optics · 相关度2</span>
+    <a href="http://arxiv.org/abs/2607.20138v1">arXiv 原文</a></div>
+  <h2>面向 CASSI 重建非对角数据保真的共轭梯度展开网络与 PSF 条件化</h2>
+  <div class="en">Conjugate Gradient Unrolled Network with PSF Conditioning for Non-Diagonal Data Fidelity in CASSI Reconstruction</div>
+  <div class="q">研究问题：真实 PSF 破坏正规方程对角结构，如何在深度展开中显式求解？</div>
+  <div class="methods">
+    <div class="m">K步共轭梯度展开<span>解非对角方程</span></div>
+    <div class="m">波长自适应步长<span>PSF嵌入</span></div>
+    <div class="m">PSF条件惩罚估计<span>适配退化强度</span></div>
+  </div>
+  <div class="res good">重建精度<span>KAIST达30.53dB，同参数超基线2.73dB</span></div>
+  <div class="conc">结论：将真实 PSF 纳入数据保真求解，直接呼应傅里叶光学中 PSF 建模与光学退化校正。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">cs.CV · 相关度2</span>
+    <a href="http://arxiv.org/abs/2607.19994v1">arXiv 原文</a></div>
+  <h2>面向不同区域类型稳健深度学习 Sentinel-2 建筑检测的季节性指南</h2>
+  <div class="en">Toward Seasonal Guidelines for Robust Deep-Learning Sentinel-2 Building Detection in Different Area Types</div>
+  <div class="q">研究问题：10米分辨率与季节变化如何影响卫星建筑检测，怎样选型更稳健？</div>
+  <div class="methods">
+    <div class="m">多时相数据集<span>华沙地区真值掩码</span></div>
+    <div class="m">U-Net/DeepLabV3+<span>场景专属微调</span></div>
+    <div class="m">跨时相推理<span>季节迁移评估</span></div>
+  </div>
+  <div class="res warn">性能变化<span>随季节与建成环境异质性显著波动</span></div>
+  <div class="conc">结论：亚像素目标检测受分辨率与季节双重制约，提示精密边缘定位需重视成像条件一致性。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">physics.optics · 相关度2</span>
+    <a href="http://arxiv.org/abs/2607.19652v1">arXiv 原文</a></div>
+  <h2>基于线性非局域消色差自由曲面贝塞尔光束透镜与高功率振荡辐射阵列的集成超分辨太赫兹 3D 成像系统</h2>
+  <div class="en">An integrated super resolution THz 3D imaging system based on a linear nonlocal achromatic freeform Bessel beam lens and high power oscillator radiator array</div>
+  <div class="q">研究问题：如何在太赫兹频段同时实现宽带消色差、超分辨与扩展焦深的紧凑 3D 成像？</div>
+  <div class="methods">
+    <div class="m">非局域贝塞尔透镜<span>3D打印自由曲面</span></div>
+    <div class="m">CMOS辐射阵列<span>65nm高功率</span></div>
+    <div class="m">抑制旁瓣<span>穿透散射介质</span></div>
+  </div>
+  <div class="res good">成像性能<span>0.3–1THz消色差，FWHM 0.65λ、焦深4.7mm</span></div>
+  <div class="conc">结论：非局域自由曲面透镜实现消色差超分辨，与傅里叶光学中亚衍射极限聚焦与边缘成像密切相关。</div>
+</div>
+
+<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论</div>
+</body>
+</html>
