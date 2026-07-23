@@ -1,10 +1,9 @@
 name: Send daily digest
 
-# 当仓库里新增/更新 digests/ 下的简报（任意分支）时触发；也支持手动触发测试
 on:
   push:
     paths:
-      - 'digests/**.md'
+      - 'digests/*.md'
   workflow_dispatch:
 
 jobs:
@@ -17,9 +16,16 @@ jobs:
       - name: Pick the newest digest
         id: pick
         run: |
-          FILE=$(ls -1 digests/*.md | sort | tail -n 1)
-          echo "file=$FILE" >> "$GITHUB_OUTPUT"
-          echo "date=$(basename "$FILE" .md)" >> "$GITHUB_OUTPUT"
+          FILE=$(ls -1 digests/*.md 2>/dev/null | sort | tail -n 1)
+          if [ -z "$FILE" ]; then
+            echo "没有找到 digests/*.md，退出。"
+            exit 1
+          fi
+          DATE=$(basename "$FILE" .md)
+          HTML="digests_html/${DATE}.html"
+          if [ -f "$HTML" ]; then ATT="$FILE,$HTML"; else ATT="$FILE"; fi
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "att=$ATT" >> "$GITHUB_OUTPUT"
           {
             echo "BODY<<__EOF__"
             cat "$FILE"
@@ -38,4 +44,4 @@ jobs:
           to: ${{ secrets.MAIL_TO }}
           subject: 每日论文简报 ${{ steps.pick.outputs.date }}
           body: ${{ env.BODY }}
-          attachments: ${{ steps.pick.outputs.file }}
+          attachments: ${{ steps.pick.outputs.att }}

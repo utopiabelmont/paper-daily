@@ -21,8 +21,11 @@ jobs:
             echo "没有找到 digests_am/*.md，退出。"
             exit 1
           fi
-          echo "file=$FILE" >> "$GITHUB_OUTPUT"
-          echo "date=$(basename "$FILE" .md)" >> "$GITHUB_OUTPUT"
+          DATE=$(basename "$FILE" .md)
+          HTML="digests_am_html/${DATE}.html"
+          if [ -f "$HTML" ]; then ATT="$FILE,$HTML"; else ATT="$FILE"; fi
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "att=$ATT" >> "$GITHUB_OUTPUT"
           {
             echo "BODY<<__EOF__"
             cat "$FILE"
@@ -41,4 +44,4 @@ jobs:
           to: ${{ secrets.MAIL_TO }}
           subject: 每日交叉方向简报 ${{ steps.pick.outputs.date }}
           body: ${{ env.BODY }}
-          attachments: ${{ steps.pick.outputs.file }}
+          attachments: ${{ steps.pick.outputs.att }}
