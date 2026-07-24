@@ -15,9 +15,12 @@ h1{font-size:20px;font-weight:600;margin:0 0 4px}
 .meta a{color:#185FA5;text-decoration:none}
 .card h2{font-size:16px;font-weight:600;margin:0 0 2px}
 .en{color:#888780;font-size:12px;margin-bottom:10px}
+a.blk{display:block;text-decoration:none;color:inherit}
+a.blk:hover .q,a.blk:hover .res,a.blk:hover .conc,a.blk:hover .m{filter:brightness(0.96)}
 .q{background:#F1EFE8;color:#444441;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:10px}
 .methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
-.m{flex:1;min-width:140px;background:#EEEDFE;color:#3C3489;border-radius:8px;
+.methods a.blk{flex:1;min-width:140px;display:flex}
+.m{flex:1;background:#EEEDFE;color:#3C3489;border-radius:8px;
    padding:8px 10px;font-size:13px;font-weight:600}
 .m span{display:block;font-weight:400;font-size:12px;color:#534AB7;margin-top:2px}
 .res{border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
@@ -27,6 +30,11 @@ h1{font-size:20px;font-weight:600;margin:0 0 4px}
 .res.bad{background:#FCEBEB;color:#791F1F}.res.bad span{color:#A32D2D}
 .conc{background:#FAEEDA;color:#633806;border-radius:8px;padding:8px 12px;font-size:13px;margin-top:2px}
 .news{background:#E6F1FB;color:#0C447C;border-radius:8px;padding:8px 12px;font-size:13px}
+details{margin-top:10px;border-top:1px dashed #E3E1D9;padding-top:8px}
+details summary{cursor:pointer;font-size:12px;color:#888780;user-select:none}
+details[open] summary{color:#2C2C2A}
+.term{background:#F7F6F1;border-radius:8px;padding:8px 12px;font-size:12px;margin-top:8px}
+.term b{color:#3C3489}
 .foot{color:#B4B2A9;font-size:12px;text-align:center;margin-top:24px}
 </style>
 </head>
@@ -34,6 +42,7 @@ h1{font-size:20px;font-weight:600;margin:0 0 4px}
 <h1>每日论文图卡</h1>
 <div class="date">{{DATE}}</div>
 <!--CARDS-->
-<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论</div>
+<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论<br>
+点击色块可跳转 claude.ai 深入追问（需登录）；点开每卡底部"术语速查"可离线阅读注释</div>
 </body>
 </html>
