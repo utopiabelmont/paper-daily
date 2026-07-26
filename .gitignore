@@ -5,3 +5,7 @@ papers.json
 papers_am.json
 news_am.md
 cards_fragment.html
+
+# Python 字节码缓存
+__pycache__/
+*.pyc
