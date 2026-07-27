@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>论文图卡 2026-07-28</title>
+<style>
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#FAF9F5;
+     color:#2C2C2A;max-width:780px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.date{color:#888780;font-size:13px;margin-bottom:20px}
+.card{background:#fff;border:1px solid #E3E1D9;border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.pill{background:#E6F1FB;color:#0C447C;border-radius:12px;padding:2px 10px}
+.meta a{color:#185FA5;text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.en{color:#888780;font-size:12px;margin-bottom:10px}
+a.blk{display:block;text-decoration:none;color:inherit}
+a.blk:hover .q,a.blk:hover .res,a.blk:hover .conc,a.blk:hover .m{filter:brightness(0.96)}
+.q{background:#F1EFE8;color:#444441;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:10px}
+.methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.methods a.blk{flex:1;min-width:140px;display:flex}
+.m{flex:1;background:#EEEDFE;color:#3C3489;border-radius:8px;
+   padding:8px 10px;font-size:13px;font-weight:600}
+.m span{display:block;font-weight:400;font-size:12px;color:#534AB7;margin-top:2px}
+.res{border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.res span{display:block;font-weight:400;font-size:12px;margin-top:2px}
+.res.good{background:#E1F5EE;color:#085041}.res.good span{color:#0F6E56}
+.res.warn{background:#FAECE7;color:#712B13}.res.warn span{color:#993C1D}
+.res.bad{background:#FCEBEB;color:#791F1F}.res.bad span{color:#A32D2D}
+.conc{background:#FAEEDA;color:#633806;border-radius:8px;padding:8px 12px;font-size:13px;margin-top:2px}
+.news{background:#E6F1FB;color:#0C447C;border-radius:8px;padding:8px 12px;font-size:13px}
+details{margin-top:10px;border-top:1px dashed #E3E1D9;padding-top:8px}
+details summary{cursor:pointer;font-size:12px;color:#888780;user-select:none}
+details[open] summary{color:#2C2C2A}
+.term{background:#F7F6F1;border-radius:8px;padding:8px 12px;font-size:12px;margin-top:8px}
+.term b{color:#3C3489}
+.foot{color:#B4B2A9;font-size:12px;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>每日论文图卡</h1>
+<div class="date">2026-07-28</div>
+  <div class="card">
+    <div class="meta"><span class="pill">运行状态 · 无新增</span>
+      <a href="http://export.arxiv.org/api/query">arXiv API 查询</a></div>
+    <h2>今日无匹配新论文</h2><div class="en">No matching new submissions in the 72-hour window</div>
+    <div class="q">抓取脚本正常执行完毕，候选 0 篇。以下为如实记录，本期不含任何论文卡片。</div>
+    <div class="methods">
+      <div class="m" style="flex:1">抓取时刻<span>2026-07-27 20:05 UTC</span></div>
+      <div class="m" style="flex:1">时间窗下界<span>2026-07-24 20:05 UTC</span></div>
+      <div class="m" style="flex:1">最新匹配投稿<span>2026-07-24 15:06 UTC</span></div>
+    </div>
+    <div class="res warn">窗口内无新论文<span>arXiv 最新一批匹配投稿（2607.22380）早于窗口下界约 5 小时</span></div>
+    <div class="res good">抓取链路正常<span>export.arxiv.org 返回 HTTP 200，三页共 300 条正常解析，未被封锁</span></div>
+    <div class="news">2026-07-25（周六）、07-26（周日）arXiv 不发布新内容；截至 UTC 周一 20:05，07-27 的新投稿尚未进入 API 索引，故 72h 窗口内确无新增。</div>
+    <details><summary>术语速查（点开）</summary>
+      <div class="term"><b>72h 时间窗</b>：脚本只收录投稿时间晚于「当前时刻减 72 小时」的论文，用于保证简报时效性。本文中：下界 2026-07-24 20:05 UTC，最新匹配投稿早于该时刻约 5 小时，被过滤。</div>
+      <div class="term"><b>submittedDate 排序</b>：arXiv API 按投稿时间倒序返回结果，脚本据此翻页取最新 300 条。本文中：300 条中最新一条即 2026-07-24T15:06Z，可确认窗口内确实空无一物。</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <div class="meta"><span class="pill">运行诊断 · 覆盖缺口</span>
+      <a href="http://arxiv.org/abs/2607.22212">arXiv 原文</a></div>
+    <h2>周末错位使 2026-07-24 批次 8 篇匹配论文全部漏报</h2><div class="en">Coverage gap: the 2026-07-24 batch never entered any digest</div>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94arXiv%20API%20%E7%9A%84%20submittedDate%20%E6%A3%80%E7%B4%A2%E7%AA%97%E5%8F%A3%E4%B8%8E%E5%85%AC%E5%91%8A%E5%91%A8%E6%9C%9F%E9%94%99%E4%BD%8D%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Deep%20Convolutional%20Large-Margin%20lp-SVDD%20for%20Visual%20Anomaly%20Detection%E3%80%95%EF%BC%88arXiv%20%E3%80%942607.22212%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%94%E8%AF%A5%E6%96%87%E6%8A%95%E7%A8%BF%E6%97%B6%E9%97%B4%E4%B8%BA%202026-07-24T11%3A30%3A03Z%EF%BC%8C%E8%80%8C%E6%9C%AC%E6%AC%A1%E6%8A%93%E5%8F%96%E7%9A%84%2072%20%E5%B0%8F%E6%97%B6%E7%AA%97%E5%8F%A3%E4%B8%8B%E7%95%8C%E4%B8%BA%202026-07-24T20%3A05Z%EF%BC%8C%E4%BB%85%E5%B7%AE%E7%BA%A6%208.6%20%E5%B0%8F%E6%97%B6%E5%8D%B3%E8%A2%AB%E8%BF%87%E6%BB%A4%EF%BC%8C%E5%AF%BC%E8%87%B4%E5%85%B6%E4%BB%8E%E6%9C%AA%E8%BF%9B%E5%85%A5%E4%BB%BB%E4%BD%95%E4%B8%80%E6%9C%9F%E7%AE%80%E6%8A%A5%E3%80%95%E3%80%82" target="_blank"><div class="q">研究问题：为什么连续两天报「无新论文」，而 arXiv 上确有 8 篇匹配本方向的投稿？</div></a>
+    <div class="methods">
+      <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E6%BB%91%E5%8A%A8%E6%97%B6%E9%97%B4%E7%AA%97%EF%BC%88sliding%20time%20window%EF%BC%89%E5%9C%A8%E5%A2%9E%E9%87%8F%E6%8A%93%E5%8F%96%E4%B8%AD%E7%9A%84%E5%AF%B9%E9%BD%90%E9%97%AE%E9%A2%98%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Deep%20Convolutional%20Large-Margin%20lp-SVDD%20for%20Visual%20Anomaly%20Detection%E3%80%95%EF%BC%88arXiv%20%E3%80%942607.22212%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%94%E8%84%9A%E6%9C%AC%20window_hours%3D72%20%E4%B8%94%E4%BB%A5%E2%80%9C%E5%BD%93%E5%89%8D%E8%BF%90%E8%A1%8C%E6%97%B6%E5%88%BB%E2%80%9D%E4%B8%BA%E5%9F%BA%E5%87%86%EF%BC%8C%E9%81%87%E5%91%A8%E5%85%AD%E6%97%A5%20arXiv%20%E5%81%9C%E6%9B%B4%E6%97%B6%E7%AA%97%E5%8F%A3%E7%A9%BA%E8%BD%AC%EF%BC%8C%E5%91%A8%E4%B8%80%E8%BF%90%E8%A1%8C%E6%97%B6%E4%B8%8A%E5%91%A8%E4%BA%94%E6%89%B9%E6%AC%A1%E5%B7%B2%E6%BB%91%E5%87%BA%E7%AA%97%E5%8F%A3%E3%80%95%E3%80%82" target="_blank">
+        <div class="m">窗口以运行时刻起算<span>周末空转致批次滑出</span></div></a>
+      <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8D%95%E8%AF%8D%E8%BE%B9%E7%95%8C%20%5Cb%20%E5%9C%A8%E5%BD%A2%E5%A6%82%202607.22212v1%20%E7%9A%84%E6%A0%87%E8%AF%86%E7%AC%A6%E4%B8%8A%E7%9A%84%E5%A4%B1%E6%95%88%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Deep%20Convolutional%20Large-Margin%20lp-SVDD%20for%20Visual%20Anomaly%20Detection%E3%80%95%EF%BC%88arXiv%20%E3%80%942607.22212%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%94fetch_arxiv.py%20%E7%9A%84%20ARXIV_ID_RE%20%3D%20r%27%5Cb%28%5Cd%7B4%7D%5C.%5Cd%7B4%2C5%7D%29%5Cb%27%20%E6%97%A0%E6%B3%95%E5%8C%B9%E9%85%8D%E5%8E%86%E5%8F%B2%E7%AE%80%E6%8A%A5%E4%B8%AD%E5%B8%A6%E7%89%88%E6%9C%AC%E5%8F%B7%E5%90%8E%E7%BC%80%E7%9A%84%202607.22212v1%EF%BC%8C%E5%AF%BC%E8%87%B4%E8%B7%A8%E5%A4%A9%E5%8E%BB%E9%87%8D%E5%A4%B1%E6%95%88%E3%80%95%E3%80%82" target="_blank">
+        <div class="m">去重正则尾部 \b 失效<span>匹配不到 22212v1</span></div></a>
+    </div>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E5%A2%9E%E9%87%8F%E6%8A%93%E5%8F%96%E7%AE%A1%E7%BA%BF%E7%9A%84%E6%BC%8F%E6%8A%A5%EF%BC%88false%20negative%EF%BC%89%E4%B8%8E%E9%87%8D%E5%A4%8D%E6%8A%A5%E9%81%93%EF%BC%88duplicate%EF%BC%89%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Deep%20Convolutional%20Large-Margin%20lp-SVDD%20for%20Visual%20Anomaly%20Detection%E3%80%95%EF%BC%88arXiv%20%E3%80%942607.22212%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%942026-07-24%20%E6%89%B9%E6%AC%A1%E5%85%B1%208%20%E7%AF%87%E5%8C%B9%E9%85%8D%E8%AE%BA%E6%96%87%E5%85%A8%E9%83%A8%E6%BC%8F%E6%8A%A5%EF%BC%8C%E5%85%B6%E4%B8%AD%E6%9C%80%E9%AB%98%E7%9B%B8%E5%85%B3%E5%BA%A6%209%20%E5%88%86%EF%BC%9B%E5%90%8C%E6%97%B6%E5%8E%86%E5%8F%B2%E7%AE%80%E6%8A%A5%E4%B8%AD%E5%B7%B2%E6%9C%89%2013%20%E4%B8%AA%20arXiv%20ID%20%E8%A2%AB%E8%BF%9E%E7%BB%AD%E4%B8%A4%E5%A4%A9%E9%87%8D%E5%A4%8D%E6%8A%A5%E9%81%93%E3%80%95%E3%80%82" target="_blank">
+      <div class="res warn">8 篇漏报<span>2607.22212(相关度9)、22380(4)、22231(4) 等从未出现在任何一期简报</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E5%A2%9E%E9%87%8F%E6%8A%93%E5%8F%96%E7%AE%A1%E7%BA%BF%E7%9A%84%E6%BC%8F%E6%8A%A5%EF%BC%88false%20negative%EF%BC%89%E4%B8%8E%E9%87%8D%E5%A4%8D%E6%8A%A5%E9%81%93%EF%BC%88duplicate%EF%BC%89%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Deep%20Convolutional%20Large-Margin%20lp-SVDD%20for%20Visual%20Anomaly%20Detection%E3%80%95%EF%BC%88arXiv%20%E3%80%942607.22212%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%942026-07-24%20%E6%89%B9%E6%AC%A1%E5%85%B1%208%20%E7%AF%87%E5%8C%B9%E9%85%8D%E8%AE%BA%E6%96%87%E5%85%A8%E9%83%A8%E6%BC%8F%E6%8A%A5%EF%BC%8C%E5%85%B6%E4%B8%AD%E6%9C%80%E9%AB%98%E7%9B%B8%E5%85%B3%E5%BA%A6%209%20%E5%88%86%EF%BC%9B%E5%90%8C%E6%97%B6%E5%8E%86%E5%8F%B2%E7%AE%80%E6%8A%A5%E4%B8%AD%E5%B7%B2%E6%9C%89%2013%20%E4%B8%AA%20arXiv%20ID%20%E8%A2%AB%E8%BF%9E%E7%BB%AD%E4%B8%A4%E5%A4%A9%E9%87%8D%E5%A4%8D%E6%8A%A5%E9%81%93%E3%80%95%E3%80%82" target="_blank">
+      <div class="res bad">13 个 ID 重复报道<span>2607.21577 连续三天、21456 等连续两天重复出现</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E5%A2%9E%E9%87%8F%E6%8A%93%E5%8F%96%E7%9A%84%E6%B0%B4%E4%BD%8D%E7%BA%BF%EF%BC%88watermark%EF%BC%89%E6%9C%BA%E5%88%B6%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Deep%20Convolutional%20Large-Margin%20lp-SVDD%20for%20Visual%20Anomaly%20Detection%E3%80%95%EF%BC%88arXiv%20%E3%80%942607.22212%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%94%E5%BB%BA%E8%AE%AE%E6%8A%8A%E5%9B%BA%E5%AE%9A%2072h%20%E7%AA%97%E5%8F%A3%E6%94%B9%E4%B8%BA%E2%80%9C%E4%B8%8A%E6%AC%A1%E6%88%90%E5%8A%9F%E6%8A%93%E5%8F%96%E6%97%B6%E5%88%BB%E2%80%9D%E6%B0%B4%E4%BD%8D%E7%BA%BF%EF%BC%8C%E5%B9%B6%E6%8A%8A%E5%8E%BB%E9%87%8D%E6%AD%A3%E5%88%99%E5%B0%BE%E9%83%A8%20%5Cb%20%E6%94%B9%E4%B8%BA%20%28%3F%21%5B0-9.%5D%29%EF%BC%8C%E5%8D%B3%E5%8F%AF%E5%90%8C%E6%97%B6%E6%B6%88%E9%99%A4%E6%BC%8F%E6%8A%A5%E4%B8%8E%E9%87%8D%E5%A4%8D%E3%80%95%E3%80%82%E5%B9%B6%E8%AE%A8%E8%AE%BA%E5%A6%82%E4%BD%95%E5%BB%B6%E4%BC%B8%E5%88%B0%E6%88%91%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E3%80%82" target="_blank">
+      <div class="conc">结论：固定 72h 窗口遇周末会漏批次、去重正则遇版本号后缀会失效，二者共同造成「该报的没报、报过的又报」；本次未擅自改动脚本，建议改为水位线增量 + 正则尾部改 (?![0-9.])。</div></a>
+    <details><summary>术语速查（点开）</summary>
+      <div class="term"><b>水位线（watermark）</b>：增量抓取中记录「上次成功处理到哪个时间点」的游标，下次从该点续抓。本文中：若用水位线替代固定 72h 窗口，周末停更也不会丢批次。</div>
+      <div class="term"><b>单词边界 \b</b>：正则中匹配「单词字符与非单词字符之间」的零宽位置。本文中：2607.22212v1 的数字后紧跟字母 v，仍属单词字符，故 \b 不成立，去重整体失效。</div>
+      <div class="term"><b>相关度评分</b>：脚本按关键词命中标题记 3 分、命中摘要记 1 分累加得出。本文中：漏报的 2607.22212 得 9 分，高于 07-26 简报中任何一篇。</div>
+    </details>
+  </div>
+
+<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论<br>
+点击色块可跳转 claude.ai 深入追问（需登录）；点开每卡底部"术语速查"可离线阅读注释</div>
+</body>
+</html>
