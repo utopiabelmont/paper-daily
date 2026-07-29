@@ -20,6 +20,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -27,10 +28,11 @@ from datetime import datetime, timedelta, timezone
 
 LOCAL_TZ = timezone(timedelta(hours=9))
 DEDUP_DIRS = ["digests", "digests_am"]          # 两个方向共用，互相防重复
-API = "http://export.arxiv.org/api/query"
+API = "https://export.arxiv.org/api/query"
 ATOM = "{http://www.w3.org/2005/Atom}"
 ARXIV = "{http://arxiv.org/schemas/atom}"
-ARXIV_ID_RE = re.compile(r"\b(\d{4}\.\d{4,5})\b")
+# 历史简报里的 ID 多带版本后缀（2607.24703v1），\b 会被 v 挡住，故改用数字边界断言
+ARXIV_ID_RE = re.compile(r"(?<!\d)(\d{4}\.\d{4,5})(?![\d.])")
 
 # ==================== 方向配置区 ====================
 PROFILES = {
@@ -106,6 +108,8 @@ PROFILES = {
 # ====================================================
 
 MAX_RESULTS_PER_PAGE = 100
+MAX_RETRIES = 6
+RETRY_BACKOFF = 5   # 秒，第 n 次失败后等待 n * RETRY_BACKOFF
 
 
 def load_past_reported_ids():
@@ -138,9 +142,18 @@ def fetch_page(cfg, start):
         "max_results": MAX_RESULTS_PER_PAGE,
     }
     url = API + "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read()
+    # arXiv 对这类长查询经常返回 503 / 超时，需重试
+    last = None
+    for attempt in range(MAX_RETRIES):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
+            with urllib.request.urlopen(req, timeout=90) as resp:
+                return resp.read()
+        except Exception as ex:
+            last = ex
+            sys.stderr.write(f"[retry] start={start} 第 {attempt + 1} 次失败: {ex}\n")
+            time.sleep(RETRY_BACKOFF * (attempt + 1))
+    raise last
 
 
 def parse_entries(xml_bytes):
