@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>论文图卡 2026-07-31</title>
+<style>
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#FAF9F5;
+     color:#2C2C2A;max-width:780px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.date{color:#888780;font-size:13px;margin-bottom:20px}
+.card{background:#fff;border:1px solid #E3E1D9;border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.pill{background:#E6F1FB;color:#0C447C;border-radius:12px;padding:2px 10px}
+.meta a{color:#185FA5;text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.en{color:#888780;font-size:12px;margin-bottom:10px}
+a.blk{display:block;text-decoration:none;color:inherit}
+a.blk:hover .q,a.blk:hover .res,a.blk:hover .conc,a.blk:hover .m{filter:brightness(0.96)}
+.q{background:#F1EFE8;color:#444441;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:10px}
+.methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.methods a.blk{flex:1;min-width:140px;display:flex}
+.m{flex:1;background:#EEEDFE;color:#3C3489;border-radius:8px;
+   padding:8px 10px;font-size:13px;font-weight:600}
+.m span{display:block;font-weight:400;font-size:12px;color:#534AB7;margin-top:2px}
+.res{border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.res span{display:block;font-weight:400;font-size:12px;margin-top:2px}
+.res.good{background:#E1F5EE;color:#085041}.res.good span{color:#0F6E56}
+.res.warn{background:#FAECE7;color:#712B13}.res.warn span{color:#993C1D}
+.res.bad{background:#FCEBEB;color:#791F1F}.res.bad span{color:#A32D2D}
+.conc{background:#FAEEDA;color:#633806;border-radius:8px;padding:8px 12px;font-size:13px;margin-top:2px}
+.news{background:#E6F1FB;color:#0C447C;border-radius:8px;padding:8px 12px;font-size:13px}
+details{margin-top:10px;border-top:1px dashed #E3E1D9;padding-top:8px}
+details summary{cursor:pointer;font-size:12px;color:#888780;user-select:none}
+details[open] summary{color:#2C2C2A}
+.term{background:#F7F6F1;border-radius:8px;padding:8px 12px;font-size:12px;margin-top:8px}
+.term b{color:#3C3489}
+.foot{color:#B4B2A9;font-size:12px;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>每日论文图卡</h1>
+<div class="date">2026-07-31</div>
+<div class="card">
+  <div class="meta"><span class="pill">⑥ 物理引导机器学习 PIML · 相关度2</span>
+    <a href="http://arxiv.org/abs/2607.26965v1">arXiv 原文</a></div>
+  <h2>基于 PINN 从纳秒激光烧蚀的多维信号中同步测量多项力学性能</h2><div class="en">Measurement of multiple mechanical properties from multi-dimensional signals in nanosecond laser ablation via PINN</div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E7%BA%B3%E7%A7%92%E6%BF%80%E5%85%89%E7%83%A7%E8%9A%80%E6%97%A0%E6%8D%9F%E5%8A%9B%E5%AD%A6%E6%80%A7%E8%83%BD%E5%8F%8D%E6%BC%94%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Measurement%20of%20multiple%20mechanical%20properties%20from%20multi-dimensional%20signals%20in%20nanosecond%20laser%20ablation%20via%20PINN%EF%BC%88arXiv%202607.26965%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E5%B8%B8%E8%A7%84%E8%AF%84%E4%BC%B0%E4%BE%9D%E8%B5%96%E7%A0%B4%E5%9D%8F%E6%80%A7%E5%8F%96%E6%A0%B7%EF%BC%8C%E4%BD%9C%E8%80%85%E8%A6%81%E7%94%A8%E4%B8%80%E6%AC%A1%E6%BF%80%E5%85%89%E7%83%A7%E8%9A%80%E5%AE%9E%E9%AA%8C%E5%90%8C%E6%97%B6%E5%8F%8D%E6%BC%94%E6%9D%A8%E6%B0%8F%E6%A8%A1%E9%87%8F%E3%80%81%E5%B1%88%E6%9C%8D%E5%BC%BA%E5%BA%A6%E3%80%81%E6%8A%97%E6%8B%89%E5%BC%BA%E5%BA%A6%E4%B8%8E%E6%98%BE%E5%BE%AE%E7%BB%B4%E6%B0%8F%E7%A1%AC%E5%BA%A6%E3%80%82" target="_blank"><div class="q">研究问题：钢材在老化或服役条件下的力学性能难以无损、高精度地一次性给出多项指标。</div></a>
+  <div class="methods">
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E7%83%AD-%E5%8A%9B%E8%80%A6%E5%90%88%E7%B3%BB%E6%95%B0%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Measurement%20of%20multiple%20mechanical%20properties%20from%20multi-dimensional%20signals%20in%20nanosecond%20laser%20ablation%20via%20PINN%EF%BC%88arXiv%202607.26965%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AF%A5%E7%B3%BB%E6%95%B0%E7%BB%9F%E4%B8%80%E6%8F%8F%E8%BF%B0%E8%BE%93%E5%85%A5%E6%BF%80%E5%85%89%E8%83%BD%E9%87%8F%E5%9C%A8%E7%83%AD%E6%89%A9%E6%95%A3%E3%80%81%E6%9C%BA%E6%A2%B0%E5%8A%9F%E4%B8%8E%E7%AD%89%E7%A6%BB%E5%AD%90%E4%BD%93%E5%B1%8F%E8%94%BD%E4%B9%8B%E9%97%B4%E9%9A%8F%E5%8F%98%E5%BD%A2%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E3%80%82" target="_blank">
+      <div class="m">能量守恒的热-力耦合框架<span>定义热力耦合系数</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E5%BC%95%E5%AF%BC%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%20PINN%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Measurement%20of%20multiple%20mechanical%20properties%20from%20multi-dimensional%20signals%20in%20nanosecond%20laser%20ablation%20via%20PINN%EF%BC%88arXiv%202607.26965%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E6%8A%8A%E7%83%AD-%E5%8A%9B%E8%80%A6%E5%90%88%E6%96%B9%E7%A8%8B%E4%BD%9C%E4%B8%BA%E7%BA%A6%E6%9D%9F%E5%B5%8C%E5%85%A5%E7%BD%91%E7%BB%9C%E6%8D%9F%E5%A4%B1%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%9B%9B%E9%A1%B9%E5%8A%9B%E5%AD%A6%E6%80%A7%E8%83%BD%E7%9A%84%E5%90%8C%E6%AD%A5%E5%8F%8D%E6%BC%94%E3%80%82" target="_blank">
+      <div class="m">守恒律嵌入 PINN<span>多对多同步反演</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E5%85%89%E8%B0%B1%E3%80%81%E5%86%B2%E5%87%BB%E6%B3%A2%E4%B8%8E%E8%A1%A8%E9%9D%A2%E6%B3%A2%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%90%8C%E6%AD%A5%E9%87%87%E9%9B%86%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Measurement%20of%20multiple%20mechanical%20properties%20from%20multi-dimensional%20signals%20in%20nanosecond%20laser%20ablation%20via%20PINN%EF%BC%88arXiv%202607.26965%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E7%94%A8%E5%AE%9E%E9%AA%8C%E5%8F%AF%E8%8E%B7%E5%8F%96%E7%9A%84%E7%89%B9%E5%BE%81%E6%9B%BF%E6%8D%A2%E8%80%A6%E5%90%88%E6%96%B9%E7%A8%8B%E4%B8%AD%E9%9A%BE%E4%BB%A5%E7%9B%B4%E6%8E%A5%E6%B5%8B%E9%87%8F%E7%9A%84%E7%89%A9%E7%90%86%E9%87%8F%E3%80%82" target="_blank">
+      <div class="m">三路信号同步采集<span>以可测特征替代难测量</span></div></a>
+  </div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E5%86%B3%E5%AE%9A%E7%B3%BB%E6%95%B0%20R%C2%B2%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Measurement%20of%20multiple%20mechanical%20properties%20from%20multi-dimensional%20signals%20in%20nanosecond%20laser%20ablation%20via%20PINN%EF%BC%88arXiv%202607.26965%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E6%9D%A8%E6%B0%8F%E6%A8%A1%E9%87%8F%E3%80%81%E5%B1%88%E6%9C%8D%E5%BC%BA%E5%BA%A6%E3%80%81%E6%8A%97%E6%8B%89%E5%BC%BA%E5%BA%A6%E3%80%81%E6%98%BE%E5%BE%AE%E7%BB%B4%E6%B0%8F%E7%A1%AC%E5%BA%A6%E7%9A%84%E5%8F%8D%E6%BC%94%20R%C2%B2%20%E5%88%86%E5%88%AB%E4%B8%BA%200.9927%E3%80%810.9912%E3%80%810.9916%E3%80%810.9959%E3%80%82" target="_blank">
+    <div class="res good">四项性能高精度反演<span>210 组实验数据下 R² 分别为 0.9927 / 0.9912 / 0.9916 / 0.9959</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%80%9F%E5%9B%9E%E5%BD%92%E6%B3%95%E6%B5%8B%E5%BC%B9%E6%80%A7%E6%A8%A1%E9%87%8F%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Measurement%20of%20multiple%20mechanical%20properties%20from%20multi-dimensional%20signals%20in%20nanosecond%20laser%20ablation%20via%20PINN%EF%BC%88arXiv%202607.26965%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E4%BD%9C%E4%B8%BA%E5%9F%BA%E7%BA%BF%E5%85%B6%E6%9D%A8%E6%B0%8F%E6%A8%A1%E9%87%8F%E5%8F%8D%E6%BC%94%20R%C2%B2%20%E4%BB%85%200.0012%EF%BC%8C%E8%A2%AB%20PINN%20%E6%A1%86%E6%9E%B6%E6%98%BE%E8%91%97%E8%B6%85%E8%B6%8A%E3%80%82" target="_blank">
+    <div class="res good">远超基线方法<span>超声速度回归杨氏模量的基线 R² 仅 0.0012</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E6%97%A0%E7%BA%A6%E6%9D%9F%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%BD%92%E4%B8%80%E5%8C%96%E5%9F%BA%E7%BA%BF%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Measurement%20of%20multiple%20mechanical%20properties%20from%20multi-dimensional%20signals%20in%20nanosecond%20laser%20ablation%20via%20PINN%EF%BC%88arXiv%202607.26965%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E4%B8%A4%E8%80%85%E7%B2%BE%E5%BA%A6%E5%9D%87%E6%98%8E%E6%98%BE%E4%BD%8E%E4%BA%8E%20PINN%EF%BC%8C%E8%AF%B4%E6%98%8E%E5%A2%9E%E7%9B%8A%E6%9D%A5%E8%87%AA%E5%AE%88%E6%81%92%E5%BE%8B%E7%BA%A6%E6%9D%9F%E8%80%8C%E9%9D%9E%E6%A8%A1%E5%9E%8B%E5%AE%B9%E9%87%8F%E3%80%82" target="_blank">
+    <div class="res good">精度提升来自守恒律约束<span>对比线性归一化与无约束神经网络，PINN 才接近满分精度</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E5%A4%9A%E4%BC%A0%E6%84%9F%E5%99%A8%E8%9E%8D%E5%90%88%E7%9A%84%E7%89%A9%E7%90%86%E5%BC%95%E5%AF%BC%E5%8F%8D%E6%BC%94%E8%8C%83%E5%BC%8F%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Measurement%20of%20multiple%20mechanical%20properties%20from%20multi-dimensional%20signals%20in%20nanosecond%20laser%20ablation%20via%20PINN%EF%BC%88arXiv%202607.26965%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AF%A5%E6%96%87%E7%94%A8%E5%85%89%E8%B0%B1%2B%E5%86%B2%E5%87%BB%E6%B3%A2%2B%E8%A1%A8%E9%9D%A2%E6%B3%A2%E4%B8%89%E8%B7%AF%E4%BF%A1%E5%8F%B7%E9%85%8D%E5%90%88%E5%AE%88%E6%81%92%E5%BE%8B%E7%BA%A6%E6%9D%9F%E7%9A%84%20PINN%EF%BC%8C%E4%B8%80%E6%AC%A1%E5%8F%8D%E6%BC%94%E5%9B%9B%E9%A1%B9%E5%8A%9B%E5%AD%A6%E6%80%A7%E8%83%BD%E3%80%82%E5%B9%B6%E8%AE%A8%E8%AE%BA%E5%A6%82%E4%BD%95%E5%BB%B6%E4%BC%B8%E5%88%B0%E6%88%91%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E3%80%82" target="_blank">
+    <div class="conc">结论：守恒定律 + 可测特征 + 物理引导学习的组合，为纳秒激光烧蚀条件下非接触、高精度、物理自洽的多对多材料性能反演提供了通用范式；与我的③光学+激光超声融合 NDT 与⑥ PIML 两个方向高度重合。</div></a>
+  <details><summary>术语速查（点开）</summary>
+    <div class="term"><b>PINN（物理引导神经网络）</b>：在神经网络损失函数中加入控制方程残差等物理约束，使模型在数据稀缺时仍保持物理自洽。本文中：承载热-力耦合方程约束，把三路实验信号映射为四项力学性能。</div>
+    <div class="term"><b>等离子体屏蔽（plasma shielding）</b>：激光烧蚀时材料蒸气电离形成的等离子体会吸收、散射后续入射激光，削弱真正到达材料表面的能量。本文中：是热-力耦合系数所描述的三条能量去向之一。</div>
+    <div class="term"><b>偏依赖分析（partial dependency analysis）</b>：固定其余变量、只改变某一输入特征，观察模型输出如何变化，用于解释黑箱模型。本文中：用于揭示输入特征与四项力学性能之间的非线性耦合规律。</div>
+  </details>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">⑥ 物理引导机器学习 PIML（弱匹配）· 相关度1</span>
+    <a href="http://arxiv.org/abs/2607.26992v1">arXiv 原文</a></div>
+  <h2>二维/三维代表性粉末颗粒堆积的生成：什么应用该选什么工具？</h2><div class="en">Generation of representative powder particle packing in 2D/3D: which tool for which application?</div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E7%B2%89%E6%9C%AB%E9%A2%97%E7%B2%92%E5%A0%86%E7%A7%AF%E7%94%9F%E6%88%90%E5%99%A8%E7%9A%84%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Generation%20of%20representative%20powder%20particle%20packing%20in%202D%2F3D%3A%20which%20tool%20for%20which%20application%3F%EF%BC%88arXiv%202607.26992%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E4%BD%9C%E8%80%85%E8%A6%81%E5%9B%9E%E7%AD%94%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E5%A0%86%E7%A7%AF%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E5%90%84%E8%87%AA%E9%80%82%E5%90%88%E4%BB%80%E4%B9%88%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E3%80%82" target="_blank"><div class="q">研究问题：粉末冶金与增材制造仿真都以致密球体堆积为初始状态，但生成器的选择几乎没有系统基准可依。</div></a>
+  <div class="methods">
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E4%BB%A3%E8%A1%A8%E6%80%A7%E7%B2%89%E6%9C%AB%E5%A0%86%E7%A7%AF%E7%9A%84%E5%88%A4%E6%8D%AE%E4%BD%93%E7%B3%BB%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Generation%20of%20representative%20powder%20particle%20packing%20in%202D%2F3D%3A%20which%20tool%20for%20which%20application%3F%EF%BC%88arXiv%202607.26992%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%A6%81%E6%B1%82%E9%A2%97%E7%B2%92%E4%B8%8D%E9%87%8D%E5%8F%A0%E3%80%81%E5%A4%84%E4%BA%8E%E9%87%8D%E5%8A%9B%E5%B9%B3%E8%A1%A1%E3%80%81%E5%BF%A0%E5%AE%9E%E4%BA%8E%E7%9B%AE%E6%A0%87%E7%B2%92%E5%BA%A6%E5%88%86%E5%B8%83%E3%80%81%E7%9B%B8%E5%AF%B9%E5%AF%86%E5%BA%A6%E5%85%B7%E4%BB%A3%E8%A1%A8%E6%80%A7%E4%B8%94%E8%AE%A1%E7%AE%97%E6%88%90%E6%9C%AC%E5%8F%AF%E6%8E%A5%E5%8F%97%E3%80%82" target="_blank">
+      <div class="m">五条代表性判据<span>不重叠/平衡/PSD/密度/成本</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E9%A1%BA%E5%BA%8F%E5%A0%86%E7%A7%AF%E6%B3%95%E4%B8%8E%E7%A6%BB%E6%95%A3%E5%85%83%E6%B3%95%EF%BC%88DEM%EF%BC%89%E7%9A%84%E5%AF%B9%E6%AF%94%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Generation%20of%20representative%20powder%20particle%20packing%20in%202D%2F3D%3A%20which%20tool%20for%20which%20application%3F%EF%BC%88arXiv%202607.26992%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E9%A1%BA%E5%BA%8F%E6%B3%95%20DR%EF%BC%88dropping-and-rolling%EF%BC%89%E5%8F%8A%E8%87%B4%E5%AF%86%E5%8C%96%E5%8F%98%E4%BD%93%20DR-ME%EF%BC%8C%E5%AF%B9%E6%AF%94%20DEM%20%E4%BB%A3%E7%A0%81%20LAMMPS%EF%BC%88%E9%87%8D%E5%8A%9B%EF%BC%89%E4%B8%8E%20dp3D%EF%BC%88%E7%AD%89%E9%9D%99%E5%8E%8B%E7%BC%A9%EF%BC%89%E3%80%82" target="_blank">
+      <div class="m">四个开源工具对标<span>DR、DR-ME、LAMMPS、dp3D</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BAHellinger%20%E8%B7%9D%E7%A6%BB%E4%B8%8E%E9%98%BF%E5%9F%BA%E7%B1%B3%E5%BE%B7%E6%B3%95%E7%9B%B8%E5%AF%B9%E5%AF%86%E5%BA%A6%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Generation%20of%20representative%20powder%20particle%20packing%20in%202D%2F3D%3A%20which%20tool%20for%20which%20application%3F%EF%BC%88arXiv%202607.26992%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%A6%86%E7%9B%96%202D%2F3D%20%E5%AF%B9%E6%95%B0%E6%AD%A3%E6%80%81%E3%80%813D%20%E5%8F%8C%E5%B3%B0%E4%B8%8E%203D%20%E8%AE%A1%E7%AE%97%E5%9F%9F%E5%B0%BA%E5%AF%B8%E7%A0%94%E7%A9%B6%EF%BC%8C%E4%BB%A5%20MIM%20%E7%BA%A7%E5%B7%A5%E4%B8%9A%E7%B2%89%E6%9C%AB%E7%9A%84%20%CF%86_exp%20%3D%200.62%20%E4%B8%BA%E5%8F%82%E7%85%A7%E3%80%82" target="_blank">
+      <div class="m">四种配置 + 工业粉末对照<span>Hellinger 距离量 PSD 保真</span></div></a>
+  </div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E7%A6%BB%E6%95%A3%E5%85%83%E6%B3%95%EF%BC%88DEM%EF%BC%89%E5%A0%86%E7%A7%AF%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Generation%20of%20representative%20powder%20particle%20packing%20in%202D%2F3D%3A%20which%20tool%20for%20which%20application%3F%EF%BC%88arXiv%202607.26992%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E4%B8%89%E7%BB%B4%E9%85%8D%E7%BD%AE%E4%B8%AD%20DEM%20%E4%BB%A3%E7%A0%81%E5%BE%97%E5%88%B0%E6%9C%80%E8%87%B4%E5%AF%86%E7%9A%84%E5%A0%86%E7%A7%AF%EF%BC%8C%E4%BD%86%E4%BB%A3%E4%BB%B7%E6%98%AF%E8%AE%A1%E7%AE%97%E6%97%B6%E9%97%B4%E3%80%82" target="_blank">
+    <div class="res good">DEM 得到最致密堆积<span>三维下 LAMMPS 与 dp3D 的相对密度最高</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E5%A0%86%E7%A7%AF%E7%94%9F%E6%88%90%E7%9A%84%E8%AE%A1%E7%AE%97%E6%88%90%E6%9C%AC%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Generation%20of%20representative%20powder%20particle%20packing%20in%202D%2F3D%3A%20which%20tool%20for%20which%20application%3F%EF%BC%88arXiv%202607.26992%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9ADEM%20%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6%E6%AF%94%E9%A1%BA%E5%BA%8F%E6%B3%95%20DR%20%E6%85%A2%E4%B8%89%E4%B8%AA%E6%95%B0%E9%87%8F%E7%BA%A7%E4%BB%A5%E4%B8%8A%E3%80%82" target="_blank">
+    <div class="res warn">致密的代价是三个数量级的耗时<span>DEM 比顺序法慢 1000 倍以上</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E7%9B%B8%E5%AF%B9%E5%AF%86%E5%BA%A6%20%CE%A6%20%E7%9A%84%E7%BC%BA%E5%8F%A3%E4%B8%8E%E5%8A%A0%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Generation%20of%20representative%20powder%20particle%20packing%20in%202D%2F3D%3A%20which%20tool%20for%20which%20application%3F%EF%BC%88arXiv%202607.26992%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E7%BA%A6%2020000%20%E9%A2%97%E7%B2%92%E8%A7%84%E6%A8%A1%E4%B8%8B%20DR%20%E7%9A%84%20%CE%A6%20%E6%AF%94%20dp3D%20%E4%BD%8E%209%25%EF%BC%8C%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6%E5%BF%AB%201800%20%E5%80%8D%E3%80%82" target="_blank">
+    <div class="res warn">精度与速度需要权衡<span>约 20000 颗粒时 DR 相对 dp3D 密度低约 9%，但快 1800 倍</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E9%9D%A2%E5%90%91%E5%BA%94%E7%94%A8%E7%9A%84%E7%B2%89%E6%9C%AB%E5%A0%86%E7%A7%AF%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9%E6%8C%87%E5%8D%97%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Generation%20of%20representative%20powder%20particle%20packing%20in%202D%2F3D%3A%20which%20tool%20for%20which%20application%3F%EF%BC%88arXiv%202607.26992%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9ADEM%20%E5%AF%86%E5%BA%A6%E6%9C%80%E9%AB%98%E4%BD%86%E6%85%A2%E4%B8%89%E4%B8%AA%E6%95%B0%E9%87%8F%E7%BA%A7%EF%BC%8CDR%20%E5%BF%AB%201800%20%E5%80%8D%E8%80%8C%E5%AF%86%E5%BA%A6%E4%BD%8E%209%25%E3%80%82%E5%B9%B6%E8%AE%A8%E8%AE%BA%E5%A6%82%E4%BD%95%E5%BB%B6%E4%BC%B8%E5%88%B0%E6%88%91%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E3%80%82" target="_blank">
+    <div class="conc">结论：不存在通吃的堆积生成器，作者给出按应用场景选工具的指南——追求密度保真选 DEM，追求吞吐量选顺序法；对我而言，粉末床初始堆积的代表性直接决定熔池热-流仿真与合成训练数据的可信度。</div></a>
+  <details><summary>术语速查（点开）</summary>
+    <div class="term"><b>粒度分布 PSD（particle size distribution）</b>：描述粉末中不同粒径颗粒所占比例的统计分布，是粉末原料的核心指标。本文中：作为堆积保真度的目标，用 Hellinger 距离衡量生成堆积与目标 PSD 的偏差。</div>
+    <div class="term"><b>相对密度 Φ</b>：堆积体中固体所占体积分数，反映堆积的致密程度。本文中：以阿基米德法测得的工业 MIM 喂料固相含量 φ_exp = 0.62 作为代表性参照。</div>
+    <div class="term"><b>离散元法 DEM（discrete element method）</b>：逐颗粒求解接触力与运动方程的数值方法，用于模拟颗粒体系的堆积与流动。本文中：由 LAMMPS（重力沉降）与 dp3D（等静压缩）两套代码代表，是最准也最慢的一档。</div>
+  </details>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">⑥ 物理引导机器学习 PIML · 相关度1</span>
+    <a href="http://arxiv.org/abs/2607.26207v1">arXiv 原文</a></div>
+  <h2>物理与隐私的交汇：面向隐私保护的脑肿瘤生物力学建模的联邦 PINN</h2><div class="en">Where Physics Meets Privacy: Federated PINNs for Privacy-Preserving Brain Tumor Biomechanical Modeling</div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E9%9A%90%E7%A7%81%E7%BA%A6%E6%9D%9F%E4%B8%8B%E7%9A%84%E8%B7%A8%E6%9C%BA%E6%9E%84%E5%8C%BB%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Where%20Physics%20Meets%20Privacy%3A%20Federated%20PINNs%20for%20Privacy-Preserving%20Brain%20Tumor%20Biomechanical%20Modeling%EF%BC%88arXiv%202607.26207%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E5%B8%B8%E8%A7%84%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E9%9C%80%E6%8A%8A%E5%A4%9A%E4%B8%AD%E5%BF%83%E6%82%A3%E8%80%85%20MRI%20%E6%B1%87%E9%9B%86%E5%88%B0%E4%B8%80%E5%A4%84%E8%AE%AD%E7%BB%83%EF%BC%8C%E4%B8%8E%E9%9A%90%E7%A7%81%E6%B3%95%E8%A7%84%E5%86%B2%E7%AA%81%E3%80%82" target="_blank"><div class="q">研究问题：脑肿瘤生物力学建模既需要跨机构数据以保证泛化，又受 GDPR、HIPAA 等隐私法规限制不能汇集原始数据。</div></a>
+  <div class="methods">
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E8%81%94%E9%82%A6%E5%B9%B3%E5%9D%87%E7%AE%97%E6%B3%95%20FedAvg%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Where%20Physics%20Meets%20Privacy%3A%20Federated%20PINNs%20for%20Privacy-Preserving%20Brain%20Tumor%20Biomechanical%20Modeling%EF%BC%88arXiv%202607.26207%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E4%B8%89%E4%B8%AA%E6%A8%A1%E6%8B%9F%E4%B8%B4%E5%BA%8A%E7%AB%99%E7%82%B9%E7%BB%8F%20100%20%E8%BD%AE%E9%80%9A%E4%BF%A1%E5%8F%AA%E5%85%B1%E4%BA%AB%E6%A8%A1%E5%9E%8B%E6%9D%83%E9%87%8D%EF%BC%8C%E5%8E%9F%E5%A7%8B%20MRI%20%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%87%BA%E6%9C%AC%E5%9C%B0%E3%80%82" target="_blank">
+      <div class="m">联邦学习 FedAvg<span>仅上传模型权重</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E7%BA%BF%E6%80%A7%E5%BC%B9%E6%80%A7%E6%96%B9%E7%A8%8B%E6%9E%84%E6%88%90%E7%9A%84%E7%89%A9%E7%90%86%E6%8D%9F%E5%A4%B1%E9%A1%B9%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Where%20Physics%20Meets%20Privacy%3A%20Federated%20PINNs%20for%20Privacy-Preserving%20Brain%20Tumor%20Biomechanical%20Modeling%EF%BC%88arXiv%202607.26207%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E6%8A%8A%E7%BA%BF%E6%80%A7%E5%BC%B9%E6%80%A7%E6%96%B9%E7%A8%8B%E4%BD%9C%E4%B8%BA%E7%89%A9%E7%90%86%E7%BA%A6%E6%9D%9F%E5%8A%A0%E5%85%A5%E6%8D%9F%E5%A4%B1%EF%BC%8C%E4%BD%BF%E9%A2%84%E6%B5%8B%E4%BD%8D%E7%A7%BB%E5%9C%BA%E7%AC%A6%E5%90%88%E8%BD%AF%E7%BB%84%E7%BB%87%E5%BD%A2%E5%8F%98%E8%A7%84%E5%BE%8B%E3%80%82" target="_blank">
+      <div class="m">线性弹性物理损失<span>约束组织位移场</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E8%B7%A8%E6%9C%BA%E6%9E%84%E8%81%94%E9%82%A6%E8%AE%AD%E7%BB%83%E8%AE%BE%E7%BD%AE%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Where%20Physics%20Meets%20Privacy%3A%20Federated%20PINNs%20for%20Privacy-Preserving%20Brain%20Tumor%20Biomechanical%20Modeling%EF%BC%88arXiv%202607.26207%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E4%B8%89%E4%B8%AA%E6%A8%A1%E6%8B%9F%E4%B8%B4%E5%BA%8A%E7%AB%99%E7%82%B9%E5%90%84%E8%87%AA%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%82%A3%E8%80%85%E7%89%B9%E5%BC%82%E6%80%A7%20MRI%20%E6%95%B0%E6%8D%AE%E8%AE%AD%E7%BB%83%E5%B1%80%E9%83%A8%E7%BD%91%E7%BB%9C%E3%80%82" target="_blank">
+      <div class="m">三站点本地训练<span>各自基于患者 MRI</span></div></a>
+  </div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E8%81%94%E9%82%A6%E6%A8%A1%E5%9E%8B%E4%B8%8E%E9%9B%86%E4%B8%AD%E5%BC%8F%E5%9F%BA%E7%BA%BF%E7%9A%84%E5%87%86%E7%A1%AE%E7%8E%87%E5%AF%B9%E6%AF%94%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Where%20Physics%20Meets%20Privacy%3A%20Federated%20PINNs%20for%20Privacy-Preserving%20Brain%20Tumor%20Biomechanical%20Modeling%EF%BC%88arXiv%202607.26207%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%81%94%E9%82%A6%E6%A8%A1%E5%9E%8B%2091.4%25%20%E5%AF%B9%E9%9D%9E%E8%81%94%E9%82%A6%E6%B1%87%E9%9B%86%E8%AE%AD%E7%BB%83%E5%9F%BA%E7%BA%BF%2090.0%25%E3%80%82" target="_blank">
+    <div class="res good">联邦反超集中式基线<span>总体准确率 91.4%，高于汇集数据训练的 90.0%</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BAAUC%20%E4%B8%8E%E5%9E%82%E4%BD%93%E7%98%A4%E5%88%86%E7%B1%BB%E5%87%86%E7%A1%AE%E7%8E%87%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Where%20Physics%20Meets%20Privacy%3A%20Federated%20PINNs%20for%20Privacy-Preserving%20Brain%20Tumor%20Biomechanical%20Modeling%EF%BC%88arXiv%202607.26207%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E5%B9%B3%E5%9D%87%20AUC%200.985%EF%BC%8C%E5%9E%82%E4%BD%93%E8%85%BA%E7%98%A4%E5%87%86%E7%A1%AE%E7%8E%87%E4%BB%8E%2085.6%25%20%E5%8D%87%E8%87%B3%2094.5%25%E3%80%82" target="_blank">
+    <div class="res good">分类性能与难类提升明显<span>各肿瘤类别平均 AUC 0.985，垂体瘤准确率 85.6% → 94.5%</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E6%97%A0%E6%95%A3%E5%BA%A6%EF%BC%88divergence-free%EF%BC%89%E4%BD%8D%E7%A7%BB%E5%9C%BA%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Where%20Physics%20Meets%20Privacy%3A%20Federated%20PINNs%20for%20Privacy-Preserving%20Brain%20Tumor%20Biomechanical%20Modeling%EF%BC%88arXiv%202607.26207%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E7%89%A9%E7%90%86%E6%8D%9F%E5%A4%B1%E4%BD%BF%E8%81%94%E9%82%A6%E8%AE%AD%E7%BB%83%E4%BA%A7%E7%94%9F%E5%B9%B3%E6%BB%91%E3%80%81%E6%97%A0%E6%95%A3%E5%BA%A6%E3%80%81%E7%AC%A6%E5%90%88%E9%A2%84%E6%9C%9F%E7%BB%84%E7%BB%87%E5%BD%A2%E5%8F%98%E7%9A%84%E4%BD%8D%E7%A7%BB%E5%9C%BA%E3%80%82" target="_blank">
+    <div class="res good">位移场物理自洽<span>训练得到平滑且无散度的位移场，与预期组织形变一致</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E6%8D%9F%E5%A4%B1%E4%B8%8E%E8%81%94%E9%82%A6%E8%81%9A%E5%90%88%E7%9A%84%E7%BB%84%E5%90%88%E8%8C%83%E5%BC%8F%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Where%20Physics%20Meets%20Privacy%3A%20Federated%20PINNs%20for%20Privacy-Preserving%20Brain%20Tumor%20Biomechanical%20Modeling%EF%BC%88arXiv%202607.26207%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E4%B8%89%E7%AB%99%E7%82%B9%20FedAvg%20100%20%E8%BD%AE%20%2B%20%E7%BA%BF%E6%80%A7%E5%BC%B9%E6%80%A7%E7%89%A9%E7%90%86%E6%8D%9F%E5%A4%B1%EF%BC%8C%E5%87%86%E7%A1%AE%E7%8E%87%2091.4%25%20%E5%8F%8D%E8%B6%85%E9%9B%86%E4%B8%AD%E5%BC%8F%2090.0%25%E3%80%82%E5%B9%B6%E8%AE%A8%E8%AE%BA%E5%A6%82%E4%BD%95%E5%BB%B6%E4%BC%B8%E5%88%B0%E6%88%91%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E3%80%82" target="_blank">
+    <div class="conc">结论：物理约束可以与联邦聚合共存，且几乎不牺牲性能；映射到我的方向，这对应多台增材设备或多家工厂想协同训练熔池模型、却不愿共享工艺数据的现实约束。</div></a>
+  <details><summary>术语速查（点开）</summary>
+    <div class="term"><b>联邦学习 / FedAvg</b>：多方各自在本地数据上训练，只把模型权重上传中心服务器做加权平均，原始数据不出本地。本文中：三个模拟临床站点经 100 轮 FedAvg 聚合，实现跨机构建模而不汇集 MRI。</div>
+    <div class="term"><b>线性弹性方程</b>：描述小变形下固体应力与应变呈线性关系的连续介质力学控制方程。本文中：构成物理损失项，约束网络输出的组织位移场。</div>
+    <div class="term"><b>AUC（ROC 曲线下面积）</b>：衡量分类器在各阈值下区分能力的指标，1.0 为完美、0.5 等同随机。本文中：联邦模型在各肿瘤类别上的平均 AUC 达 0.985。</div>
+  </details>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE8tNU85NGgwaTZFNmZ5NWprZTFqcmY0MDM0bElEM1BUaWtwTGgtYmZla0w3OTgtNTIteElDMFZuYTFCOE9pT1BnT2N2M0ViWkV5UEkySHVjQWdKaHZocHVfX0dLRjRDQ2V5eDBVSkNCOFJmTDVNellz?oc=5">原文</a></div>
+  <h2>工业电子束打印：JEOL 推出更快的金属增材制造设备</h2><div class="en">Trend Hunter · 2026-07-31</div>
+  <div class="news">日本电子（JEOL）发布一款速度更快的工业电子束金属增材制造设备。仅据 RSS 标题，且标题被截断，未给出机型、速度指标或上市时间。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE5ZMjA5eFdRMHNNTnBpcEVTZnBhbFdxaHZBSE9DbVpjaldFODFzTW1ncEtjNW0yNHk1REhqdEpiNkk2bWdwWXNFZEFlWDJ6MnBLS2JScWRR?oc=5">原文</a></div>
+  <h2>骄成超声（688392）：会计师事务所关于向特定对象发行股票申请文件审核问询函的回复</h2><div class="en">cfi.net.cn · 2026-07-30</div>
+  <div class="news">上海骄成超声波技术股份有限公司定向增发申请文件的审核问询函回复公告。仅据 RSS 标题；属融资合规披露，与在线监测技术无直接关联，系 ultrasonic 关键词命中。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNTTBvTHNJXy11Vnl3T2xPR1dLYkVqcjY3am5ZRkU1MW4zbjR1bHN0WGU3UGY1NzNuSm1qT2RraDRLTU01WjFnWVVJYWloSE44WFFlZ25VZEUwcVFwYmJnRF85MmxWMjE4SVRJd3dBVUI2Q3QwbXRINVJhdnBjTWstWk5QclpCSS1VRXdSRkFETGg5cXA3NWxj?oc=5">原文</a></div>
+  <h2>DAIHEN 携新品 ArcBuilder 3D 进入 WAAM 市场</h2><div class="en">3D Printing Industry · 2026-07-30</div>
+  <div class="news">焊接设备厂商 DAIHEN（达汉）以新产品 ArcBuilder 3D 切入电弧增材制造（WAAM）市场。仅据 RSS 标题，未给出规格与传感配置。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQOWthVlZpcmZCeEo5Q3NUOGJaTDgzdWNsbDloMS1BQWJNY0lBVG4wV2E1Q0xUbzBwS2pUN3IzYWxDLWNRTmdPY1FMODNJQmxydzYxaEVsSUNwNkJhbnNfSWZxY2RCWkFKUVBPdF9hbDJHWk5Bb05YWHh1X3VwYzdxLWhUa2FuUG9pZndlbi1CVHFPMHJkVFhQWk1qdUxMVWNKci1KZFphVHNDRGF1MWxUaWVVeVBlTzI3UGVn?oc=5">原文</a></div>
+  <h2>美国项目推动金属 3D 打印供应商资质认证的标准化</h2><div class="en">3Druck.com · 2026-07-30</div>
+  <div class="news">一项美国计划推动金属 3D 打印供应商资质认证的标准化。仅据 RSS 标题；与下方 1050 万美元投入疑为同一事件的后续报道，但摘要未点明，不作合并断言。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE0wVEttdDJOeWpTOXhQYzhqTnBaUUxRRTNtcVZYTGstaUlBZGJ6V3BPSHllUTZ1OC0xVjhoLUhvVXBmbV9rMmdDakhaZ0RYOVB4ZFhrTTJVbGNva1RBUDNYYjlfRUxYWE84ODlTUlJhajd0cjNkeXZINUtxUTM?oc=5">原文</a></div>
+  <h2>顽刻巅峰 3D 打印鞋：依托全链路晶格自研体系，重塑国货穿戴产业发展新格局</h2><div class="en">infomorning.com · 2026-07-29</div>
+  <div class="news">国产品牌以自研晶格设计体系推 3D 打印鞋。仅据 RSS 标题；内容偏消费品营销稿，与金属增材在线监测无关。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNazhvSXpiRjV3b2FIcmY0RTJZa3lRVmxvZ21sT09DYVltTDFiS3FieWJtM2hMSFNfUFo3MWlmTDIzWXIxOURLTGVQenR1TjNXc18tUGhQTVI1UkJVS3VrcDIzcnM4N0h3cU9uLUJBeHhmSUJVVzJ2THdaX2xkbUFyVG5XSDZZUk8tMEV1a2V5a0t0dGo4RWtIX3Y3VkpTMVlLdnNaQ0dUMXZKUFMz?oc=5">原文</a></div>
+  <h2>美国投入 1050 万美元用于金属 3D 打印的资质认证</h2><div class="en">3Druck.com · 2026-07-28</div>
+  <div class="news">美国投入 1050 万美元推进金属 3D 打印资质认证。仅据 RSS 标题；昨日已收录，仍在 168 小时窗口内。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQNHlfa203UTNhWlEtbHBJbUZDVkpEaFNsQ0FfR3hfcWhaZTFqejNzbk1uRzYza0xFSDAyVWhUQkVpR0NwU25jQ1NoRU9DZDRfbDRpZmNoTnRrQWZrTWlaTUNqNG1jMkNoRjdBN2taUUw1VFRFTWhCNlBfdmdIR3pUWjlGRVEtUUgwSi16UUU0X3hZWFl4TWxHMXZwZjJpVHV0VmVDYUczbmRGVHY5TEE?oc=5">原文</a></div>
+  <h2>GKN Aerospace 以定向能量沉积（DED）为 GTF 发动机维修提供“创新支持”</h2><div class="en">3D Printing Industry · 2026-07-28</div>
+  <div class="news">GKN Aerospace 用 DED 工艺为 GTF 发动机维修提供支持。仅据 RSS 标题，未给出部件与工艺参数；昨日已收录。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNQjB3Mko3U095c1RMWk9JSVBja3VmdHdPUUdac0pheXlBTjk5ak4tNXBwQ191OEMwVUcxNTFmS1dpT1BCT0E5M1g0cGhZMDlId0sySTFILWx0R19YZWVkTUh0ZER3MzB4M1d4alNYcUZzendob21wdy16WTIteE0ta1ktS3BqUXFvaVZlY3dtX09VZTFRU1kzTGlDOW5mS0FtRnF0WV95QnZHTkNDYzdnX0FTNjV5bk1Odjk3T3NEaVlSVUtPMURN?oc=5">原文</a></div>
+  <h2>3D Systems 与 Elmet Technologies 推进面向高超声速航空航天零件的 C103 金属 3D 打印</h2><div class="en">Quiver Quantitative · 2026-07-27</div>
+  <div class="news">3D Systems 与 Elmet Technologies 合作推进 C103 铌合金 3D 打印用于高超声速航空航天零件。仅据 RSS 标题；昨日已收录。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOUENMRUhFLWpjdFBTNkp5dGlpNks1QUpkOExmN0lxcmNGeXRWU0NEcnBVQXlNMDVqN0tucE9CNDIxZi1pTmhNV1owQnczUGpUbVJzcUYwVHdmX1hYY0ZITHBMWFh1Z0t6dHVRamVvY2JGLUxwTGU1VEV1Qm5UY2lrclhyQTlHVVo1aERLQ2FyNXhqRzl6SVBIMGtfU0ZJbzFGZUhSSnZYMEEzeDhNcTdtSC14a29RN3ZaYVp2S3FWcw?oc=5">原文</a></div>
+  <h2>Additive Assurance 将金属 3D 打印实时监测引入日本</h2><div class="en">3Druck.com · 2026-07-24</div>
+  <div class="news">Additive Assurance 把面向金属 3D 打印的实时（在线）监测方案带入日本市场。仅据 RSS 标题；昨日已收录，仍在窗口内。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxOZm9vSGVBekxhWXNoRHVuMnJCUFlVV09HMC1tbDFLdnI0UXdSZDZIQTRoMnBCdjRFLXpvaTUxWGVkRjlwdkZEREswZEJNSEFacjBpd1dPVjR4VjcyZ2NGcEdZdmVqRm4wdGNRS3N4SmhfcExlR003cW1hOW96Q1BhVC11cnZTazdoelJDS3pzU0VWblVpMGhrZ3N0SG9KaGc?oc=5">原文</a></div>
+  <h2>Additive Assurance 把金属 3D 打印质量保证业务拓展至日本</h2><div class="en">TCT Magazine · 2026-07-24</div>
+  <div class="news">同一事件的另一家媒体报道，措辞为把“质量保证”业务带到日本。仅据 RSS 标题；昨日已收录。</div>
+</div>
+
+<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论<br>
+点击色块可跳转 claude.ai 深入追问（需登录）；点开每卡底部"术语速查"可离线阅读注释</div>
+</body>
+</html>
