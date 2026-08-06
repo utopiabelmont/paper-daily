@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>论文图卡 2026-08-07</title>
+<style>
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#FAF9F5;
+     color:#2C2C2A;max-width:780px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.date{color:#888780;font-size:13px;margin-bottom:20px}
+.card{background:#fff;border:1px solid #E3E1D9;border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.pill{background:#E6F1FB;color:#0C447C;border-radius:12px;padding:2px 10px}
+.meta a{color:#185FA5;text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.en{color:#888780;font-size:12px;margin-bottom:10px}
+a.blk{display:block;text-decoration:none;color:inherit}
+a.blk:hover .q,a.blk:hover .res,a.blk:hover .conc,a.blk:hover .m{filter:brightness(0.96)}
+.q{background:#F1EFE8;color:#444441;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:10px}
+.methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.methods a.blk{flex:1;min-width:140px;display:flex}
+.m{flex:1;background:#EEEDFE;color:#3C3489;border-radius:8px;
+   padding:8px 10px;font-size:13px;font-weight:600}
+.m span{display:block;font-weight:400;font-size:12px;color:#534AB7;margin-top:2px}
+.res{border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.res span{display:block;font-weight:400;font-size:12px;margin-top:2px}
+.res.good{background:#E1F5EE;color:#085041}.res.good span{color:#0F6E56}
+.res.warn{background:#FAECE7;color:#712B13}.res.warn span{color:#993C1D}
+.res.bad{background:#FCEBEB;color:#791F1F}.res.bad span{color:#A32D2D}
+.conc{background:#FAEEDA;color:#633806;border-radius:8px;padding:8px 12px;font-size:13px;margin-top:2px}
+.news{background:#E6F1FB;color:#0C447C;border-radius:8px;padding:8px 12px;font-size:13px}
+details{margin-top:10px;border-top:1px dashed #E3E1D9;padding-top:8px}
+details summary{cursor:pointer;font-size:12px;color:#888780;user-select:none}
+details[open] summary{color:#2C2C2A}
+.term{background:#F7F6F1;border-radius:8px;padding:8px 12px;font-size:12px;margin-top:8px}
+.term b{color:#3C3489}
+.foot{color:#B4B2A9;font-size:12px;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>每日论文图卡</h1>
+<div class="date">2026-08-07</div>
+<div class="card">
+  <div class="meta"><span class="pill">运行记录</span>
+    <a href="http://export.arxiv.org/api/query">arXiv API</a></div>
+  <h2>今日无匹配新论文</h2><div class="en">fetch_arxiv.py --profile am ｜ 72h 窗口 ｜ 候选 0 篇（跳过历史重复 1 篇）</div>
+  <div class="q">研究问题：交叉方向（激光增材在线监测 × 光学精密测量／机器学习）本期候选 0 篇，不含论文卡片，如实记录。</div>
+  <div class="methods">
+    <div class="m" style="flex:1">arXiv 抓取<span>start=100 页返回 429，重试第 2 次成功</span></div>
+    <div class="m" style="flex:1">新闻抓取<span>10 条，失败查询 0/8</span></div>
+  </div>
+  <div class="res warn">0 篇属"无新命中"而非抓取失败<span>429 出现在第二页且已被重试自愈，分页完整完成</span></div>
+  <div class="res warn">连续两日 arXiv 侧 HTTP 错误<span>08-06 两次 503，今日一次 429，已接近限流阈值</span></div>
+  <div class="conc">结论：论文侧连续两日无有效新增（昨日唯一 1 篇与本方向无关），但行业侧新增 6 条，且头两条直接命中金属增材制造实时在线检测，本期价值集中在动态部分。</div>
+  <details><summary>术语速查（点开）</summary>
+    <div class="term"><b>HTTP 429（Too Many Requests）</b>：服务端限流响应，表示单位时间内请求过多而被拒。本文中：出现在 arXiv 分页抓取的第二页请求上，由脚本自带重试在第 2 次消除，未造成结果缺口。</div>
+    <div class="term"><b>72 小时窗口</b>：只保留投稿时间落在最近 72 小时内的预印本的过滤条件。本文中：本期检索在该窗口内除 1 篇历史重复外无任何命中，故候选数为 0。</div>
+  </details>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNdjB5Uk5sLVVzZkhRcmVWdVlSZ3UtbzNEcGlKTFNMSVJwVFJEVXdNeTFLOGxtNnlNd0NHS0kzTy1MY0JSWE5QaVR6eGl6a0p1cTFCZHlZN2N6eUg1c0VkWkxWLXZWS0hnck5KT2lfeFJ0djRFVWhqUjVTVnFHWXBsVzk0SXhqUGltdXJqQUo5RG5XbF9ZUlkwalB3MDJfaDlBbmcza2dn0gGmAUFVX3lxTE12MHlSTmwtVXNmSFFyZVZ1WVJndS1vM0RwaUpMU0xJUnBUUkRVd015MUs4bG02eU13Q0dLSTNPLUxjQlJYTlBpVHp4aXprSnVxMUJkeVk3Y3p5SDVzRWRaTFYtdlZLSGdyTkpPaV94UnR2NEVVaGpSNVNWcUdZcGxXOTRJeGpQaW11cmpBSjlEbldsX1lSWTBqUHcwMl9oOUFuZzNrZ2c?oc=5">原文</a></div>
+  <h2>Phase3D 与罗文大学就金属增材制造实时检测达成合作</h2><div class="en">VoxelMatters · 2026-08-06</div>
+  <div class="news">在线检测厂商 Phase3D 与罗文大学（Rowan University）就金属增材制造的实时检测建立合作（仅据标题；合作形式、传感手段、目标缺陷类型与工艺范围均未给出）。本期与我的方向最相关的一条。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQbWNhUmxqMk5OekZrZk82UmxhYmFSOHlKcXg1bzJMY2ZRSXc4TEUzbTF4RGlva3JkMnBFSF9zSkM4c2Jqb0huNjJXdnlnbjdOZ05Ya2F5UHZ5MmxRLXIyTTd6OGdFTkpXeUY1T1RsOFhkRndSUjBCWWVJXzZ4T0tCLWpZQ3VOaGROWHc?oc=5">原文</a></div>
+  <h2>Phase3D 与罗文大学就金属增材制造过程监测达成合作</h2><div class="en">Metal Additive Manufacturing magazine · 2026-08-06</div>
+  <div class="news">同一合作事件由 MAM 杂志报道，标题用词为"过程监测（process monitoring）"而非"检测（inspection）"（仅据标题；两家媒体措辞差异是否对应不同技术描述，未给出）。与上一条互为同源报道。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNWURDOVU1cHFELV9KWHZKbnhaMzRlWllKZ1JpN01BR3JianphUDNlNEZvZzFFTVFVeDJMaENETEJKMm1wTklid2FTZFUxQmFJazRNQ0dieUoxSkpNcGphNDlFNm4yRkFuZC1PUFphTnRoVTF4Mi1wYTRXOEVYYzVxc2M2Z0dHdw?oc=5">原文</a></div>
+  <h2>iAM3D 发布大幅面 LPW Z2500 金属增材制造设备</h2><div class="en">Metal Additive Manufacturing magazine · 2026-08-06</div>
+  <div class="news">iAM3D 推出大幅面金属增材制造设备 LPW Z2500（仅据标题；幅面尺寸、激光功率、送料形式与是否配备在线监测未给出）。与昨日 3D Printing Industry 报道的同一机型为同一事件。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNdGs2TEZ0NVNWd1otZUpacUJlNThCVGdyVDVrRTlNZU1fUWtQaGktMXFOT3FmY1V6WFYwRXFoSmZyVkU4aEp1RVRJUGJvNWtrM3ExLUJuSjl0U1U0Q3loWkV3YlpGbTVhcDdEYndOWFZfeEhYdHFmUU1nenhzNWlraTdBQ2lHYlJnbEhyem9VamdXS2pueDhIb2Y5aTVUeEctX0M3SWRTcXdZeEFY?oc=5">原文</a></div>
+  <h2>金属 3D 打印：为什么粉末履历正在成为一项质量因素</h2><div class="en">3Druck.com · 2026-08-06</div>
+  <div class="news">一篇讨论粉末履历（powder history）为何正成为质量影响因素的报道（仅据标题；具体机理、量化指标与数据来源未给出）。与在线监测的关联：原料状态若是漂移变量，监测模型须将其作为协变量处理。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMikAJBVV95cUxQRGN0OUdYQTNBTC13TmJMT29IdXVDbTJ2d1ZOYTZQUzdaMVB4S1B6a0M0SExRMGpMOUZ4QjlPQXh2eHNMdWtZVThQWFJlb3VxQ08tZjVSdlBUNE5SQkYxOXNlYVZ3ZmxmalBzMlpBTkU4M21pVjd4dk5ULTV0TG04ZnR1RVpDZ0NjYXRMRGJ3NkZxZWctVjNFM2thaXpQUHJLemlQby1oREtXY2tsLTVLeWlnUVA2WUx0VFpqOThyM25hN25LRjRiYTB4S3Flb2pCZGRBNncwUnFndERrQmxyNHFtS1BTbUdteXgydnJzUXFYZWp0eF8zd1hjRk14RlpQN0daa3huODJLUW1fS28yWg?oc=5">原文</a></div>
+  <h2>韩国船级社认证 3D 打印技术，应用范围从新件生产扩展至维护与修复</h2><div class="en">shipmanagementinternational.com · 2026-08-06</div>
+  <div class="news">船舶管理媒体报道 KR 的 3D 打印认证覆盖范围由新件生产扩展到维护与修复（仅据标题；被认证工艺、材料与验收检测要求未给出）。为 08-02 起同一 KR 认证事件的第 4 家媒体版本。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQblkyYWdtYWtJUlhOaHFvZjhzcWpfRDJpNW42Q2VFYkw3bGFSYlBldmh4Q1ZqOF85UXJQaXl5eFQyRjdVemM3VG4tSnhBc3JvcklLc25OUHhXd09MNHZJaVQ2Y18xLW9Kc0FhRFJxU1BTSnloVkY3ZktPbW5wY2FIOHU0QjVyQXk3QmNaOE9ZSjdBSV9UY1pVUDlndDl5X3lGZDEtWXhFOVRZb2doTnJzX05FaTRzQV9OU2VvZw?oc=5">原文</a></div>
+  <h2>Velo3D 在利弗莫尔新建生产基地，扩充金属 3D 打印产能</h2><div class="en">3Druck.com · 2026-08-06</div>
+  <div class="news">Velo3D 在美国加州利弗莫尔设立新生产基地以扩展金属 3D 打印业务（仅据标题；产能规模、设备型号、投产时间与投资额未给出）。属产能布局类商业动态。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态 · 昨日重复</span>
+    <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNQ1dVcEdIVkdPdWZzSk56Vlc5UkppRDBHN3dfQURWanBFRHhRaUJmUFktYlBSSGVOQmgwaUJpQnk5LW5tZHE0bjVydTBoZWRsc2tTbUhFMHRMbzdXYTJRQWNXRjBUM2tBaFNGdkl3UjRJSXBLTENUMF9XdHJwdGlOYTJDVWV3dGh4MDJEdVUxTUE0OXp2YXIycHkyanYyTzA3?oc=5">原文</a></div>
+  <h2>超 10 万个样本验证：深圳先进院提出非接触激光超声技术，实现锂电池 SoC/SoH 实时监测</h2><div class="en">搜狐网 · 2026-08-05</div>
+  <div class="news">报道称中科院深圳先进技术研究院提出一种非接触式激光超声方法，用于锂电池 SoC/SoH 实时监测，称经超过 10 万个样本验证（仅据标题；激发/接收方式、频段、精度指标与验证方式均未给出）。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态 · 昨日重复</span>
+    <a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE9rZzRKQzRmSE5GZDJ6Rjhvb0tPdEhfbGlEY2RleEhhYkFNS1B5cFZlTGZpZmhmRkgxLWlhU0p0WE9zN19iMFRTUDZpZTBrcEE4Q0haejZuMF8?oc=5">原文</a></div>
+  <h2>美国 NIST 为陶瓷增材制造浆料开发粘度计量标准</h2><div class="en">维度网 · 2026-08-05</div>
+  <div class="news">NIST 针对陶瓷增材制造用浆料开展粘度计量标准的开发（仅据标题；标准编号、测量方法与适用工艺范围未给出）。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态 · 昨日重复</span>
+    <a href="https://news.google.com/rss/articles/CBMiyAJBVV95cUxOeHIyUzBQazJmOGppYkFMaVJhdExKTHNaWlZnRk5nTk1MX3hISWVCazIxVk5ZZEtvYXNFWTQ0bEJEQ0cwOU5UNHJ0eWNKQjhIeV9nakRmUzNOSC1ZNjF5TjZrWHB2ci1tOHdldVZkX2RnYjNScDlXR095TXk5Z0dsTXlzNy12WkhzcGxEcTVqX3dITk9aWGpCbXNVODVVTE9SWTlodDFZTDNnZDQxMzF2bUhTZGN1X01KelpSdHE5T2xQOGFteTdxS091R1BZWkhjY28yajNYLXVfME84ZE40cHlITGp4VzZVUHNRVWtnUkNIMW5aN3NSVmYzSG9hZWMxa2p3VVRKbnJxSng2aVk4ZW55clBCcFRydFlhZ09FLVJOWHltTDdzZ2pIRXk4NnFOY2ZVZld3WHZWVDFwTFlRbXJjMlprNW9s?oc=5">原文</a></div>
+  <h2>3D 打印铜腔在受限冷却条件下通过热运行测试</h2><div class="en">3Druck.com · 2026-08-05</div>
+  <div class="news">一台增材制造的铜制腔体在受限冷却条件下完成热运行（hot-fire）测试（仅据标题；应用对象、材料牌号、打印工艺与测试条件未给出）。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态 · 昨日重复</span>
+    <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxQUnZDX0xkY24zdXVHMjBkQlFfcGt0Q2tKTkYtRVY4Nk1xMDV3cHB0OEJKdzQ0aXdfZG1BaDh1dFNfXzFneThfXzhCR2VjSjlhdDVFbFdhSTdHMWdsQUNfM1JRZ1YyS0RTcy1tTkx6dkZuZ3VyNDNuX1I1a194VVBmMlY1VUEzVDJDMDdz?oc=5">原文</a></div>
+  <h2>AM Solutions 获韩国船级社金属增材制造认证</h2><div class="en">Metal Additive Manufacturing magazine · 2026-08-04</div>
+  <div class="news">增材制造后处理设备厂商 AM Solutions 获得 KR 的金属增材制造认证（仅据标题；认证范围、适用工艺与依据标准未给出）。</div>
+</div>
+
+<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论<br>
+点击色块可跳转 claude.ai 深入追问（需登录）；点开每卡底部"术语速查"可离线阅读注释</div>
+</body>
+</html>
