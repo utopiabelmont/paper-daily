@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>论文图卡 2026-08-25</title>
+<style>
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#FAF9F5;
+     color:#2C2C2A;max-width:780px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.date{color:#888780;font-size:13px;margin-bottom:20px}
+.card{background:#fff;border:1px solid #E3E1D9;border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.pill{background:#E6F1FB;color:#0C447C;border-radius:12px;padding:2px 10px}
+.meta a{color:#185FA5;text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.en{color:#888780;font-size:12px;margin-bottom:10px}
+a.blk{display:block;text-decoration:none;color:inherit}
+a.blk:hover .q,a.blk:hover .res,a.blk:hover .conc,a.blk:hover .m{filter:brightness(0.96)}
+.q{background:#F1EFE8;color:#444441;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:10px}
+.methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.methods a.blk{flex:1;min-width:140px;display:flex}
+.m{flex:1;background:#EEEDFE;color:#3C3489;border-radius:8px;
+   padding:8px 10px;font-size:13px;font-weight:600}
+.m span{display:block;font-weight:400;font-size:12px;color:#534AB7;margin-top:2px}
+.res{border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.res span{display:block;font-weight:400;font-size:12px;margin-top:2px}
+.res.good{background:#E1F5EE;color:#085041}.res.good span{color:#0F6E56}
+.res.warn{background:#FAECE7;color:#712B13}.res.warn span{color:#993C1D}
+.res.bad{background:#FCEBEB;color:#791F1F}.res.bad span{color:#A32D2D}
+.conc{background:#FAEEDA;color:#633806;border-radius:8px;padding:8px 12px;font-size:13px;margin-top:2px}
+.news{background:#E6F1FB;color:#0C447C;border-radius:8px;padding:8px 12px;font-size:13px}
+details{margin-top:10px;border-top:1px dashed #E3E1D9;padding-top:8px}
+details summary{cursor:pointer;font-size:12px;color:#888780;user-select:none}
+details[open] summary{color:#2C2C2A}
+.term{background:#F7F6F1;border-radius:8px;padding:8px 12px;font-size:12px;margin-top:8px}
+.term b{color:#3C3489}
+.foot{color:#B4B2A9;font-size:12px;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>每日论文图卡</h1>
+<div class="date">2026-08-25</div>
+<div class="card">
+  <div class="meta"><span class="pill">⑥ 物理引导机器学习 PIML · 相关度1</span>
+    <a href="http://arxiv.org/abs/2608.21332v1">arXiv 原文</a></div>
+  <h2>解剖学引导的神经网络：把解剖先验编码进损失与架构，并给出导丝致主动脉—髂动脉变形的 SE(3) 表述</h2><div class="en">Anatomy-Informed Neural Networks: Encoding Anatomic Priors in Loss and Architecture, with an SE(3) Formulation of Guidewire-Induced Aortoiliac Deformation</div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E6%8A%8A%E9%A2%86%E5%9F%9F%E5%85%88%E9%AA%8C%E7%BC%96%E7%A0%81%E8%BF%9B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%88%E8%BD%AF%E7%BA%A6%E6%9D%9F%E5%85%A5%E6%8D%9F%E5%A4%B1%E3%80%81%E7%A1%AC%E7%BA%A6%E6%9D%9F%E5%85%A5%E6%9E%B6%E6%9E%84%EF%BC%89%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Anatomy-Informed%20Neural%20Networks%3A%20Encoding%20Anatomic%20Priors%20in%20Loss%20and%20Architecture%2C%20with%20an%20SE%283%29%20Formulation%20of%20Guidewire-Induced%20Aortoiliac%20Deformation%EF%BC%88arXiv%202608.21332%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E6%8C%87%E5%87%BA%E8%A7%A3%E5%89%96%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E5%8F%AF%E8%83%BD%E6%95%B0%E5%80%BC%E4%B8%8A%E5%8F%AF%E4%BF%A1%E5%8D%B4%E8%A7%A3%E5%89%96%E5%AD%A6%E4%B8%8A%E4%B8%8D%E5%8F%AF%E8%83%BD%EF%BC%8C%E4%B8%94%E6%95%B0%E6%8D%AE%E7%A8%80%E7%BC%BA%E6%97%B6%E6%B3%9B%E5%8C%96%E5%BE%88%E5%B7%AE%EF%BC%8C%E5%9B%A0%E6%AD%A4%E6%8A%8A%E8%BD%AF%E5%85%88%E9%AA%8C%E5%81%9A%E6%88%90%E6%8D%9F%E5%A4%B1%E7%BD%9A%E9%A1%B9%E3%80%81%E6%8A%8A%E7%A1%AC%E5%85%88%E9%AA%8C%EF%BC%88%E5%A6%82%E8%A1%80%E7%AE%A1%E8%BF%9E%E7%BB%AD%E6%80%A7%EF%BC%89%E5%86%85%E5%BB%BA%E8%BF%9B%E6%9E%B6%E6%9E%84%E4%B8%8E%E7%8A%B6%E6%80%81%E8%A1%A8%E7%A4%BA%E3%80%82" target="_blank"><div class="q">研究问题：数据稀缺时，如何让深度学习的几何形变预测既数值合理、又不产生解剖学（物理结构）上根本不可能的结果？</div></a>
+  <div class="methods">
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E7%89%A9%E7%90%86%E4%BF%A1%E6%81%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%20PINN%20%E4%B8%AD%E7%9A%84%E8%BD%AF%E7%BA%A6%E6%9D%9F%E7%BD%9A%E9%A1%B9%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Anatomy-Informed%20Neural%20Networks%3A%20Encoding%20Anatomic%20Priors%20in%20Loss%20and%20Architecture%2C%20with%20an%20SE%283%29%20Formulation%20of%20Guidewire-Induced%20Aortoiliac%20Deformation%EF%BC%88arXiv%202608.21332%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E6%8A%8A%E5%88%86%E6%94%AF%E5%BC%82%E5%B8%B8%EF%BC%88%E5%A6%82%E8%82%BE%E7%A7%BB%E6%A4%8D%E5%8A%A8%E8%84%89%E4%BB%8E%E9%AB%82%E5%8A%A8%E8%84%89%E8%80%8C%E9%9D%9E%E4%B8%BB%E5%8A%A8%E8%84%89%E5%8F%91%E5%87%BA%EF%BC%89%E8%AE%BE%E4%B8%BA%E7%BD%9A%E9%A1%B9%EF%BC%8C%E4%BD%BF%E5%85%B6%E8%A2%AB%E8%A7%86%E4%B8%BA%E2%80%9C%E6%84%8F%E5%A4%96%E2%80%9D%E8%80%8C%E9%9D%9E%E2%80%9C%E4%B8%8D%E5%8F%AF%E8%83%BD%E2%80%9D%EF%BC%8C%E4%BD%9C%E8%80%85%E6%98%8E%E7%A1%AE%E8%AF%B4%E6%98%8E%E8%BF%99%E6%98%AF%E4%B8%8E%20PINN%20%E7%9A%84%E7%9B%B4%E6%8E%A5%E7%B1%BB%E6%AF%94%E3%80%82" target="_blank">
+      <div class="m">软先验入损失<span>类比 PINN 的罚项</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E6%8A%8A%E7%A1%AC%E7%BA%A6%E6%9D%9F%E5%86%85%E5%BB%BA%E8%BF%9B%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%E4%B8%8E%E7%8A%B6%E6%80%81%E8%A1%A8%E7%A4%BA%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Anatomy-Informed%20Neural%20Networks%3A%20Encoding%20Anatomic%20Priors%20in%20Loss%20and%20Architecture%2C%20with%20an%20SE%283%29%20Formulation%20of%20Guidewire-Induced%20Aortoiliac%20Deformation%EF%BC%88arXiv%202608.21332%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E6%8A%8A%E8%A1%80%E7%AE%A1%E8%BF%9E%E7%BB%AD%E6%80%A7%E7%AD%89%E7%A1%AC%E8%A7%A3%E5%89%96%E5%85%88%E9%AA%8C%E5%BB%BA%E8%BF%9B%E6%9E%B6%E6%9E%84%E4%B8%8E%E7%8A%B6%E6%80%81%E8%A1%A8%E7%A4%BA%EF%BC%8C%E4%BD%BF%E5%BE%97%E5%9C%A8%E5%85%88%E9%AA%8C%E5%85%81%E8%AE%B8%E6%9E%B6%E6%9E%84%E5%BC%BA%E5%88%B6%E7%9A%84%E5%9C%B0%E6%96%B9%EF%BC%8C%E9%9D%9E%E6%B3%95%E9%A2%84%E6%B5%8B%E5%9C%A8%E6%9E%84%E9%80%A0%E4%B8%8A%E5%B0%B1%E6%97%A0%E6%B3%95%E4%BA%A7%E7%94%9F%E3%80%82" target="_blank">
+      <div class="m">硬先验入架构<span>违例在结构上不可能</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E6%9D%8E%E7%BE%A4%20SE%283%29%20%E4%B8%8A%E7%9A%84%E6%A0%87%E6%9E%B6%E6%9B%B2%E7%BA%BF%E4%B8%8E%20Cosserat%20%E6%9D%86%E6%A8%A1%E5%9E%8B%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Anatomy-Informed%20Neural%20Networks%3A%20Encoding%20Anatomic%20Priors%20in%20Loss%20and%20Architecture%2C%20with%20an%20SE%283%29%20Formulation%20of%20Guidewire-Induced%20Aortoiliac%20Deformation%EF%BC%88arXiv%202608.21332%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E6%8A%8A%E8%A1%80%E7%AE%A1%E4%B8%AD%E5%BF%83%E7%BA%BF%E4%B8%8E%E5%AF%BC%E4%B8%9D%E8%B7%AF%E5%BE%84%E4%BB%8E%20R%5E3%20%E6%8F%90%E5%8D%87%E4%B8%BA%20SE%283%29%20%E4%B8%8A%E7%9A%84%E6%A0%87%E6%9E%B6%E6%9B%B2%E7%BA%BF%EF%BC%8C%E7%94%A8%20Cosserat%20%E6%9D%86%E6%8F%8F%E8%BF%B0%E5%AF%BC%E4%B8%9D%EF%BC%8C%E5%B9%B6%E9%80%9A%E8%BF%87%E5%8D%95%E8%BE%B9%E7%AE%A1%E8%85%94%E6%8E%A5%E8%A7%A6%E4%B8%8D%E7%AD%89%E5%BC%8F%E4%B8%8E%E5%8F%97%E8%BF%82%E6%9B%B2%E5%BA%A6%E8%B0%83%E5%88%B6%E3%80%81%E8%A7%A3%E5%89%96%E9%94%9A%E5%AE%9A%E7%9A%84%E8%A1%80%E7%AE%A1%E8%80%A6%E5%90%88%EF%BC%9B%E9%A2%84%E6%B5%8B%E5%8D%B3%E8%80%A6%E5%90%88%E5%BC%B9%E6%80%A7%E8%83%BD%E7%9A%84%E7%BA%A6%E6%9D%9F%E6%9E%81%E5%B0%8F%E7%82%B9%EF%BC%8C%E6%8E%A5%E8%A7%A6%E5%8A%9B%E4%B8%BA%E5%85%B6%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E3%80%82" target="_blank">
+      <div class="m">SE(3) 标架 + Cosserat 杆<span>单边管腔接触耦合</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8CWasserstein-2%20%E6%9C%80%E4%BC%98%E4%BC%A0%E8%BE%93%E6%8D%9F%E5%A4%B1%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Anatomy-Informed%20Neural%20Networks%3A%20Encoding%20Anatomic%20Priors%20in%20Loss%20and%20Architecture%2C%20with%20an%20SE%283%29%20Formulation%20of%20Guidewire-Induced%20Aortoiliac%20Deformation%EF%BC%88arXiv%202608.21332%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E4%BB%A5%E9%A2%84%E6%B5%8B%E7%BB%93%E6%9E%9C%E7%BB%8F%20C%20%E8%87%82%E5%87%A0%E4%BD%95%E6%8A%95%E5%BD%B1%E5%90%8E%E4%B8%8E%E5%AE%9E%E6%B5%8B%E8%A1%80%E7%AE%A1%E9%80%A0%E5%BD%B1%E4%B9%8B%E9%97%B4%E7%9A%84%20Wasserstein-2%20%E6%9C%80%E4%BC%98%E4%BC%A0%E8%BE%93%E6%8D%9F%E5%A4%B1%E4%BD%9C%E4%B8%BA%E7%9B%91%E7%9D%A3%EF%BC%8C%E4%BB%8E%E8%80%8C%E7%94%A8%E4%B8%80%E5%BC%A0%202D%20%E9%80%A0%E5%BD%B1%E5%9B%BE%E8%AE%AD%E7%BB%83%203D%20%E5%BD%A2%E5%8F%98%E9%A2%84%E6%B5%8B%E3%80%82" target="_blank">
+      <div class="m">W2 最优传输监督<span>2D 造影训 3D 预测</span></div></a>
+  </div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E7%94%A8%E5%B7%B2%E7%9F%A5%E7%9C%9F%E5%80%BC%E9%AA%8C%E8%AF%81%E6%95%B0%E5%80%BC%E7%AE%A1%E7%BA%BF%EF%BC%88kinematics%20%2F%20loss%20%2F%20projection%EF%BC%89%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Anatomy-Informed%20Neural%20Networks%3A%20Encoding%20Anatomic%20Priors%20in%20Loss%20and%20Architecture%2C%20with%20an%20SE%283%29%20Formulation%20of%20Guidewire-Induced%20Aortoiliac%20Deformation%EF%BC%88arXiv%202608.21332%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E7%A7%B0%E8%BF%90%E5%8A%A8%E5%AD%A6%E3%80%81%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E6%8A%95%E5%BD%B1%E7%8E%AF%E8%8A%82%E5%9D%87%E5%B7%B2%E5%AF%B9%E5%B7%B2%E7%9F%A5%E7%9C%9F%E5%80%BC%EF%BC%88ground%20truth%EF%BC%89%E5%AE%8C%E6%88%90%E9%AA%8C%E8%AF%81%E3%80%82" target="_blank">
+    <div class="res good">数值管线已对已知真值验证通过<span>运动学、损失函数与 C 臂投影三部分均以已知真值核对无误。</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E6%B1%82%E8%A7%A3%E5%99%A8%E9%AA%8C%E8%AF%81%E4%B8%8E%E7%BD%91%E6%A0%BC%E6%94%B6%E6%95%9B%E6%80%A7%EF%BC%88mesh%20convergence%EF%BC%89%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Anatomy-Informed%20Neural%20Networks%3A%20Encoding%20Anatomic%20Priors%20in%20Loss%20and%20Architecture%2C%20with%20an%20SE%283%29%20Formulation%20of%20Guidewire-Induced%20Aortoiliac%20Deformation%EF%BC%88arXiv%202608.21332%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E6%98%8E%E7%A1%AE%E5%8A%9B%E5%AD%A6%E6%B1%82%E8%A7%A3%E5%99%A8%E5%8F%AA%E5%AF%B9%E5%85%B6%E8%87%AA%E8%BA%AB%E7%9A%84%E6%9C%80%E4%BC%98%E6%80%A7%E6%9D%A1%E4%BB%B6%E5%81%9A%E4%BA%86%E9%AA%8C%E8%AF%81%EF%BC%8C%E4%B8%94%E9%A2%84%E6%B5%8B%E4%BD%8D%E7%A7%BB%E5%B0%9A%E6%9C%AA%E8%BE%BE%E5%88%B0%E7%BD%91%E6%A0%BC%E6%94%B6%E6%95%9B%EF%BC%88not%20yet%20mesh-converged%EF%BC%89%E3%80%82" target="_blank">
+    <div class="res warn">力学求解器仅自洽验证，位移未网格收敛<span>求解器只对自身最优性条件做了验证，预测位移尚未达到网格收敛。</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8Cin%20silico%20%E5%BB%BA%E6%A8%A1%E4%B8%8E%E5%B0%9A%E6%9C%AA%E8%AE%AD%E7%BB%83%E7%BD%91%E7%BB%9C%E7%9A%84%E6%96%B9%E6%B3%95%E5%AD%A6%E8%AE%BA%E6%96%87%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Anatomy-Informed%20Neural%20Networks%3A%20Encoding%20Anatomic%20Priors%20in%20Loss%20and%20Architecture%2C%20with%20an%20SE%283%29%20Formulation%20of%20Guidewire-Induced%20Aortoiliac%20Deformation%EF%BC%88arXiv%202608.21332%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E5%8E%9F%E6%96%87%E5%86%99%E6%98%8E%E2%80%9CHere%2C%20no%20network%20is%20trained%E2%80%9D%EF%BC%8C%E5%85%A8%E9%83%A8%E7%BB%93%E6%9E%9C%E4%B8%BA%20in%20silico%20%E6%A8%A1%E5%9E%8B%EF%BC%8C%E8%BF%81%E7%A7%BB%E5%88%B0%E7%9C%9F%E5%AE%9E%20CT%20%E4%B8%8E%E7%B2%BE%E5%BA%A6%2F%E6%95%B0%E6%8D%AE%E9%87%8F%E6%94%B6%E7%9B%8A%E7%9A%84%E6%A3%80%E9%AA%8C%E7%95%99%E5%BE%85%E5%90%8E%E7%BB%AD%E5%B7%A5%E4%BD%9C%E3%80%82" target="_blank">
+    <div class="res bad">本文尚未训练任何网络<span>原文写明 “Here, no network is trained”，全部结果为 in silico 模型，真实 CT 迁移与数据量收益留待后续。</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E6%8A%8A%E7%A1%AC%E7%89%A9%E7%90%86%E7%BA%A6%E6%9D%9F%E5%86%85%E5%BB%BA%E8%BF%9B%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%E8%80%8C%E9%9D%9E%E4%BB%85%E4%BD%9C%E6%8D%9F%E5%A4%B1%E7%BD%9A%E9%A1%B9%E3%80%8D%E8%BF%99%E4%B8%80%E5%BB%BA%E6%A8%A1%E8%8C%83%E5%BC%8F%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Anatomy-Informed%20Neural%20Networks%3A%20Encoding%20Anatomic%20Priors%20in%20Loss%20and%20Architecture%2C%20with%20an%20SE%283%29%20Formulation%20of%20Guidewire-Induced%20Aortoiliac%20Deformation%EF%BC%88arXiv%202608.21332%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E5%9C%A8%E6%95%B0%E6%8D%AE%E7%A8%80%E7%BC%BA%E7%9A%84%E4%B8%B4%E5%BA%8A%E5%9C%BA%E6%99%AF%E4%B8%8B%EF%BC%8C%E7%94%A8%E8%BD%AF%E5%85%88%E9%AA%8C%E7%BD%9A%E9%A1%B9%20%2B%20%E6%9E%B6%E6%9E%84%E5%86%85%E5%BB%BA%E7%A1%AC%E5%85%88%E9%AA%8C%E7%9A%84%E7%BB%84%E5%90%88%EF%BC%8C%E4%BD%BF%E9%9D%9E%E6%B3%95%E9%A2%84%E6%B5%8B%E5%9C%A8%E6%9E%84%E9%80%A0%E4%B8%8A%E4%B8%8D%E5%8F%AF%E8%83%BD%EF%BC%8C%E5%B9%B6%E7%94%A8%202D%20%E6%8A%95%E5%BD%B1%E7%9A%84%20W2%20%E6%8D%9F%E5%A4%B1%E7%9B%91%E7%9D%A3%203D%20%E9%A2%84%E6%B5%8B%E3%80%82%E5%B9%B6%E8%AE%A8%E8%AE%BA%E5%A6%82%E4%BD%95%E5%BB%B6%E4%BC%B8%E5%88%B0%E6%88%91%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E3%80%82" target="_blank">
+    <div class="conc">结论：本文给出的是一套“软先验入损失、硬先验入架构”的建模范式与 SE(3) 力学表述，而非已训练好的模型；与我的方向的关联在于——熔池形貌与沉积层几何同样受强物理约束，把连续性、质量守恒这类硬约束搬进网络结构，可能比只加罚项更能压住小样本下的非物理预测。</div></a>
+  <details><summary>术语速查（点开）</summary>
+    <div class="term"><b>PINN（物理信息神经网络）</b>：把控制方程或物理约束作为损失罚项加入训练的神经网络，使解在数据稀缺时仍趋于物理可行。本文中：作者把解剖先验罚项明确类比为 PINN 的物理罚项，是其“软先验”一侧的直接来源。</div>
+    <div class="term"><b>SE(3)</b>：三维刚体运动的李群，同时描述位置与姿态（平移 + 旋转）。本文中：血管中心线与导丝路径被从 R^3 提升为 SE(3) 上的标架曲线，从而能表达截面姿态而不仅是走向。</div>
+    <div class="term"><b>Wasserstein-2 最优传输损失</b>：以“把一个分布搬成另一个分布的最小搬运代价”定义的距离，对形状/分布差异比逐点误差更稳健。本文中：用作预测的 C 臂投影与实测血管造影之间的监督信号，使 2D 观测能训练 3D 预测。</div>
+  </details>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">② 沉积层几何光学在线测量（勉强归类）· 相关度1</span>
+    <a href="http://arxiv.org/abs/2608.21190v1">arXiv 原文</a></div>
+  <h2>把液体塑造成太空结构：微重力辅助的极小曲面设计与制造</h2><div class="en">Shaping liquids into space structures - microgravity-assisted design and manufacturing of minimal surfaces</div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2%EF%BC%88minimal%20surface%EF%BC%89%E4%B8%8E%E6%B6%B2%E4%BD%93%E7%95%8C%E9%9D%A2%E8%87%AA%E7%BB%84%E7%BB%87%E6%88%90%E5%BD%A2%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Shaping%20liquids%20into%20space%20structures%20-%20microgravity-assisted%20design%20and%20manufacturing%20of%20minimal%20surfaces%EF%BC%88arXiv%202608.21190%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E6%8F%90%E5%87%BA%E6%8A%8A%E5%BE%AE%E9%87%8D%E5%8A%9B%E4%B8%8B%E7%9A%84%E6%B6%B2%E4%BD%93%E8%87%AA%E7%BB%84%E7%BB%87%E5%BD%93%E4%BD%9C%E7%94%9F%E6%88%90%E5%BC%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%B6%E9%80%A0%E5%8E%9F%E7%90%86%EF%BC%8C%E8%AE%A9%E4%BC%A0%E7%BB%9F%E4%B8%8A%E4%BE%9D%E8%B5%96%E5%A4%8D%E6%9D%82%E5%A2%9E%E6%9D%90%E5%88%B6%E9%80%A0%E7%9A%84%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2%E7%BB%93%E6%9E%84%E7%9B%B4%E6%8E%A5%E7%94%B1%E5%8F%AF%E7%BC%96%E7%A8%8B%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6%E4%B8%8B%E7%9A%84%E6%B5%81%E4%BD%93%E7%95%8C%E9%9D%A2%E7%89%A9%E7%90%86%E4%BA%A7%E7%94%9F%E3%80%82" target="_blank"><div class="q">研究问题：能否用微重力下的液体自组织直接“长出”极小曲面结构，从而绕开依赖复杂增材制造设备的在轨建造路径？</div></a>
+  <div class="methods">
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8CLiquiFab%20%E6%96%B9%E6%B3%95%E4%B8%8E%E5%8F%AF%E7%BC%96%E7%A8%8B%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6%E6%88%90%E5%BD%A2%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Shaping%20liquids%20into%20space%20structures%20-%20microgravity-assisted%20design%20and%20manufacturing%20of%20minimal%20surfaces%EF%BC%88arXiv%202608.21190%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E5%9C%A8%20LiquiFab%20%E6%96%B9%E6%B3%95%E5%9F%BA%E7%A1%80%E4%B8%8A%EF%BC%8C%E7%94%A8%E5%8F%AF%E7%BC%96%E7%A8%8B%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6%E5%A1%91%E9%80%A0%E6%B5%81%E4%BD%93%E7%95%8C%E9%9D%A2%EF%BC%8C%E4%BD%BF%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2%E6%9E%B6%E6%9E%84%E7%9B%B4%E6%8E%A5%E4%BB%8E%E7%95%8C%E9%9D%A2%E7%89%A9%E7%90%86%E4%B8%AD%E6%B6%8C%E7%8E%B0%E3%80%82" target="_blank">
+      <div class="m">LiquiFab 液体成形<span>可编程边界条件塑形</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E8%BE%B9%E7%95%8C%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2%E6%95%B0%E5%80%BC%E6%B1%82%E8%A7%A3%E5%99%A8%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Shaping%20liquids%20into%20space%20structures%20-%20microgravity-assisted%20design%20and%20manufacturing%20of%20minimal%20surfaces%EF%BC%88arXiv%202608.21190%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E7%BB%99%E5%87%BA%E4%BB%BF%E7%9C%9F%E5%88%B0%E5%88%B6%E9%80%A0%E7%9A%84%E5%AE%8C%E6%95%B4%E5%B7%A5%E4%BD%9C%E6%B5%81%EF%BC%8C%E5%85%B6%E4%B8%AD%E8%BE%B9%E7%95%8C%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2%E6%B1%82%E8%A7%A3%E5%99%A8%E9%9B%86%E6%88%90%E5%9C%A8%20Grasshopper%2FRhino%20%E5%8F%82%E6%95%B0%E5%8C%96%E8%AE%BE%E8%AE%A1%E7%8E%AF%E5%A2%83%E4%B8%AD%E3%80%82" target="_blank">
+      <div class="m">边界驱动求解器<span>集成于 Grasshopper/Rhino</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E4%B8%AD%E6%80%A7%E6%B5%AE%E5%8A%9B%E7%8E%AF%E5%A2%83%EF%BC%88neutral%20buoyancy%EF%BC%89%E6%A8%A1%E6%8B%9F%E5%BE%AE%E9%87%8D%E5%8A%9B%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Shaping%20liquids%20into%20space%20structures%20-%20microgravity-assisted%20design%20and%20manufacturing%20of%20minimal%20surfaces%EF%BC%88arXiv%202608.21190%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E7%9A%84%E5%AE%9E%E9%AA%8C%E7%B3%BB%E7%BB%9F%E5%9C%A8%E4%B8%AD%E6%80%A7%E6%B5%AE%E5%8A%9B%E7%8E%AF%E5%A2%83%E4%B8%AD%E5%AE%9E%E7%8E%B0%EF%BC%8C%E4%BB%A5%E5%9C%A8%E5%9C%B0%E9%9D%A2%E6%A8%A1%E6%8B%9F%E5%BE%AE%E9%87%8D%E5%8A%9B%E6%9D%A1%E4%BB%B6%E4%B8%8B%E7%9A%84%E6%B6%B2%E4%BD%93%E6%88%90%E5%BD%A2%E8%BF%87%E7%A8%8B%E3%80%82" target="_blank">
+      <div class="m">中性浮力实验台<span>地面模拟微重力</span></div></a>
+  </div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8CSchwarz-P%20%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2%E4%B8%8E%E5%8F%AF%E8%B0%83%E5%8E%9A%E5%BA%A6%E7%BB%93%E6%9E%84%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Shaping%20liquids%20into%20space%20structures%20-%20microgravity-assisted%20design%20and%20manufacturing%20of%20minimal%20surfaces%EF%BC%88arXiv%202608.21190%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E7%A7%B0%E8%AF%A5%E6%B5%81%E7%A8%8B%E5%8F%AF%E7%94%9F%E6%88%90%E5%8F%97%20Schwarz-P%20%E5%90%AF%E5%8F%91%E3%80%81%E5%87%A0%E4%BD%95%E4%B8%8E%E5%8E%9A%E5%BA%A6%E5%9D%87%E5%8F%AF%E8%B0%83%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%8C%E5%B1%95%E7%A4%BA%E4%BA%86%E6%9D%90%E6%96%99%E9%AB%98%E6%95%88%E7%9A%84%E5%9C%A8%E8%BD%A8%E5%88%B6%E9%80%A0%E8%B7%AF%E5%BE%84%E3%80%82" target="_blank">
+    <div class="res good">生成几何与厚度可调的类 Schwarz-P 结构<span>该流程跑通了仿真到制造，得到受 Schwarz-P 启发、几何与厚度均可调的结构。</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E5%9C%B0%E9%9D%A2%E4%B8%AD%E6%80%A7%E6%B5%AE%E5%8A%9B%E6%A8%A1%E6%8B%9F%E4%B8%8E%E5%9C%A8%E8%BD%A8%E9%A3%9E%E8%A1%8C%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B7%AE%E8%B7%9D%E3%80%8D%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Shaping%20liquids%20into%20space%20structures%20-%20microgravity-assisted%20design%20and%20manufacturing%20of%20minimal%20surfaces%EF%BC%88arXiv%202608.21190%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E8%AF%B4%E6%98%8E%E7%9C%9F%E5%BE%AE%E9%87%8D%E5%8A%9B%E4%B8%8B%E7%9A%84%E6%80%A7%E8%83%BD%E9%AA%8C%E8%AF%81%E4%BE%9D%E8%B5%96%E5%AE%9A%E4%BA%8E%202027%20%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%AD%A3%E5%BA%A6%E5%9C%A8%E5%9B%BD%E9%99%85%E7%A9%BA%E9%97%B4%E7%AB%99%E5%BC%80%E5%B1%95%E7%9A%84%E9%A3%9E%E8%A1%8C%E5%AE%9E%E9%AA%8C%EF%BC%8C%E6%9C%AC%E6%96%87%E5%8F%AA%E8%AF%A6%E8%BF%B0%E4%BA%86%E8%AF%A5%E5%AE%9E%E9%AA%8C%E6%89%80%E9%9C%80%E7%9A%84%E9%A2%9D%E5%A4%96%E8%80%83%E9%87%8F%E3%80%82" target="_blank">
+    <div class="res warn">真实微重力验证尚未完成<span>目前仅在地面中性浮力环境验证，真微重力检验依赖 2027 年 Q1 的国际空间站飞行实验。</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%8C%E4%BB%A5%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6%E8%80%8C%E9%9D%9E%E9%80%90%E5%B1%82%E6%B2%89%E7%A7%AF%E6%9D%A5%E5%86%B3%E5%AE%9A%E6%9C%80%E7%BB%88%E6%88%90%E5%BD%A2%E5%87%A0%E4%BD%95%E3%80%8D%E7%9A%84%E5%88%B6%E9%80%A0%E6%80%9D%E8%B7%AF%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87Shaping%20liquids%20into%20space%20structures%20-%20microgravity-assisted%20design%20and%20manufacturing%20of%20minimal%20surfaces%EF%BC%88arXiv%202608.21190%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E7%94%A8%E5%8F%AF%E7%BC%96%E7%A8%8B%E8%BE%B9%E7%95%8C%E6%9D%A1%E4%BB%B6%E9%A9%B1%E5%8A%A8%E5%BE%AE%E9%87%8D%E5%8A%9B%E4%B8%8B%E7%9A%84%E6%B6%B2%E4%BD%93%E7%95%8C%E9%9D%A2%EF%BC%8C%E7%9B%B4%E6%8E%A5%E5%BE%97%E5%88%B0%E5%87%A0%E4%BD%95%E4%B8%8E%E5%8E%9A%E5%BA%A6%E5%8F%AF%E8%B0%83%E7%9A%84%E7%B1%BB%20Schwarz-P%20%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2%E7%BB%93%E6%9E%84%EF%BC%8C%E5%B9%B6%E8%AE%A1%E5%88%92%E4%BA%8E%202027%20%E5%B9%B4%20Q1%20%E5%9C%A8%E5%9B%BD%E9%99%85%E7%A9%BA%E9%97%B4%E7%AB%99%E9%AA%8C%E8%AF%81%E3%80%82%E5%B9%B6%E8%AE%A8%E8%AE%BA%E5%A6%82%E4%BD%95%E5%BB%B6%E4%BC%B8%E5%88%B0%E6%88%91%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E3%80%82" target="_blank">
+    <div class="conc">结论：这是一条“用物理界面而非逐层堆积来成形”的在轨制造路线，目前停在地面模拟阶段；与我的方向关联很弱——七类标签均不贴合，仅在“边界条件如何决定最终成形几何”这一几何控制视角上，与沉积层几何调控有微弱的可类比之处。</div></a>
+  <details><summary>术语速查（点开）</summary>
+    <div class="term"><b>极小曲面（minimal surface）</b>：平均曲率处处为零的曲面，物理上对应肥皂膜在给定边界下的平衡形状。本文中：正是液体界面在可编程边界条件下自发形成的目标几何，无需逐层打印即可获得。</div>
+    <div class="term"><b>Schwarz-P 曲面</b>：一类周期性三重极小曲面，常用作轻量化点阵与多孔结构的设计母版。本文中：作为演示对象，论文生成了受其启发、几何与厚度可调的结构。</div>
+    <div class="term"><b>中性浮力</b>：使物体密度与周围流体一致、净浮力为零的状态，地面常用来近似失重环境。本文中：实验系统所处的环境，用于在真实微重力飞行实验之前模拟微重力成形。</div>
+  </details>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQODJMT1pRQUJoUFNpWVhxdndEZV9YNnROcXFJTndSWkJEOVl3RmdmZlNlWWc2Y3N5S2xVRUt2SVJyWGczN1BtOE5MUE1lZGtVQjcyVUlMTWRSbkRKQTktQXBXd2hVVkNJWnJDQ0xya0RFcWh2Y05CNm8tTjRyckoyMmN1dTNMbXpOUktrLTJvU1JhTy1IQTJycFRocVlBQUhqNlhIaEhUWWxiWjR3U240?oc=5">原文</a></div>
+  <h2>美国海军为潜艇建造中的 3D 打印金属部件扫清障碍</h2><div class="en">Ocean News &amp; Technology · 2026-08-24</div>
+  <div class="news">仅据标题：报道称美国海军已为 3D 打印金属部件用于潜艇建造扫清路径。具体获批部件、所用工艺、认证依据与验收检测要求，RSS 摘要未给出（本源摘要片段即标题本身）。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9CZGVCejRIMy0wMF9NeVhkSm1zc19jSU8yLXpIaG5makJ0aG9WOW5FNkoxdDV5aGplU0RjYzhuLXRoWmRoUUlzVmlRdTNIMG5halpfSnQ4U0Z6SzJvbnc?oc=5">原文</a></div>
+  <h2>检测服务：一个被低估的存量市场</h2><div class="en">中华网 · 2026-08-24</div>
+  <div class="news">仅据标题：一篇把“检测服务”定位为被低估的存量市场的行业评论。涉及的检测门类、市场规模与数据来源，RSS 摘要未给出。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNX3RYUmo1VHJ6bzhqU3lNYmMxTzBPT1ZEQUItM1JUNUZ5UlZjX3ZtV2hCZFctLVhSbklSa3JQRzRVYlZVYjZwRFM1c0FYOWxpT1h1eUdNS2R4M21JZEhwajNHRkVfZHJEdGk5Q0FuTU1TUlBTZFZIZXBINEdUX1pua3ZKdEZJa2tCWWkybzFxZHotT0pqUFdYV2RVc1dDdTRz?oc=5">原文</a></div>
+  <h2>Phase3D 将在线检测技术适配到陶瓷基复合材料</h2><div class="en">3Druck.com · 2026-08-24</div>
+  <div class="news">仅据标题：在线检测厂商 Phase3D 把其在线（in-line）检测技术调整到陶瓷基复合材料上。所用传感原理、检测的缺陷类型与适配改动，RSS 摘要未给出。本期与我方向最相关的一条：Phase3D 主线产品为逐层结构光形貌测量，对应“沉积层几何光学在线测量”。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTDhYekFmTDhicmhRQXJCdE51NnpCM1BDdUZzMW13RFo3WndQdUpnWGQ3ZUxqSERPTENEdjhBSmJLMTlQekx3NU5ISFFZUWFHb3lVS3k2UXh3NHFkUkFzcHMzLUVELWdCMWFvQWNDNFRjTVVvNEJoQURqc0NsZ0FtTU1ITC1EQk5OYWl1LS1pUEE3b2g3ZUNSMlhxMXRDb0owS1RjRktMc2Nrc1E1U1lmTG5DdHpTYWIy?oc=5">原文</a></div>
+  <h2>Phase3D 调整在线检测技术以适用于陶瓷复合材料（中文版报道）</h2><div class="en">3Druck.com · 2026-08-24</div>
+  <div class="news">仅据标题：与上一条为同一事件的中文版报道，同源同日。两条标题措辞一致，未提供额外细节。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE42aGdScmdhTFlpT2ZneWFPd1RFMHA3SmpNekkxdnd6WmQ5bHJEdkxLQ0ZZVFhhdWRhVm8xSTNIRzlYNzlrckhrU2dCM09qTzFwLTJud3FDZ25HQUZYQVptME0yR2lpWWNz?oc=5">原文</a></div>
+  <h2>问鼎网址最新版本发布首款融合星基 RTK、AI 视觉与激光雷达割草机器人</h2><div class="en">womenofchina.com · 2026-08-23</div>
+  <div class="news">仅据标题：一款融合星基 RTK、AI 视觉与激光雷达的割草机器人发布。与激光增材制造在线监测无关，属关键词“AI 视觉/激光”误召回，此处如实列出但不作展开。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPRzdiaTBIeWNzeU05MVpmNXFEOFQ5YjFSLU1IWU1GWV9vMl8zTUFfdms5bzZiYU9INVZNdVhnd0pZRDl2MDdlX0ZYREdVR1EtVWI0MlowR2tlZUxjTHRFNS1GWlhQMFJKSHpJVV9QbUtrUElhUHBjUEhJRXFRUmxMakw4UkZXbmRUSjg5UGp4T2tDU1FaaTBtWDZBN2p0UlBMWHc?oc=5">原文</a></div>
+  <h2>AMiquam 牵头 220 万欧元 Eurostars 项目，用于 3D 打印缺陷检测</h2><div class="en">Dealroom · 2026-08-22</div>
+  <div class="news">仅据标题：AMiquam 牵头一项 220 万欧元的 Eurostars 资助项目，主题为 3D 打印的缺陷检测（defect-spotting）。传感手段、合作方与项目周期，RSS 摘要未给出。属在线/过程检测方向的资金动向，值得点开原文核实其传感原理。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE5RSThTbFBkbXBkVEVFQnpPWWlDVUQwQ2hTamxHYzgyM2pLa3N4Y3B3TVh3ZFkzRUV2M042S0o0TDJhb2xFMmpIa1NVVXpRd2dDTmFseDFtTmtGT0Z1LVREb1ozRkNucWlkakxYSQ?oc=5">原文</a></div>
+  <h2>2026 深圳 3D 打印展观察：TCT 深圳展买家扩容，增材制造加速走向真实生产</h2><div class="en">中华网 · 2026-08-21</div>
+  <div class="news">仅据标题：TCT 深圳展的观察类报道，称买家群体扩容、增材制造正加速走向真实生产。展会数据与具体案例，RSS 摘要未给出。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxPVVM2Z0FtMlBYZW41VFZtSHAtTVFDRWxQbE5XcTRScURtZkM0TG8wUG5QNkpfMmVRLXlTWklsQlplWWtWR0huTTFXenBFTlozeG1IMkZIN015M0xVbVliWjlycGI5S0VkQy1UWU1DeGRVRXZoX3dMdDlRSlhseXRlUnF0ZzE5ak8zSEZ6d0ZPa2pLVy1naGZqdU1zMGxRdjA2ZWZ2MjlvamlUZFFrU2ktR0ZLbEkwVG4wd05aSjBZRUttbm4zcHRvdXJ5cnI5czVTNkxIbA?oc=5">原文</a></div>
+  <h2>Freeform 旨在扩大金属 3D 打印规模，用于航天部件的批量生产</h2><div class="en">3Druck.com · 2026-08-20</div>
+  <div class="news">仅据标题：Freeform 计划扩大金属 3D 打印规模以支撑航天部件批量生产。产能、设备与其自动化/监测手段，RSS 摘要未给出。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxObmVkNjJyOXNLYS1qWHk3bHQ3bjFUUC1NRy1HYlVrVVBaQ1RMdEI5c0VUOThRaUNoTVYwc1g2Q1JadUpZWjR2T2d2MUZGb2IyNTNwcmxtd3VWYkpzdDNzajVYUVdta2psczlMX1duMDllSW1CUUVXRXBidUZTemRrSHVVeXl0bDZVY2ZSTQ?oc=5">原文</a></div>
+  <h2>华秦科技：2026 年上半年净利润同比增长 17.55%，拟 10 派 0.9 元</h2><div class="en">搜狐网 · 2026-08-19</div>
+  <div class="news">仅据标题：华秦科技公布 2026 年半年度业绩，净利润同比增长 17.55%，并拟每 10 股派 0.9 元。业务构成与增长来源，RSS 摘要未给出。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE4yMnB6eXVZT1NVOVBxT3B2SjU1aEpjbHRLWFppNFktejNySEhzTm1EWW42Vi1scnlaQ1ZLMWRjaEtPOUZsMnNNTzBfZmJFdUpmaS1mc0FB?oc=5">原文</a></div>
+  <h2>华秦科技（688281）：2026 年度提质增效重回报专项行动方案半年度评估报告</h2><div class="en">中财网 · 2026-08-19</div>
+  <div class="news">仅据标题：华秦科技披露“提质增效重回报”专项行动方案的半年度评估报告，与上一条为同一家公司的同日公告类报道。报告内容，RSS 摘要未给出。</div>
+</div>
+
+<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论<br>
+点击色块可跳转 claude.ai 深入追问（需登录）；点开每卡底部"术语速查"可离线阅读注释</div>
+</body>
+</html>
