@@ -13,6 +13,11 @@
 通用规则（两个 profile 共享，改一处即全局生效）：
   - 日期标签按 JST(UTC+9) 计算；时间窗按 UTC 比对（arXiv 时间就是 UTC）
   - 跨天去重扫描 DEDUP_DIRS 中所有历史简报，两条推送互不重复
+  - 时间窗的锚点是「数据源索引前沿」而非「当前时刻」（2026-08-30 修复）：
+    arXiv 的 submittedDate 索引会滞后（实测曾达 51 小时），若按当前时刻往回推，
+    窗口的新鲜端是空的，而真正待召回的论文补进索引时已滑出窗口，造成静默漏检。
+    改为先探测索引前沿、再以它为基准往回推，索引滞后多久窗口就自动后移多久。
+    放宽窗口不会带来重复推送——跨天去重是按 arXiv ID 做的。
 """
 
 import argparse
@@ -110,6 +115,9 @@ PROFILES = {
 MAX_RESULTS_PER_PAGE = 100
 MAX_RETRIES = 6
 RETRY_BACKOFF = 5   # 秒，第 n 次失败后等待 n * RETRY_BACKOFF
+# 索引前沿最多允许把窗口往回推这么多小时。正常滞后是几小时；设上限是为了防止
+# 数据源长时间异常时窗口无限扩大，把几百篇陈年论文重新拉进打分流程。
+MAX_LAG_HOURS = 240
 
 
 def load_past_reported_ids():
@@ -176,12 +184,47 @@ def parse_entries(xml_bytes):
     return out
 
 
-def within_window(published, window_hours):
+def parse_published(published):
     try:
-        dt = datetime.strptime(published, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+        return datetime.strptime(published, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
     except ValueError:
-        return False
-    return dt >= datetime.now(timezone.utc) - timedelta(hours=window_hours)
+        return None
+
+
+def probe_index_frontier(cfg):
+    """探测数据源索引前沿：只按 category 查、不加任何关键词，取最新一条的投稿时间。
+
+    不能拿主查询的最新命中当前沿——主查询带关键词，没有命中只说明今天没有相关
+    论文，不代表索引滞后，两者必须分开测。探测失败返回 None，退回按当前时刻计算。
+    """
+    cat_q = " OR ".join(f"cat:{c}" for c in cfg["categories"])
+    params = {"search_query": cat_q, "sortBy": "submittedDate",
+              "sortOrder": "descending", "start": 0, "max_results": 5}
+    url = API + "?" + urllib.parse.urlencode(params)
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
+        with urllib.request.urlopen(req, timeout=90) as resp:
+            entries = parse_entries(resp.read())
+    except Exception as ex:
+        sys.stderr.write(f"[warn] 索引前沿探测失败，退回按当前时刻计算窗口: {ex}\n")
+        return None
+    stamps = [d for d in (parse_published(e["published"]) for e in entries) if d]
+    return max(stamps) if stamps else None
+
+
+def compute_cutoff(cfg):
+    """返回 (窗口起点, 索引前沿, 滞后小时数)。"""
+    now = datetime.now(timezone.utc)
+    frontier = probe_index_frontier(cfg)
+    if frontier is None:
+        return now - timedelta(hours=cfg["window_hours"]), None, None
+    lag = (now - frontier).total_seconds() / 3600
+    anchor = frontier if lag > 0 else now
+    if lag > MAX_LAG_HOURS:
+        sys.stderr.write(f"[warn] 索引滞后 {lag:.1f}h 超过上限 {MAX_LAG_HOURS}h，"
+                         f"窗口锚点按上限截断\n")
+        anchor = now - timedelta(hours=MAX_LAG_HOURS)
+    return anchor - timedelta(hours=cfg["window_hours"]), frontier, lag
 
 
 def relevance_score(paper, keywords):
@@ -204,6 +247,7 @@ def main():
     cfg = PROFILES[args.profile]
 
     past = load_past_reported_ids()
+    cutoff, frontier, lag = compute_cutoff(cfg)
     seen, collected, skipped_past = set(), [], 0
     for page in range(cfg["max_pages"]):
         try:
@@ -216,7 +260,8 @@ def main():
         for p in entries:
             if p["arxiv_id"] in seen:
                 continue
-            if not within_window(p["published"], cfg["window_hours"]):
+            pub = parse_published(p["published"])
+            if pub is None or pub < cutoff:
                 continue
             seen.add(p["arxiv_id"])
             if p["arxiv_id"] in past:
@@ -234,7 +279,15 @@ def main():
         json.dump({"date": today, "profile": args.profile, "count": len(top),
                    "papers": top}, f, ensure_ascii=False, indent=2)
 
+    if frontier is None:
+        anchor_note = "索引前沿探测失败，窗口按当前时刻计算"
+    else:
+        anchor_note = (f"索引前沿 {frontier.strftime('%Y-%m-%dT%H:%M:%SZ')}"
+                       f"（滞后 {lag:.1f}h），窗口起点 "
+                       f"{cutoff.strftime('%Y-%m-%dT%H:%M:%SZ')}")
+
     lines = [f"# {cfg['label']} {today}（共 {len(top)} 篇，已跳过 {skipped_past} 篇历史重复）\n"]
+    lines.append(f"> 窗口 {cfg['window_hours']}h ｜ {anchor_note}\n")
     if not top:
         lines.append("今日无匹配新论文。")
     for i, p in enumerate(top, 1):
@@ -247,7 +300,8 @@ def main():
         f.write("\n".join(lines))
 
     print(f"[{args.profile}] 完成：{len(top)} 篇候选（{today}，窗口 {cfg['window_hours']}h，"
-          f"跳过历史重复 {skipped_past}），已写入 {cfg['out_json']} 与 {cfg['out_md']}")
+          f"跳过历史重复 {skipped_past}），已写入 {cfg['out_json']} 与 {cfg['out_md']}\n"
+          f"[{args.profile}] {anchor_note}")
 
 
 if __name__ == "__main__":

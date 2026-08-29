@@ -67,10 +67,18 @@ details[open] summary{color:#2C2C2A}
 </div>
 
 <div class="card">
-  <div class="meta"><span class="pill">运行记录 · 去重缺陷第 6 天</span>
+  <div class="meta"><span class="pill">运行记录 · 两个缺陷已修复</span>
     <a href="https://news.google.com/" target="_blank">Google News RSS</a></div>
-  <h2>新闻候选 10 条中 8 条为旧闻</h2><div class="en">fetch_news_am.py · 一次成功 · 失败查询 0/8</div>
-  <div class="news">已报道旧闻 8 条：AMiRIS 入日本（中英各一，08-29 已报）、LPBF 双回路熔池温控（08-29 已报）、Additive Assurance 出口奖决赛（08-25／08-29 已报）、TU Braunschweig 混凝土光学检测（08-27 已报）、美海军潜艇 3D 打印件放行（08-25 已报）、Phase3D 陶瓷复材在线检测（中英各一，08-25 已报）。脚本仍只按链接去重，抓不住「同一新闻多个跳转 URL」与「中英文双条」两类重复，建议改为标题归一化比对并纳入历史简报标题集。</div>
+  <h2>新闻候选 10 条中 8 条为旧闻 —— 根因已定位并修复</h2><div class="en">fetch_news_am.py / fetch_arxiv.py · 均一次成功 · 失败查询 0/8</div>
+  <div class="res warn">此前的根因判断有误<span>不是「按链接去重抓不住」，而是链接提取正则本身是坏的</span></div>
+  <div class="news">旧写法 <code>https?://\S+</code> 会把 markdown 行内链接的右括号连同其后内容一起吞掉，历史链接集合里没有一条干净 URL，去重每天都在拿真链接比对脏串、永不命中。改用 <code>https?://[^\s)\]&lt;&gt;"'｜|，、）]+</code> 后，今天 10 条候选立刻有 7 条被正确识别为旧闻（修复前为 0 条）。</div>
+  <div class="res good">端到端回放验证通过<span>10 条 → L1 丢弃 7、L2 抑制 1（相似度 0.80），余下正好是那 2 条真新增</span></div>
+  <div class="res good">arXiv 窗口锚点改为索引前沿<span>窗口起点 08-26T21:22Z → 08-24T17:59Z，多覆盖 51h、多拦下 3 篇盲区论文</span></div>
+  <details><summary>修复要点（点开）</summary>
+    <div class="term"><b>三层去重</b>：L1 链接/标题精确匹配（静默丢弃）；L2 与历史简报标题字符级相似度 ≥0.72（同一新闻换了跳转 URL）；L3 同来源同日 + 拉丁词块重合度 ≥0.6（同一新闻的中英文两条）。本文中：L2/L3 属启发式，一律不静默丢弃，被抑制的条目连同判据写进 news_am.md 附录以便推翻。</div>
+    <div class="term"><b>阈值 0.72 的依据</b>：拿今天的候选回放，真重复实测 0.80，三条真新增分别为 0.26 / 0.32 / 0.35。本文中：安全边界很宽，误判风险低；L3 的已知边界（中文标题只剩一个拉丁词块时靠「同发布日」兜底）已写进脚本注释。</div>
+    <div class="term"><b>索引前沿探测</b>：只按 category 查一次、不带任何关键词，取最新投稿时间作为窗口锚点。本文中：必须与主查询分开——主查询带关键词，没有命中只说明今天没有相关论文，不能用来判断索引是否滞后。另设 240h 上限，探测失败则退回按当前时刻计算并告警。</div>
+  </details>
 </div>
 
 <div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论<br>
