@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>论文图卡 2026-09-04</title>
+<style>
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#FAF9F5;
+     color:#2C2C2A;max-width:780px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.date{color:#888780;font-size:13px;margin-bottom:20px}
+.card{background:#fff;border:1px solid #E3E1D9;border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.pill{background:#E6F1FB;color:#0C447C;border-radius:12px;padding:2px 10px}
+.meta a{color:#185FA5;text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.en{color:#888780;font-size:12px;margin-bottom:10px}
+a.blk{display:block;text-decoration:none;color:inherit}
+a.blk:hover .q,a.blk:hover .res,a.blk:hover .conc,a.blk:hover .m{filter:brightness(0.96)}
+.q{background:#F1EFE8;color:#444441;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:10px}
+.methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.methods a.blk{flex:1;min-width:140px;display:flex}
+.m{flex:1;background:#EEEDFE;color:#3C3489;border-radius:8px;
+   padding:8px 10px;font-size:13px;font-weight:600}
+.m span{display:block;font-weight:400;font-size:12px;color:#534AB7;margin-top:2px}
+.res{border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.res span{display:block;font-weight:400;font-size:12px;margin-top:2px}
+.res.good{background:#E1F5EE;color:#085041}.res.good span{color:#0F6E56}
+.res.warn{background:#FAECE7;color:#712B13}.res.warn span{color:#993C1D}
+.res.bad{background:#FCEBEB;color:#791F1F}.res.bad span{color:#A32D2D}
+.conc{background:#FAEEDA;color:#633806;border-radius:8px;padding:8px 12px;font-size:13px;margin-top:2px}
+.news{background:#E6F1FB;color:#0C447C;border-radius:8px;padding:8px 12px;font-size:13px}
+details{margin-top:10px;border-top:1px dashed #E3E1D9;padding-top:8px}
+details summary{cursor:pointer;font-size:12px;color:#888780;user-select:none}
+details[open] summary{color:#2C2C2A}
+.term{background:#F7F6F1;border-radius:8px;padding:8px 12px;font-size:12px;margin-top:8px}
+.term b{color:#3C3489}
+.foot{color:#B4B2A9;font-size:12px;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>每日论文图卡</h1>
+<div class="date">2026-09-04</div>
+<div class="card">
+  <div class="meta"><span class="pill">物理引导机器学习PIML · 相关度4</span>
+    <a href="http://arxiv.org/abs/2609.01881v1">arXiv 原文</a></div>
+  <h2>带误差界的物理引导学习用于轨道不确定性传播</h2><div class="en">Physics-informed Learning for Orbital Uncertainty Propagation with Error Bounds</div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94Fokker-Planck%20%E6%96%B9%E7%A8%8B%E6%8F%8F%E8%BF%B0%E7%9A%84%E9%9A%8F%E6%9C%BA%E7%B3%BB%E7%BB%9F%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%BC%A0%E6%92%AD%E9%97%AE%E9%A2%98%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Physics-informed%20Learning%20for%20Orbital%20Uncertainty%20Propagation%20with%20Error%20Bounds%E3%80%95%EF%BC%88arXiv%202609.01881%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E6%8C%87%E5%87%BA%E5%9C%A8%E8%BD%A8%E9%81%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E4%B8%AD%20FP-PDE%20%E5%9B%A0%E8%BF%90%E5%8A%A8%E9%9D%9E%E7%BA%BF%E6%80%A7%E3%80%81%E7%8A%B6%E6%80%81%E9%AB%98%E7%BB%B4%E3%80%81%E6%97%B6%E7%A9%BA%E5%9F%9F%E5%A4%A7%E8%80%8C%E9%9A%BE%E4%BB%A5%E7%9B%B4%E6%8E%A5%E6%B1%82%E8%A7%A3%EF%BC%8C%E4%BD%9C%E8%80%85%E8%A6%81%E5%90%8C%E6%97%B6%E5%BE%97%E5%88%B0%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E8%BF%91%E4%BC%BC%E4%B8%8E%E6%9C%80%E5%9D%8F%E6%83%85%E5%86%B5%E8%AF%AF%E5%B7%AE%E3%80%82" target="_blank"><div class="q">研究问题：随机系统的 Fokker-Planck 方程在强非线性、高维状态与大时空域下解不动，如何既快速给出概率密度、又给出可信的最坏情况误差？</div></a>
+  <div class="methods">
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E7%89%A9%E7%90%86%E5%BC%95%E5%AF%BC%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%20PINN%20%E4%B8%8E%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%20GMM%20%E7%9A%84%E7%BB%93%E5%90%88%EF%BC%88PINN-GMM%EF%BC%89%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Physics-informed%20Learning%20for%20Orbital%20Uncertainty%20Propagation%20with%20Error%20Bounds%E3%80%95%EF%BC%88arXiv%202609.01881%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E8%AE%BE%E8%AE%A1%20PINN-GMM%EF%BC%8C%E6%8A%8A%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E7%BB%93%E6%9E%84%E5%B5%8C%E5%85%A5%E7%BD%91%E7%BB%9C%E4%BB%A5%E5%BC%BA%E5%88%B6%E8%BE%93%E5%87%BA%E6%BB%A1%E8%B6%B3%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8%EF%BC%8C%E5%B9%B6%E7%A7%B0%E8%AF%A5%E6%96%B9%E6%B3%95%E5%8E%9F%E5%88%99%E4%B8%8A%E4%B8%8E%E7%8A%B6%E6%80%81%E5%9D%90%E6%A0%87%E9%80%89%E6%8B%A9%E5%8F%8A%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84%E6%97%A0%E5%85%B3%E3%80%82" target="_blank">
+      <div class="m">PINN-GMM<span>高斯混合嵌入密度约束</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E4%B8%BA%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%91%E4%BC%BC%E8%A7%A3%E9%85%8D%E4%B8%80%E4%B8%AA%E4%B8%93%E9%97%A8%E5%AD%A6%E4%B9%A0%E8%AF%AF%E5%B7%AE%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%9A%84%E4%BC%B4%E9%9A%8F%E6%A8%A1%E5%9E%8B%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Physics-informed%20Learning%20for%20Orbital%20Uncertainty%20Propagation%20with%20Error%20Bounds%E3%80%95%EF%BC%88arXiv%202609.01881%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E7%94%A8%E4%B8%80%E4%B8%AA%20companion%20error%20PINN%20%E5%AD%A6%E4%B9%A0%E8%BF%91%E4%BC%BC%E8%AF%AF%E5%B7%AE%E8%87%AA%E8%BA%AB%E7%9A%84%E5%8A%A8%E5%8A%9B%E5%AD%A6%EF%BC%8C%E4%BA%A7%E5%87%BA%E9%9A%8F%E6%97%B6%E9%97%B4%E5%8F%98%E5%8C%96%E7%9A%84%E8%AF%AF%E5%B7%AE%E7%95%8C%EF%BC%8C%E7%94%B1%E6%AD%A4%E5%AE%9A%E4%B9%89%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E7%9A%84%E6%A8%A1%E7%B3%8A%E9%9B%86%20ambiguity%20set%E3%80%82" target="_blank">
+      <div class="m">伴随误差 PINN<span>学误差动力学出时变界</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E7%94%A8%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92%E4%BB%8E%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E7%9A%84%E6%A8%A1%E7%B3%8A%E9%9B%86%E4%B8%AD%E6%B1%82%E4%BA%8B%E4%BB%B6%E6%A6%82%E7%8E%87%E7%9A%84%E4%B8%8A%E4%B8%8B%E7%95%8C%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Physics-informed%20Learning%20for%20Orbital%20Uncertainty%20Propagation%20with%20Error%20Bounds%E3%80%95%EF%BC%88arXiv%202609.01881%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E5%80%9F%E5%8A%A9%E8%AF%AF%E5%B7%AE%20PINN%20%E7%BB%99%E5%87%BA%E7%9A%84%E6%A8%A1%E7%B3%8A%E9%9B%86%EF%BC%8C%E9%80%9A%E8%BF%87%E5%8F%AF%E8%A7%A3%E7%9A%84%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92%E4%B8%A5%E6%A0%BC%E8%AE%A1%E7%AE%97%E4%BA%8B%E4%BB%B6%E6%A6%82%E7%8E%87%E7%9A%84%E4%B8%8A%E7%95%8C%E4%B8%8E%E4%B8%8B%E7%95%8C%E3%80%82" target="_blank">
+      <div class="m">线性规划求界<span>由模糊集算概率上下界</span></div></a>
+  </div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E7%89%A9%E7%90%86%E5%BC%95%E5%AF%BC%E6%96%B9%E6%B3%95%E5%9C%A8%E4%BD%8E%E7%BB%B4%E7%A4%BA%E4%BE%8B%E4%B8%8E%E5%A4%9A%E7%BB%B4%E8%BD%A8%E9%81%93%E7%AE%97%E4%BE%8B%E4%B8%8A%E7%9A%84%E7%B2%BE%E5%BA%A6%E4%B8%8E%E8%AF%AF%E5%B7%AE%E7%95%8C%E9%AA%8C%E8%AF%81%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Physics-informed%20Learning%20for%20Orbital%20Uncertainty%20Propagation%20with%20Error%20Bounds%E3%80%95%EF%BC%88arXiv%202609.01881%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E5%9C%A8%201D%20%E7%A4%BA%E4%BE%8B%E4%B8%8E%E8%8B%A5%E5%B9%B2%204D%20%E8%87%B3%206D%20%E8%BD%A8%E9%81%93%E6%B5%8B%E8%AF%95%E7%AE%97%E4%BE%8B%E4%B8%8A%E9%AA%8C%E8%AF%81%EF%BC%8C%E4%BC%A0%E6%92%AD%E7%B2%BE%E5%BA%A6%E3%80%81%E8%AF%AF%E5%B7%AE%E7%95%8C%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%80%A7%E4%B8%8E%E4%BF%A1%E6%81%AF%E9%87%8F%E4%BB%A5%E5%8F%8A%E6%95%B4%E4%BD%93%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%9D%87%E4%BC%98%E4%BA%8E%E9%AB%98%E6%96%AF%E8%BF%91%E4%BC%BC%E3%80%81%E6%97%A0%E8%BF%B9%E5%8F%98%E6%8D%A2%E4%B8%8E%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E4%B8%89%E7%A7%8D%E5%9F%BA%E7%BA%BF%E3%80%82" target="_blank">
+    <div class="res good">1D 与 4D–6D 轨道算例全面胜出<span>精度、误差界正确性与可靠性均优于高斯近似/无迹变换/GMM</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E8%AE%AD%E7%BB%83%E5%90%8E%E5%8D%95%E6%AC%A1%E5%89%8D%E5%90%91%E6%8E%A8%E7%90%86%E7%9A%84%E5%AE%9E%E6%97%B6%E6%80%A7%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Physics-informed%20Learning%20for%20Orbital%20Uncertainty%20Propagation%20with%20Error%20Bounds%E3%80%95%EF%BC%88arXiv%202609.01881%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E6%8A%A5%E5%91%8A%20PINN-GMM%20%E8%AE%AD%E7%BB%83%E5%AE%8C%E6%88%90%E5%90%8E%E5%8D%95%E6%AC%A1%E5%89%8D%E5%90%91%E5%8D%B3%E5%8F%AF%E8%BF%94%E5%9B%9E%E4%BB%BB%E6%84%8F%E6%97%B6%E5%88%BB%E7%9A%84%E5%AF%86%E5%BA%A6%EF%BC%8C%E5%85%B6%E5%AE%9E%E7%8E%B0%E4%B8%AD%E8%80%97%E6%97%B6%E7%BA%A6%200.16%20%E6%AF%AB%E7%A7%92%E3%80%82" target="_blank">
+    <div class="res good">训练后推理仅 0.16 ms<span>单次前向即返回任意时刻的概率密度</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E7%89%A9%E7%90%86%E5%BC%95%E5%AF%BC%E4%BB%A3%E7%90%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%A6%BB%E7%BA%BF%E8%AE%AD%E7%BB%83%E6%88%90%E6%9C%AC%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Physics-informed%20Learning%20for%20Orbital%20Uncertainty%20Propagation%20with%20Error%20Bounds%E3%80%95%EF%BC%88arXiv%202609.01881%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E6%98%8E%E7%A1%AE%E6%8C%87%E5%87%BA%E6%9E%84%E5%BB%BA%20PINN-GMM%20%E9%9C%80%E8%A6%81%E7%A6%BB%E7%BA%BF%E8%AE%AD%E7%BB%83%EF%BC%8C%E4%BD%BF%E5%85%B6%E6%AF%94%E9%AB%98%E6%96%AF%E8%BF%91%E4%BC%BC%E3%80%81%E6%97%A0%E8%BF%B9%E5%8F%98%E6%8D%A2%E3%80%81%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E7%AD%89%E5%9F%BA%E7%BA%BF%E8%BF%91%E4%BC%BC%E6%96%B9%E6%B3%95%E6%9B%B4%E4%B8%BA%E6%98%82%E8%B4%B5%E3%80%82" target="_blank">
+    <div class="res warn">离线训练成本高于基线<span>作者明言比三种基线近似更贵，代价前置到训练阶段</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E5%B8%A6%E8%AF%AF%E5%B7%AE%E4%BF%9D%E8%AF%81%E7%9A%84%E7%89%A9%E7%90%86%E5%BC%95%E5%AF%BC%E4%BB%A3%E7%90%86%E6%A8%A1%E5%9E%8B%E8%8C%83%E5%BC%8F%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94Physics-informed%20Learning%20for%20Orbital%20Uncertainty%20Propagation%20with%20Error%20Bounds%E3%80%95%EF%BC%88arXiv%202609.01881%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E8%AE%BA%E6%96%87%E6%8A%8A%E4%B8%BB%E6%A8%A1%E5%9E%8B%20PINN-GMM%E3%80%81%E5%AD%A6%E4%B9%A0%E8%AF%AF%E5%B7%AE%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%9A%84%E4%BC%B4%E9%9A%8F%20PINN%20%E4%B8%8E%E7%94%B1%E6%AD%A4%E5%AE%9A%E4%B9%89%E7%9A%84%E6%A8%A1%E7%B3%8A%E9%9B%86%E7%BB%84%E5%90%88%E6%88%90%E4%B8%80%E5%A5%97%E7%BB%93%E6%9E%84%EF%BC%8C%E4%BD%BF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%91%E4%BC%BC%E8%A7%A3%E4%BB%8E%E7%82%B9%E4%BC%B0%E8%AE%A1%E5%8D%87%E7%BA%A7%E4%B8%BA%E5%B8%A6%E5%8F%AF%E4%BF%A1%E8%AF%AF%E5%B7%AE%E7%95%8C%E7%9A%84%E4%BC%B0%E8%AE%A1%E3%80%82%E5%B9%B6%E8%AE%A8%E8%AE%BA%E5%A6%82%E4%BD%95%E5%BB%B6%E4%BC%B8%E5%88%B0%E6%88%91%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E3%80%82" target="_blank">
+    <div class="conc">结论：主模型＋误差模型＋模糊集这套三段式，把 PINN 从"大概对"升级为"带保证的对"；与我方向的关联在于熔池 PIML 代理模型同样只有点估计、缺可信度量化，该范式与具体物理方程无关，原则上可迁移作在线监测的置信度评估（此为我的推断，论文未涉及增材制造）。</div></a>
+  <details><summary>术语速查（点开）</summary>
+    <div class="term"><b>Fokker-Planck 方程（FP-PDE）</b>：描述随机动力系统中概率密度如何随时间演化的偏微分方程，是"不确定性怎么长大"的物理定律。本文中：它是要被求解的目标方程，因轨道动力学的非线性与高维性而无法直接解，才引入 PINN 近似。</div>
+    <div class="term"><b>物理引导神经网络（PINN）</b>：把控制方程的残差写进损失函数、让网络在拟合数据的同时服从物理定律的一类神经网络。本文中：既用作主模型 PINN-GMM 去近似概率密度，又用作伴随模型去学习近似误差本身的演化。</div>
+    <div class="term"><b>模糊集（ambiguity set）</b>：不是单一分布，而是一族"都有可能是真值"的概率分布集合，用于在分布未知时做稳健推断。本文中：由误差 PINN 给出的时变误差界圈定，使事件概率的上下界可由线性规划严格算出。</div>
+  </details>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMzRyYnB2bjNHVzNnVGRHaFpZbExTbS1ad3ppRHBUU3ZBN1ZTOUI3VlNEVDc4RFJDR0VBMUpyanlQRWVULUMyUlRJczlyYlo5N0R3dWFhcTRsM29OckhJbXVOZkp5MXZ4VUo3U1I2WjJLMkxkWExzVFdvcUEyN1AwbDZrYkZKX1FDN2JEb0QtbEVhakVxeVRfMENpb29CdnQ3dThfU2pZYl9vV1ZRT0dnNkpEZUtMTmdqQm5NUExDUDBQdw?oc=5">原文</a></div>
+  <h2>人工智能引导实验为 NASA GRCop-42 合金找出低功率 DED 工艺参数</h2><div class="en">3D Printing Industry · 2026-09-02</div>
+  <div class="news">标题给出的事实：用 AI 引导的实验为 NASA 的 GRCop-42 合金确定了低功率定向能量沉积（DED）工艺参数。RSS 摘要仅为标题重复，无算法与参数细节；此条与 09-02 期第 5 条应为同一项研究的另一家媒体报道。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxOcDhQd2xoYmhSRklOdy01M1JHeWZSUlJLTldyendPS0FRc0h0dm81OFFVMDRYT2pBcXdwREVUWTlwYmsydnNyNnVVdWNkQ0tHWkN5OHBnOU9zYzBxZ1ZpUkRod3JTOVlWb1doLVU5a0FjWGRfYlp0aXB5WXo3QnZTT3VoZ0dNdnFMeUx5cW5Taklndw?oc=5">原文</a></div>
+  <h2>浸没式超声波探头市场展望至 2035 年</h2><div class="en">IndexBox · 2026-08-31</div>
+  <div class="news">一份面向 2035 年的浸没式超声波探头市场展望报告。RSS 摘要仅为标题重复，未给出规模、增速或厂商数据，不作展开。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxObERzMllZT1VyRnNyVVRLUkY2SkNzTUNiVVE1N3JPS0FDeFRSOGRkRzYwelQ3Z01yYUNqcGlNTEZHSnVKaFN3SnI3VWo2VUhXZjlaV1ZNMVNfNGpoNF82OGYtNVlrWVZUajFNX3JkaWgtTE5GMHZqVU9JcWpBdzZmLXVaaHNMbV9TcEs0Smd2SHlrdVVsRXVkQVlWVGRjaXdWNWFFSW1icEpCb1lsblVtSThadDI4V1M1MmVCZnNQQQ?oc=5">原文</a></div>
+  <h2>全球三维打印粉末市场前 15 家公司</h2><div class="en">Spherical Insights · 2026-08-30</div>
+  <div class="news">一份列举全球 3D 打印粉末前 15 家供应商的市场报告。RSS 摘要仅为标题重复，未列出公司名称、份额或排名依据，不作推测。</div>
+</div>
+
+<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论<br>
+点击色块可跳转 claude.ai 深入追问（需登录）；点开每卡底部"术语速查"可离线阅读注释</div>
+</body>
+</html>
