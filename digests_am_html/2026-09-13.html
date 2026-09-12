@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>论文图卡 2026-09-13</title>
+<style>
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#FAF9F5;
+     color:#2C2C2A;max-width:780px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.date{color:#888780;font-size:13px;margin-bottom:20px}
+.card{background:#fff;border:1px solid #E3E1D9;border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.pill{background:#E6F1FB;color:#0C447C;border-radius:12px;padding:2px 10px}
+.meta a{color:#185FA5;text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.en{color:#888780;font-size:12px;margin-bottom:10px}
+a.blk{display:block;text-decoration:none;color:inherit}
+a.blk:hover .q,a.blk:hover .res,a.blk:hover .conc,a.blk:hover .m{filter:brightness(0.96)}
+.q{background:#F1EFE8;color:#444441;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:10px}
+.methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.methods a.blk{flex:1;min-width:140px;display:flex}
+.m{flex:1;background:#EEEDFE;color:#3C3489;border-radius:8px;
+   padding:8px 10px;font-size:13px;font-weight:600}
+.m span{display:block;font-weight:400;font-size:12px;color:#534AB7;margin-top:2px}
+.res{border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.res span{display:block;font-weight:400;font-size:12px;margin-top:2px}
+.res.good{background:#E1F5EE;color:#085041}.res.good span{color:#0F6E56}
+.res.warn{background:#FAECE7;color:#712B13}.res.warn span{color:#993C1D}
+.res.bad{background:#FCEBEB;color:#791F1F}.res.bad span{color:#A32D2D}
+.conc{background:#FAEEDA;color:#633806;border-radius:8px;padding:8px 12px;font-size:13px;margin-top:2px}
+.news{background:#E6F1FB;color:#0C447C;border-radius:8px;padding:8px 12px;font-size:13px}
+details{margin-top:10px;border-top:1px dashed #E3E1D9;padding-top:8px}
+details summary{cursor:pointer;font-size:12px;color:#888780;user-select:none}
+details[open] summary{color:#2C2C2A}
+.term{background:#F7F6F1;border-radius:8px;padding:8px 12px;font-size:12px;margin-top:8px}
+.term b{color:#3C3489}
+.foot{color:#B4B2A9;font-size:12px;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>每日论文图卡</h1>
+<div class="date">2026-09-13</div>
+<div class="card">
+  <div class="meta"><span class="pill">运行状态 · 脚本本期 0 篇论文</span>
+    <a href="https://arxiv.org/list/physics.app-ph/recent">arXiv 最新列表</a></div>
+  <h2>今日无匹配新论文（脚本侧）</h2><div class="en">fetch_arxiv.py --profile am · 窗口 72h · 索引前沿 2026-09-10T17:59:55Z（滞后 51.3h，与上期逐秒相同）</div>
+  <div class="news">两个抓取脚本均一次跑通、无网络错误。脚本输出 0 篇候选（跳过历史重复 2 篇）。<b>关键：arXiv 索引已冻结满 24 小时，72h 窗口与昨日完全重合（09-07T17:59:55Z → 09-10T17:59:55Z），窗口没滑动，去重后自然归零——这是数据源停摆的机械结果，不等于本方向空窗。</b>两路独立复核确认冻结属实：cs.CV / cs.LG / eess.IV 三个分类的前沿一致卡在 09-10，最新一条逐秒等于脚本读数；宽检索 15/15 查询全部成功，melt pool、laser ultrasonic、laser welding、in-situ monitoring 等 11 个核心词条窗口内命中为 0。下方 1 张论文卡为宽检索补录，非脚本召回，无相关度分值。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">②沉积层几何光学在线测量 · 宽检索补录（无脚本分值）</span>
+    <a href="http://arxiv.org/abs/2609.11330v1">arXiv 原文</a></div>
+  <h2>面向高速运动鲁棒性的预测式多标志点 OCT 跟踪</h2><div class="en">Predictive Multi-Landmark OCT Tracking for Increased Motion Robustness</div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94OCT%20%E6%97%A0%E6%A0%87%E8%AE%B0%E8%BF%90%E5%8A%A8%E8%B7%9F%E8%B8%AA%E4%B8%AD%E3%80%8C%E5%8F%AF%E8%B7%9F%E8%B8%AA%E9%80%9F%E5%BA%A6%E4%B8%8A%E9%99%90%E3%80%8D%E7%9A%84%E6%9D%A5%E6%BA%90%E4%B8%8E%E9%87%8F%E7%BA%A7%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94%E3%80%8APredictive%20Multi-Landmark%20OCT%20Tracking%20for%20Increased%20Motion%20Robustness%E3%80%8B%E3%80%95%EF%BC%88arXiv%20%E3%80%942609.11330%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%94%E4%BD%9C%E8%80%85%E6%8C%87%E5%87%BA%E7%8E%B0%E6%9C%89%20OCT%20%E8%B7%9F%E8%B8%AA%E6%96%B9%E6%B3%95%E7%9A%84%E5%8F%AF%E8%B7%9F%E8%B8%AA%E9%80%9F%E5%BA%A6%E5%8F%97%E9%99%90%EF%BC%8C%E5%B0%A4%E5%85%B6%E6%98%AF%E4%B8%BA%E4%BC%B0%E8%AE%A1%206D%20%E4%BD%8D%E5%A7%BF%E8%80%8C%E9%A1%BA%E5%BA%8F%E8%B7%9F%E8%B8%AA%E5%A4%9A%E4%B8%AA%E6%A0%87%E5%BF%97%E7%82%B9%E6%97%B6%EF%BC%8C%E6%89%AB%E5%AE%8C%E4%B8%80%E8%BD%AE%E6%89%80%E9%9C%80%E6%97%B6%E9%97%B4%E7%9B%B4%E6%8E%A5%E5%8E%8B%E6%AD%BB%E4%BA%86%E9%80%9F%E5%BA%A6%E4%B8%8A%E9%99%90%E3%80%95%E3%80%82" target="_blank"><div class="q">研究问题：OCT 跟踪多个标志点要靠顺序扫描，扫完一轮的耗时把可跟踪速度上限压死了。</div></a>
+  <div class="methods">
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E5%85%89%E5%AD%A6%E7%9B%B8%E5%B9%B2%E5%B1%82%E6%9E%90%20OCT%20%E4%BD%9C%E4%B8%BA%E6%97%A0%E6%A0%87%E8%AE%B0%E8%BF%90%E5%8A%A8%E8%B7%9F%E8%B8%AA%E6%A8%A1%E6%80%81%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BC%98%E5%8A%BF%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94%E3%80%8APredictive%20Multi-Landmark%20OCT%20Tracking%20for%20Increased%20Motion%20Robustness%E3%80%8B%E3%80%95%EF%BC%88arXiv%20%E3%80%942609.11330%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%94%E4%BD%9C%E8%80%85%E9%80%89%E7%94%A8%20OCT%20%E7%9A%84%E7%90%86%E7%94%B1%E6%98%AF%E5%AE%83%E7%A9%BA%E9%97%B4%E5%88%86%E8%BE%A8%E7%8E%87%E9%AB%98%E4%B8%94%E5%A4%A9%E7%84%B6%E5%B8%A6%E6%B7%B1%E5%BA%A6%E6%84%9F%E7%9F%A5%EF%BC%8C%E5%9B%A0%E6%AD%A4%E5%8F%AF%E5%81%9A%E6%97%A0%E6%A0%87%E8%AE%B0%EF%BC%88markerless%EF%BC%89%E8%B7%9F%E8%B8%AA%E3%80%95%E3%80%82" target="_blank">
+      <div class="m">OCT 做无标记跟踪<span>高分辨＋天然深度信息</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E5%A4%9A%E6%A0%87%E5%BF%97%E7%82%B9%E9%A1%BA%E5%BA%8F%E8%B7%9F%E8%B8%AA%E4%B8%8E%206D%20%E4%BD%8D%E5%A7%BF%E4%BC%B0%E8%AE%A1%E7%9A%84%E5%85%B3%E7%B3%BB%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94%E3%80%8APredictive%20Multi-Landmark%20OCT%20Tracking%20for%20Increased%20Motion%20Robustness%E3%80%8B%E3%80%95%EF%BC%88arXiv%20%E3%80%942609.11330%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%94%E6%9C%AC%E6%96%87%E8%B7%9F%E8%B8%AA%E6%9C%80%E5%A4%9A%209%20%E4%B8%AA%E8%BF%9E%E7%BB%AD%E6%A0%87%E5%BF%97%E7%82%B9%E6%9D%A5%E6%B1%82%E5%85%A8%E5%B1%80%E4%BD%8D%E5%A7%BF%EF%BC%8C%E9%A1%BA%E5%BA%8F%E9%87%87%E6%A0%B7%E6%AD%A3%E6%98%AF%E9%80%9F%E5%BA%A6%E7%93%B6%E9%A2%88%E6%89%80%E5%9C%A8%E3%80%95%E3%80%82" target="_blank">
+      <div class="m">多标志点求 6D 位姿<span>最多 9 点顺序跟踪</span></div></a>
+    <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E9%A2%84%E6%B5%8B%E5%BC%8F%E8%B7%9F%E8%B8%AA%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E6%9B%B4%E6%96%B0%E4%BC%A0%E6%92%AD%EF%BC%88update%20propagation%EF%BC%89%E6%9C%BA%E5%88%B6%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94%E3%80%8APredictive%20Multi-Landmark%20OCT%20Tracking%20for%20Increased%20Motion%20Robustness%E3%80%8B%E3%80%95%EF%BC%88arXiv%20%E3%80%942609.11330%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%94%E4%BD%9C%E8%80%85%E6%8A%8A%E5%90%84%E6%A0%87%E5%BF%97%E7%82%B9%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BD%8D%E7%BD%AE%E6%9B%B4%E6%96%B0%E4%BA%92%E7%9B%B8%E4%BC%A0%E6%92%AD%EF%BC%8C%E7%94%B1%E5%B1%80%E9%83%A8%E6%9B%B4%E6%96%B0%E5%8F%8D%E6%8E%A8%E5%85%A8%E5%B1%80%E4%BD%8D%E5%A7%BF%E9%A2%84%E6%B5%8B%EF%BC%8C%E4%BB%8E%E8%80%8C%E4%B8%8D%E5%BF%85%E7%AD%89%E4%B8%80%E8%BD%AE%E6%89%AB%E6%8F%8F%E8%B5%B0%E5%AE%8C%E5%B0%B1%E8%83%BD%E7%BB%B4%E6%8C%81%E4%BD%8D%E5%A7%BF%E4%BC%B0%E8%AE%A1%E3%80%95%E3%80%82" target="_blank">
+      <div class="m">更新传播＋位姿预测<span>不等扫描走完即出估计</span></div></a>
+  </div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94%E8%B7%9F%E8%B8%AA%E7%B2%BE%E5%BA%A6%E6%8C%87%E6%A0%87%20RMSE%20%E5%9C%A8%E4%BD%8D%E5%A7%BF%E4%BC%B0%E8%AE%A1%E4%B8%AD%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%AF%BB%E6%B3%95%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94%E3%80%8APredictive%20Multi-Landmark%20OCT%20Tracking%20for%20Increased%20Motion%20Robustness%E3%80%8B%E3%80%95%EF%BC%88arXiv%20%E3%80%942609.11330%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%94%E5%9C%A8%E9%80%9F%E5%BA%A6%E6%9C%80%E9%AB%98%20100%20mm%2Fs%E3%80%81%E8%BF%9E%E7%BB%AD%E8%B7%9F%E8%B8%AA%E6%9C%80%E5%A4%9A%209%20%E4%B8%AA%E6%A0%87%E5%BF%97%E7%82%B9%E7%9A%84%E6%9D%A1%E4%BB%B6%E4%B8%8B%EF%BC%8CRMSE%20%E4%BF%9D%E6%8C%81%E5%9C%A8%201%20mm%20%E4%BB%A5%E4%B8%8B%E3%80%95%E3%80%82" target="_blank">
+    <div class="res good">高速下精度守住<span>100 mm/s、9 个标志点，RMSE 低于 1 mm</span></div></a>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%E3%80%94OCT%20%E9%A1%BA%E5%BA%8F%E9%87%87%E6%A0%B7%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%97%B6%E9%97%B4%E4%B8%8D%E4%B8%80%E8%87%B4%E6%80%A7%EF%BC%8C%E5%8F%8A%E5%85%B6%E5%9C%A8%E9%AB%98%E9%80%9F%E6%89%AB%E6%8F%8F%E4%B8%8B%E7%9A%84%E8%A1%A5%E5%81%BF%E6%80%9D%E8%B7%AF%E3%80%95%E7%9A%84%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E8%AE%BA%E6%96%87%E3%80%94%E3%80%8APredictive%20Multi-Landmark%20OCT%20Tracking%20for%20Increased%20Motion%20Robustness%E3%80%8B%E3%80%95%EF%BC%88arXiv%20%E3%80%942609.11330%E3%80%95%EF%BC%89%E8%AF%B4%E6%98%8E%E5%AE%83%E5%9C%A8%E6%96%87%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E3%80%94%E6%9C%AC%E6%96%87%E7%94%A8%E5%A4%9A%E6%A0%87%E5%BF%97%E7%82%B9%E9%97%B4%E7%9A%84%E6%9B%B4%E6%96%B0%E4%BC%A0%E6%92%AD%E6%8D%A2%E5%8F%96%E6%9B%B4%E9%AB%98%E7%9A%84%E5%8F%AF%E8%B7%9F%E8%B8%AA%E9%80%9F%E5%BA%A6%EF%BC%8C%E5%9C%A8%20100%20mm%2Fs%E3%80%819%20%E4%B8%AA%E6%A0%87%E5%BF%97%E7%82%B9%E4%B8%8B%20RMSE%20%E4%BD%8E%E4%BA%8E%201%20mm%E3%80%95%E3%80%82%E5%B9%B6%E8%AE%A8%E8%AE%BA%E5%A6%82%E4%BD%95%E5%BB%B6%E4%BC%B8%E5%88%B0%E6%88%91%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%E3%80%82" target="_blank">
+    <div class="conc">结论：用标志点间的更新传播做全局预测，可把 OCT 跟踪的速度上限显著抬高。与我方向的关联：OCT 正是 ICI 同轴相干成像测熔深所用的同一模态，"顺序采样导致时间不一致"这个病灶共通，方法骨架可借；但 100 mm/s 与 1 mm 的指标比 DED/PBF 所需的 10²–10³ mm/s 与十微米级差 1–2 个数量级，可借的是骨架不是数字。</div></a>
+  <details><summary>术语速查（点开）</summary>
+    <div class="term"><b>OCT（光学相干层析）</b>：用低相干干涉测量样品内部背向散射随深度分布的成像技术，轴向分辨率可达微米级。本文中：作为无标记跟踪的传感模态，靠它自带的深度感知直接取标志点的三维位置。</div>
+    <div class="term"><b>6D 位姿</b>：刚体在空间中的三个平移自由度加三个旋转自由度的完整描述。本文中：跟踪的目标量，需要多个标志点的位置联合求解，这正是顺序扫描耗时的来源。</div>
+    <div class="term"><b>RMSE（均方根误差）</b>：预测值与真值之差的平方均值再开方，量纲与被测量相同。本文中：跟踪精度的唯一报告指标，在 100 mm/s、9 标志点条件下低于 1 mm。</div>
+  </details>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE82a1Q0bnJnVTJ0MXVnemduZFBHSXo0ZXZjRERMSHB2OU1McjZ1S2ZMV29fZVI2aGJEZWtkZ2ZrckplQVU4NEZzdnFRUFhSbHpNalQ2UGJyc1I?oc=5">原文</a></div>
+  <h2>丹佛斯 EBI 产线启用 2 万伏终端检测系统</h2><div class="en">维度网 · 2026-09-12</div>
+  <div class="news">标题称丹佛斯 EBI 产线上线了一套 2 万伏级别的终端检测系统。RSS 片段只有标题重复，未给出被测产品、检测项目与产线位置，不作推测。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxPeUplSk5WRnVsZklXTTBCYmR1ZEttd2lnbkstN21XQXR4MWd2eTdRTW83LVVZMjZyX2NIMVl6SXpNLW84bHNjc1F3bExwMGFJb2ZpZ1BzM0xfUktXV2xkN0tBS054TkxaZnF4VEVQVDQ1UGdIMU9GTFNzbVJkRnFTa2Q5djVOQi1EWHZTY0ZDWWpiNTVBbU5WdnV1SF9WY2hVOUFCbGhSWHhydnVMZTRBcFV1Y2pqbXhOeDFWSkZwQW1XX29mNnhESkhMX0Z1anJVNzhVcm8tUHhwQQ?oc=5">原文</a></div>
+  <h2>老化基础设施无损检测需求推动超声波延迟线楔块市场至 2035 年持续扩张</h2><div class="en">IndexBox · 2026-09-12</div>
+  <div class="news">市场研究稿，标题把超声延迟线楔块市场到 2035 年的扩张归因于老化基础设施的无损检测需求。RSS 片段仅为标题重复，无市场规模、增长率与区域数字，不作推测。</div>
+</div>
+
+<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论<br>
+点击色块可跳转 claude.ai 深入追问（需登录）；点开每卡底部"术语速查"可离线阅读注释</div>
+</body>
+</html>
