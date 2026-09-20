@@ -28,6 +28,11 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+
+try:
+    import requests
+except ImportError:  # 没装 requests 时退回标准库
+    requests = None
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 
@@ -114,7 +119,8 @@ PROFILES = {
 
 MAX_RESULTS_PER_PAGE = 100
 MAX_RETRIES = 6
-RETRY_BACKOFF = 5   # 秒，第 n 次失败后等待 n * RETRY_BACKOFF
+RETRY_BACKOFF = 10  # 秒，第 n 次失败后等待 n * RETRY_BACKOFF
+REQUEST_GAP = 3     # 秒，两次 arXiv 请求之间的最小间隔，避免连打接口
 # 索引前沿最多允许把窗口往回推这么多小时。正常滞后是几小时；设上限是为了防止
 # 数据源长时间异常时窗口无限扩大，把几百篇陈年论文重新拉进打分流程。
 MAX_LAG_HOURS = 240
@@ -141,6 +147,34 @@ def build_search_query(cfg):
     return f"({cat_q}) AND ({term_q})"
 
 
+_last_request_at = 0.0
+
+
+def _throttle():
+    """请求之间强制留出 REQUEST_GAP 秒，避免连打 arXiv 接口。"""
+    global _last_request_at
+    wait = REQUEST_GAP - (time.monotonic() - _last_request_at)
+    if _last_request_at and wait > 0:
+        time.sleep(wait)
+    _last_request_at = time.monotonic()
+
+
+def http_get(url):
+    """取回 URL 内容。
+
+    arXiv 前端会对 urllib 发出的请求回 406 Not Acceptable（只有命中 CDN 缓存时
+    才侥幸成功），requests 的请求则正常，因此优先走 requests，没装再退回 urllib。
+    """
+    _throttle()
+    if requests is not None:
+        resp = requests.get(url, headers={"User-Agent": "daily-digest/2.0"}, timeout=90)
+        resp.raise_for_status()
+        return resp.content
+    req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
+    with urllib.request.urlopen(req, timeout=90) as resp:
+        return resp.read()
+
+
 def fetch_page(cfg, start):
     params = {
         "search_query": build_search_query(cfg),
@@ -154,9 +188,7 @@ def fetch_page(cfg, start):
     last = None
     for attempt in range(MAX_RETRIES):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
-            with urllib.request.urlopen(req, timeout=90) as resp:
-                return resp.read()
+            return http_get(url)
         except Exception as ex:
             last = ex
             sys.stderr.write(f"[retry] start={start} 第 {attempt + 1} 次失败: {ex}\n")
@@ -202,9 +234,7 @@ def probe_index_frontier(cfg):
               "sortOrder": "descending", "start": 0, "max_results": 5}
     url = API + "?" + urllib.parse.urlencode(params)
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
-        with urllib.request.urlopen(req, timeout=90) as resp:
-            entries = parse_entries(resp.read())
+        entries = parse_entries(http_get(url))
     except Exception as ex:
         sys.stderr.write(f"[warn] 索引前沿探测失败，退回按当前时刻计算窗口: {ex}\n")
         return None
@@ -270,6 +300,10 @@ def main():
             p["score"] = relevance_score(p, cfg["keywords"])
             if p["score"] > 0:
                 collected.append(p)
+        # 结果按投稿时间倒序，本页最后一条已早于窗口起点时，后面的页只会更旧
+        last_pub = parse_published(entries[-1]["published"])
+        if last_pub is not None and last_pub < cutoff:
+            break
 
     collected.sort(key=lambda x: (x["score"], x["published"]), reverse=True)
     top = collected[:cfg["top_n"]]
