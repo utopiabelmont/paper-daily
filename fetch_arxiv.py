@@ -115,6 +115,42 @@ PROFILES = {
 MAX_RESULTS_PER_PAGE = 100
 MAX_RETRIES = 6
 RETRY_BACKOFF = 5   # 秒，第 n 次失败后等待 n * RETRY_BACKOFF
+REQUEST_GAP = 3     # 秒，两次请求之间的最小间隔，避免连打接口
+
+# 传输层：export.arxiv.org 会对 urllib 发出的请求稳定返回 HTTP 406，而同一时刻、
+# 同一条全新（缓存必定 MISS）URL 用 requests 或 curl 均为 200。换请求头、换 HTTP
+# 版本都无效，换客户端立刻恢复，故优先用 requests，未安装时才退回 urllib。
+try:
+    import requests as _requests
+    _SESSION = _requests.Session()
+    _SESSION.headers.update({"User-Agent": "daily-digest/2.0"})
+except ImportError:
+    _requests = None
+    _SESSION = None
+
+_last_request_at = 0.0
+
+
+def _throttle():
+    global _last_request_at
+    wait = REQUEST_GAP - (time.monotonic() - _last_request_at)
+    if wait > 0:
+        time.sleep(wait)
+    _last_request_at = time.monotonic()
+
+
+def http_get(url, timeout=90):
+    """取回 URL 内容。优先 requests，缺失时退回 urllib。"""
+    _throttle()
+    if _SESSION is not None:
+        resp = _SESSION.get(url, timeout=timeout)
+        resp.raise_for_status()
+        return resp.content
+    req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return resp.read()
+
+
 # 索引前沿最多允许把窗口往回推这么多小时。正常滞后是几小时；设上限是为了防止
 # 数据源长时间异常时窗口无限扩大，把几百篇陈年论文重新拉进打分流程。
 MAX_LAG_HOURS = 240
@@ -154,9 +190,7 @@ def fetch_page(cfg, start):
     last = None
     for attempt in range(MAX_RETRIES):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
-            with urllib.request.urlopen(req, timeout=90) as resp:
-                return resp.read()
+            return http_get(url)
         except Exception as ex:
             last = ex
             sys.stderr.write(f"[retry] start={start} 第 {attempt + 1} 次失败: {ex}\n")
@@ -202,9 +236,7 @@ def probe_index_frontier(cfg):
               "sortOrder": "descending", "start": 0, "max_results": 5}
     url = API + "?" + urllib.parse.urlencode(params)
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
-        with urllib.request.urlopen(req, timeout=90) as resp:
-            entries = parse_entries(resp.read())
+        entries = parse_entries(http_get(url))
     except Exception as ex:
         sys.stderr.write(f"[warn] 索引前沿探测失败，退回按当前时刻计算窗口: {ex}\n")
         return None
@@ -257,6 +289,9 @@ def main():
             continue
         if not entries:
             break
+        # 结果按投稿时间倒序，本页最旧一条若已早于窗口起点，后面的页只会更旧，不必再请求
+        page_stamps = [d for d in (parse_published(e["published"]) for e in entries) if d]
+        oldest = min(page_stamps) if page_stamps else None
         for p in entries:
             if p["arxiv_id"] in seen:
                 continue
@@ -270,6 +305,8 @@ def main():
             p["score"] = relevance_score(p, cfg["keywords"])
             if p["score"] > 0:
                 collected.append(p)
+        if oldest is not None and oldest < cutoff:
+            break
 
     collected.sort(key=lambda x: (x["score"], x["published"]), reverse=True)
     top = collected[:cfg["top_n"]]
