@@ -114,7 +114,16 @@ PROFILES = {
 
 MAX_RESULTS_PER_PAGE = 100
 MAX_RETRIES = 6
-RETRY_BACKOFF = 5   # 秒，第 n 次失败后等待 n * RETRY_BACKOFF
+RETRY_BACKOFF = 15  # 秒，第 n 次失败后等待 n * RETRY_BACKOFF
+# arXiv 对突发请求限流，且 406 与 429 混用（2026-09-22 实测同一 URL 同一请求头，
+# 密集连发必 406/429、间隔 6s 后连发 4 次全部 200），故所有请求统一走节流闸门。
+MIN_REQUEST_INTERVAL = 6  # 秒，任意两次 API 请求之间的最小间隔
+# 探测失败时窗口额外回溯的小时数。锚点退回「当前时刻」是危险的默认：索引一旦
+# 滞后超过窗口长度（2026-09-22 实测滞后 75.3h > 窗口 72h），窗口整段落在索引
+# 前沿之后，明明有新论文也会全部滑出，把一次瞬时 406 放大成静默的零命中。
+# 宁可放宽——跨天去重按 arXiv ID 做，窗口放宽不会造成重复推送。
+PROBE_FAIL_EXTRA_HOURS = 96
+_last_request_ts = [0.0]
 # 索引前沿最多允许把窗口往回推这么多小时。正常滞后是几小时；设上限是为了防止
 # 数据源长时间异常时窗口无限扩大，把几百篇陈年论文重新拉进打分流程。
 MAX_LAG_HOURS = 240
@@ -141,6 +150,37 @@ def build_search_query(cfg):
     return f"({cat_q}) AND ({term_q})"
 
 
+def api_get(url, timeout=90):
+    """所有 arXiv API 请求的唯一出口：先等够节流间隔，再发请求。"""
+    wait = MIN_REQUEST_INTERVAL - (time.time() - _last_request_ts[0])
+    if wait > 0:
+        time.sleep(wait)
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "daily-digest/2.0",
+        "Accept": "application/atom+xml,application/xml;q=0.9,*/*;q=0.8",
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return resp.read()
+    finally:
+        _last_request_ts[0] = time.time()
+
+
+def api_get_retry(url, label):
+    """带节流与重试的取数。索引前沿探测同样要重试——它只发一次就放弃的话，
+    一次限流 406 就会让窗口锚点退回「当前时刻」，在索引滞后超过窗口长度时
+    （2026-09-22 实测滞后 75.3h > 窗口 72h）直接产出全零的假空窗。"""
+    last = None
+    for attempt in range(MAX_RETRIES):
+        try:
+            return api_get(url)
+        except Exception as ex:
+            last = ex
+            sys.stderr.write(f"[retry] {label} 第 {attempt + 1} 次失败: {ex}\n")
+            time.sleep(RETRY_BACKOFF * (attempt + 1))
+    raise last
+
+
 def fetch_page(cfg, start):
     params = {
         "search_query": build_search_query(cfg),
@@ -150,18 +190,8 @@ def fetch_page(cfg, start):
         "max_results": MAX_RESULTS_PER_PAGE,
     }
     url = API + "?" + urllib.parse.urlencode(params)
-    # arXiv 对这类长查询经常返回 503 / 超时，需重试
-    last = None
-    for attempt in range(MAX_RETRIES):
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
-            with urllib.request.urlopen(req, timeout=90) as resp:
-                return resp.read()
-        except Exception as ex:
-            last = ex
-            sys.stderr.write(f"[retry] start={start} 第 {attempt + 1} 次失败: {ex}\n")
-            time.sleep(RETRY_BACKOFF * (attempt + 1))
-    raise last
+    # arXiv 对这类长查询经常返回 503 / 超时 / 限流(406、429)，需重试
+    return api_get_retry(url, f"start={start}")
 
 
 def parse_entries(xml_bytes):
@@ -202,11 +232,9 @@ def probe_index_frontier(cfg):
               "sortOrder": "descending", "start": 0, "max_results": 5}
     url = API + "?" + urllib.parse.urlencode(params)
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "daily-digest/2.0"})
-        with urllib.request.urlopen(req, timeout=90) as resp:
-            entries = parse_entries(resp.read())
+        entries = parse_entries(api_get_retry(url, "索引前沿探测"))
     except Exception as ex:
-        sys.stderr.write(f"[warn] 索引前沿探测失败，退回按当前时刻计算窗口: {ex}\n")
+        sys.stderr.write(f"[warn] 索引前沿探测失败，窗口改走放宽兜底: {ex}\n")
         return None
     stamps = [d for d in (parse_published(e["published"]) for e in entries) if d]
     return max(stamps) if stamps else None
@@ -217,7 +245,11 @@ def compute_cutoff(cfg):
     now = datetime.now(timezone.utc)
     frontier = probe_index_frontier(cfg)
     if frontier is None:
-        return now - timedelta(hours=cfg["window_hours"]), None, None
+        # 探测不到前沿就不知道索引滞后多少，只能按最坏情况把窗口整体放宽，
+        # 绝不能假设滞后为零（那等于断言「现在就是前沿」，正是假零的来源）。
+        span = cfg["window_hours"] + PROBE_FAIL_EXTRA_HOURS
+        sys.stderr.write(f"[warn] 索引前沿未知，窗口放宽到 {span}h 兜底\n")
+        return now - timedelta(hours=span), None, None
     lag = (now - frontier).total_seconds() / 3600
     anchor = frontier if lag > 0 else now
     if lag > MAX_LAG_HOURS:
@@ -280,7 +312,8 @@ def main():
                    "papers": top}, f, ensure_ascii=False, indent=2)
 
     if frontier is None:
-        anchor_note = "索引前沿探测失败，窗口按当前时刻计算"
+        anchor_note = (f"索引前沿探测失败，窗口放宽至 "
+                       f"{cfg['window_hours'] + PROBE_FAIL_EXTRA_HOURS}h 兜底")
     else:
         anchor_note = (f"索引前沿 {frontier.strftime('%Y-%m-%dT%H:%M:%SZ')}"
                        f"（滞后 {lag:.1f}h），窗口起点 "
