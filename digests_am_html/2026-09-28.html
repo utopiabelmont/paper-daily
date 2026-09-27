@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>论文图卡 2026-09-28</title>
+<style>
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#FAF9F5;
+     color:#2C2C2A;max-width:780px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.date{color:#888780;font-size:13px;margin-bottom:20px}
+.card{background:#fff;border:1px solid #E3E1D9;border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.pill{background:#E6F1FB;color:#0C447C;border-radius:12px;padding:2px 10px}
+.meta a{color:#185FA5;text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.en{color:#888780;font-size:12px;margin-bottom:10px}
+a.blk{display:block;text-decoration:none;color:inherit}
+a.blk:hover .q,a.blk:hover .res,a.blk:hover .conc,a.blk:hover .m{filter:brightness(0.96)}
+.q{background:#F1EFE8;color:#444441;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:10px}
+.methods{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.methods a.blk{flex:1;min-width:140px;display:flex}
+.m{flex:1;background:#EEEDFE;color:#3C3489;border-radius:8px;
+   padding:8px 10px;font-size:13px;font-weight:600}
+.m span{display:block;font-weight:400;font-size:12px;color:#534AB7;margin-top:2px}
+.res{border-radius:8px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:8px}
+.res span{display:block;font-weight:400;font-size:12px;margin-top:2px}
+.res.good{background:#E1F5EE;color:#085041}.res.good span{color:#0F6E56}
+.res.warn{background:#FAECE7;color:#712B13}.res.warn span{color:#993C1D}
+.res.bad{background:#FCEBEB;color:#791F1F}.res.bad span{color:#A32D2D}
+.conc{background:#FAEEDA;color:#633806;border-radius:8px;padding:8px 12px;font-size:13px;margin-top:2px}
+.news{background:#E6F1FB;color:#0C447C;border-radius:8px;padding:8px 12px;font-size:13px}
+details{margin-top:10px;border-top:1px dashed #E3E1D9;padding-top:8px}
+details summary{cursor:pointer;font-size:12px;color:#888780;user-select:none}
+details[open] summary{color:#2C2C2A}
+.term{background:#F7F6F1;border-radius:8px;padding:8px 12px;font-size:12px;margin-top:8px}
+.term b{color:#3C3489}
+.foot{color:#B4B2A9;font-size:12px;text-align:center;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>每日论文图卡</h1>
+<div class="date">2026-09-28</div>
+<div class="card">
+  <div class="meta"><span class="pill">运行说明 · 论文</span>
+    <a href="http://export.arxiv.org/api/query" target="_blank">arXiv API</a></div>
+  <h2>今日无匹配新论文（上游索引停滞导致的观测空窗）</h2><div class="en">2026-09-28 · 窗口 2026-09-21 17:59Z → 2026-09-24 17:59Z（72h）</div>
+  <div class="news">脚本一次跑通、无网络错误：pages_ok=1、pages_failed=0、entries_seen=100、skipped_past=6，窗口内命中 0 篇，脚本自述"此为真实空结果"。<b>但索引前沿连续三天停在 2026-09-24T17:59:32Z</b>（09-26 滞后 27.4h、09-27 滞后 51.4h、09-28 滞后 75.4h，时间戳完全相同、滞后每天正好 +24h）。独立交叉验证：直查 arXiv API <code>cat:cs.CV</code> 按 submittedDate 降序，最新三条 published 为 2026-09-24T17:58:21Z / 17:58:03Z / 17:57:56Z，与脚本一致——<b>停滞在 arXiv 检索索引一侧，不在本仓库脚本</b>。故今天的"0 篇"是看不见，不是没有。</div>
+  <a class="blk" href="https://claude.ai/new?q=%E8%AF%B7%E5%88%86%E4%B8%A4%E9%83%A8%E5%88%86%E5%9B%9E%E7%AD%94%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%8C%E5%85%88%E8%81%94%E7%BD%91%E6%90%9C%E7%B4%A2%EF%BC%8C%E7%BB%99%E5%87%BA%20arXiv%20%E6%A3%80%E7%B4%A2%20API%EF%BC%88export.arxiv.org%2Fapi%2Fquery%EF%BC%89%E7%9A%84%E7%B4%A2%E5%BC%95%E5%89%8D%E6%B2%BF%E4%B8%8E%20listing%20%E9%A1%B5%E9%9D%A2%EF%BC%88arxiv.org%2Flist%EF%BC%89%E4%B9%8B%E9%97%B4%E9%80%9A%E9%81%93%E5%B7%AE%E5%BC%82%E7%9A%84%E9%80%9A%E7%94%A8%E8%AF%B4%E6%98%8E%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%8E%86%E5%8F%B2%E4%B8%8A%E7%B4%A2%E5%BC%95%E7%AE%A1%E9%81%93%E5%81%9C%E6%BB%9E%E7%9A%84%E5%B8%B8%E8%A7%81%E6%88%90%E5%9B%A0%E4%B8%8E%E6%81%A2%E5%A4%8D%E6%97%B6%E9%95%BF%EF%BC%9B%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%8C%E7%BB%93%E5%90%88%E4%BB%A5%E4%B8%8B%E4%BA%8B%E5%AE%9E%E7%BB%99%E5%87%BA%E5%BA%94%E5%AF%B9%E5%BB%BA%E8%AE%AE%EF%BC%9A%E6%9F%90%E6%AF%8F%E6%97%A5%E6%8A%93%E5%8F%96%E8%84%9A%E6%9C%AC%E8%BF%9E%E7%BB%AD%E4%B8%89%E5%A4%A9%EF%BC%882026-09-26%2F27%2F28%EF%BC%89%E6%8A%A5%E5%91%8A%E7%9A%84%E7%B4%A2%E5%BC%95%E5%89%8D%E6%B2%BF%E6%97%B6%E9%97%B4%E6%88%B3%E5%AE%8C%E5%85%A8%E7%9B%B8%E5%90%8C%EF%BC%8C%E5%9D%87%E4%B8%BA%202026-09-24T17%3A59%3A32Z%EF%BC%8C%E6%BB%9E%E5%90%8E%E5%88%86%E5%88%AB%E4%B8%BA%2027.4h%2F51.4h%2F75.4h%EF%BC%9B%E7%8B%AC%E7%AB%8B%E7%9B%B4%E6%9F%A5%20cat%3Acs.CV%20%E6%8C%89%20submittedDate%20%E9%99%8D%E5%BA%8F%EF%BC%8C%E6%9C%80%E6%96%B0%E4%B8%89%E6%9D%A1%20published%20%E4%B8%BA%202026-09-24T17%3A58%3A21Z%E3%80%8117%3A58%3A03Z%E3%80%8117%3A57%3A56Z%EF%BC%8C%E4%B8%8E%E8%84%9A%E6%9C%AC%E4%B8%80%E8%87%B4%E3%80%82%E8%AF%A5%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%9B%BA%E5%AE%9A%2072h%20%E7%AA%97%E5%8F%A3%E4%B8%94%E4%B8%8D%E6%94%AF%E6%8C%81%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%8C%87%E5%AE%9A%E7%AA%97%E5%8F%A3%E9%95%BF%E5%BA%A6%E3%80%82%E8%AF%B7%E8%AF%B4%E6%98%8E%E7%B4%A2%E5%BC%95%E6%81%A2%E5%A4%8D%E5%BD%93%E5%A4%A9%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E6%BC%8F%E6%8E%89%E8%A2%AB%E7%AA%97%E5%8F%A3%E6%8C%A4%E5%87%BA%E7%9A%84%E6%8A%95%E7%A8%BF%E5%8C%BA%E9%97%B4%E3%80%82%E5%B9%B6%E8%AE%A8%E8%AE%BA%E5%A6%82%E4%BD%95%E5%BB%B6%E4%BC%B8%E5%88%B0%E6%88%91%E7%9A%84%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91%EF%BC%88%E6%BF%80%E5%85%89%E5%A2%9E%E6%9D%90%E5%88%B6%E9%80%A0%E5%9C%A8%E7%BA%BF%E7%9B%91%E6%B5%8B%20%C3%97%20%E5%85%89%E5%AD%A6%E7%B2%BE%E5%AF%86%E6%B5%8B%E9%87%8F%20%2F%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%87%E7%8C%AE%E8%B7%9F%E8%B8%AA%EF%BC%89%E3%80%82" target="_blank">
+    <div class="conc">结论：空窗成因已定位为 arXiv 检索 API 索引停滞（连续 3 天未推进）；风险点是索引恢复当天可能一次性放出 4–5 天投稿，而 72h 固定窗口只接住最后 3 天——点此追问恢复当天的补窗方案。</div></a>
+  <details><summary>术语速查（点开）</summary>
+    <div class="term"><b>索引前沿（index frontier）</b>：检索服务已收录条目中最新那条的时间戳，代表"服务端能看到多新的内容"。本文中：脚本用它反推可信窗口；它三天不动，说明上游收录管道停了，而窗口起点仍随当天日期往前滚，有效新增区间被挤压为零。</div>
+    <div class="term"><b>skipped_past（跨天去重跳过数）</b>：本次抓取命中但已在往期简报报道过、因此被丢弃的条目数。本文中：=6，说明这 100 条 entry 里凡是相关的都是旧货，进一步印证没有新内容进入索引。</div>
+    <div class="term"><b>HTTP 406 Not Acceptable</b>：服务端拒绝本次请求的内容协商结果，实践中常见于限流或代理拦截。本文中：交叉验证时 eess.IV、physics.optics 两条查询返回 406，属请求侧被拒，<b>不</b>作为索引停滞的证据；结论仅由成功的 cs.CV 那条支撑。</div>
+  </details>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">运行说明 · 行业动态</span>
+    <a href="https://news.google.com/" target="_blank">Google News RSS</a></div>
+  <h2>今日无新行业动态（真实空结果）</h2><div class="en">2026-09-28 · 窗口 168h · 8/8 查询成功，失败 0</div>
+  <div class="news">脚本一次跑通、无抓取失败。窗口内抓回条目经去重后全部归零：L1 精确命中历史链接丢弃 5 条，L2/L3 疑似重复抑制 5 条。逐条复核 5 条被抑制项，<b>均不推翻</b>：其中 4 条（相似度 0.76–0.91）是 09-27 简报已报的 Instruct3D「Additive Build Intelligence」金属增材平台在 VoxelMatters、IndexBox、维度网的转载（维度网同一稿件重复入队两次），无新增事实；余 1 条为风能展会稿，与本方向无关。</div>
+</div>
+
+<div class="foot">由自动化 routine 生成 · 色块含义：紫=方法 绿=达标/正面 橙=背离/意外 红=失效 黄=结论<br>
+点击色块可跳转 claude.ai 深入追问（需登录）；点开每卡底部"术语速查"可离线阅读注释</div>
+</body>
+</html>
