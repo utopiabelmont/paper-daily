@@ -136,6 +136,7 @@ PROFILES = {
 # ====================================================
 
 MAX_RESULTS_PER_PAGE = 100
+LEGACY_MD_TOP = 12  # candidates*.md 的篇数上限（旧版定时任务按它写简报）
 MAX_RETRIES = 6
 RETRY_BACKOFF = 15  # 秒，第 n 次失败后等待 n * RETRY_BACKOFF
 # arXiv 对突发请求限流，且 406 与 429 混用（2026-09-22 实测同一 URL 同一请求头，
@@ -407,8 +408,14 @@ def main():
                        f"（滞后 {lag:.1f}h），窗口起点 "
                        f"{cutoff.strftime('%Y-%m-%dT%H:%M:%SZ')}")
 
-    lines = [f"# {cfg['label']} {today}（共 {len(top)} 篇，已跳过 {skipped_past} 篇历史重复）\n"]
+    # candidates.md 是旧版定时任务直接据以写简报的清单，保持旧版的 12 篇上限，
+    # 这样定时任务说明未切换时行为不变；新流程读取 papers.json 里的全部候选。
+    legacy = top[:LEGACY_MD_TOP]
+    lines = [f"# {cfg['label']} {today}（共 {len(legacy)} 篇，已跳过 {skipped_past} 篇历史重复）\n"]
     lines.append(f"> 窗口 {cfg['window_hours']}h ｜ {anchor_note}\n")
+    if len(top) > len(legacy):
+        lines.append(f"> 本文件只列关键词分最高的 {len(legacy)} 篇；精选流程读取 "
+                     f"{cfg['out_json']} 中的全部 {len(top)} 篇。\n")
     if fetch_failed:
         lines.append(f"**⚠ 抓取失败：{pages_failed} 页请求全部失败，一条 entry 都没取到。**\n")
         lines.append("本文件不代表「今日无新论文」——这是故障，不是空结果。"
@@ -417,9 +424,9 @@ def main():
         lines.append("今日无匹配新论文。")
         lines.append(f"\n> 抓取健康：成功 {pages_ok} 页、取到 {entries_seen} 条 entry、"
                      f"其中 {skipped_past} 条为历史已报道。此为真实空结果。")
-    for i, p in enumerate(top, 1):
+    for i, p in enumerate(legacy, 1):
         lines.append(f"## {i}. {p['title']}")
-        lines.append(f"- arXiv: {p['arxiv_id']}  |  分类: {p['primary_category']}  |  关键词分: {p['score']}")
+        lines.append(f"- arXiv: {p['arxiv_id']}  |  分类: {p['primary_category']}  |  相关度: {p['score']}")
         lines.append(f"- 作者: {', '.join(p['authors'])}")
         lines.append(f"- 链接: {p['link']}")
         lines.append(f"- 摘要原文: {p['summary']}\n")
