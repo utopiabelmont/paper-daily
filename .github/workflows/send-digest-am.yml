@@ -25,12 +25,26 @@ jobs:
           HTML="digests_am_html/${DATE}.html"
           if [ -f "$HTML" ]; then ATT="$FILE,$HTML"; else ATT="$FILE"; fi
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "file=$FILE" >> "$GITHUB_OUTPUT"
+          echo "html=$HTML" >> "$GITHUB_OUTPUT"
           echo "att=$ATT" >> "$GITHUB_OUTPUT"
           {
             echo "BODY<<__EOF__"
             cat "$FILE"
             echo "__EOF__"
           } >> "$GITHUB_ENV"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build HTML email body
+        run: |
+          # 图卡排进邮件正文，样式内联；失败时退回把文字版原样放进正文，保证邮件照常发出
+          pip install --quiet premailer || echo "premailer 安装失败，正文只保留 <style> 样式"
+          python build_email.py "${{ steps.pick.outputs.file }}" "${{ steps.pick.outputs.html }}" email.html \
+            || python -c "import html,sys; open('email.html','w',encoding='utf-8').write('<pre style=\"white-space:pre-wrap;font-family:sans-serif\">'+html.escape(open(sys.argv[1],encoding='utf-8').read())+'</pre>')" "${{ steps.pick.outputs.file }}"
 
       - name: Send email
         uses: dawidd6/action-send-mail@v3
@@ -44,4 +58,5 @@ jobs:
           to: ${{ secrets.MAIL_TO }}
           subject: 每日交叉方向简报 ${{ steps.pick.outputs.date }}
           body: ${{ env.BODY }}
+          html_body: file://email.html
           attachments: ${{ steps.pick.outputs.att }}
