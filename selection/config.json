@@ -1,0 +1,26 @@
+{
+  "_comment": "精选门槛与权重。改动后用 select_papers.py eval 在标注样本上重跑，再决定上线（见 selection/README.md）。",
+  "thresholds": {
+    "preprint": 50,
+    "journal": 50
+  },
+  "source_tier": {
+    "arxiv": "preprint"
+  },
+  "min_fit": 4,
+  "shortlist_floor": 40,
+  "max_selected": {
+    "main": 8,
+    "am": 6
+  },
+  "max_shortlist": 5,
+  "weights": {
+    "measurement_method":      {"sig": 2, "nov": 2, "cred": 2, "fit": 3, "act": 1},
+    "instrument_system":       {"sig": 2, "nov": 2, "cred": 2, "fit": 3, "act": 1},
+    "calibration_uncertainty": {"sig": 1, "nov": 2, "cred": 2, "fit": 3, "act": 2},
+    "process_monitoring":      {"sig": 2, "nov": 2, "cred": 2, "fit": 3, "act": 1},
+    "dataset_benchmark":       {"sig": 1, "nov": 2, "cred": 1, "fit": 3, "act": 3},
+    "ml_method":               {"sig": 1, "nov": 2, "cred": 1, "fit": 4, "act": 2},
+    "review":                  {"sig": 1, "nov": 1, "cred": 1, "fit": 4, "act": 3}
+  }
+}

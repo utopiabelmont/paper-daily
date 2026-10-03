@@ -7,8 +7,9 @@
     python fetch_arxiv.py --profile main   # 主方向：傅里叶光学/精密测量/工业检测ML
     python fetch_arxiv.py --profile am     # 交叉方向：激光增材监测 × 光学测量/ML
 
-流程：读取历史简报已报道的 arXiv ID → 查 arXiv API → 时间窗过滤 → 剔除历史重复
-      → 相关度打分 → 单次内去重 → 输出 JSON + Markdown 候选清单交给模型总结。
+流程：读取历史简报已报道与已评分的 arXiv ID → 查 arXiv API → 时间窗过滤 → 剔除历史重复
+      → 分层关键词召回与排序 → 单次内去重 → 输出 JSON + Markdown 候选清单。
+      之后由 select_papers.py 做预筛与两次独立评分，决定哪些论文写进简报。
 
 通用规则（两个 profile 共享，改一处即全局生效）：
   - 日期标签按 JST(UTC+9) 计算；时间窗按 UTC 比对（arXiv 时间就是 UTC）
@@ -33,6 +34,7 @@ from datetime import datetime, timedelta, timezone
 
 LOCAL_TZ = timezone(timedelta(hours=9))
 DEDUP_DIRS = ["digests", "digests_am"]          # 两个方向共用，互相防重复
+SELECTION_LOG_DIR = "selection_log"             # select_papers.py 的评分日志，同样参与去重
 API = "https://export.arxiv.org/api/query"
 ATOM = "{http://www.w3.org/2005/Atom}"
 ARXIV = "{http://arxiv.org/schemas/atom}"
@@ -58,20 +60,33 @@ PROFILES = {
             'abs:"point spread function"', 'abs:"wavefront"',
             'abs:"metrology"', 'abs:"profilometry"', 'abs:"interferometry"',
             'abs:"subpixel"', 'abs:"sub-pixel"', 'abs:"dimensional measurement"',
+            # 2026-10-03 补：此前漏召回或只靠分类进来的方向
+            'abs:"deflectometry"', 'abs:"fringe projection"', 'abs:"structured light"',
+            'abs:"metasurface"', 'abs:"optical computing"', 'abs:"aberration"',
         ],
-        "keywords": [
-            "edge localization", "edge detection", "defect detection", "surface defect",
-            "anomaly detection", "surface inspection", "industrial inspection",
-            "visual inspection", "optical inspection", "semiconductor", "wafer",
-            "fourier optics", "wave optics", "spatial frequency", "frequency filtering",
-            "phase retrieval", "computational imaging", "super-resolution",
-            "point spread function", "wavefront", "diffraction", "interferometry",
-            "metrology", "profilometry", "subpixel", "sub-pixel", "sub-micron", "submicron",
-            "precision measurement", "dimensional measurement",
-            "cnn", "convolutional", "deep learning", "machine learning",
+        # 分层关键词（2026-10-03）：只用于召回与排序，不决定是否推送。
+        # 是否推送由 select_papers.py 的预筛与两次评分决定。
+        "keywords_core": [
+            "edge localization", "edge detection", "edge enhancement", "subpixel", "sub-pixel",
+            "sub-micron", "submicron", "fourier optics", "spatial frequency", "frequency filtering",
+            "phase retrieval", "point spread function", "aberration", "wavefront", "diffract",
+            "interferometry", "interferometric", "profilometry", "metrology",
+            "precision measurement", "dimensional measurement", "fringe projection",
+            "structured light", "deflectometry", "defect detection", "surface defect",
+            "surface inspection", "industrial inspection", "optical inspection",
+            "visual inspection", "industrial anomaly", "wafer", "metasurface",
+            "optical computing", "optical neural network", "computational imaging",
+        ],
+        "keywords_generic": [
+            "anomaly detection", "super-resolution", "semiconductor", "wave optics",
+            "cnn", "convolutional", "deep learning", "machine learning", "segmentation",
+        ],
+        "keywords_negative": [
+            "mri", "medical", "clinical", "remote sensing", "satellite", "quantum",
+            "wireless", "communication", "autonomous driving", "video anomaly",
         ],
         "window_hours": 72,
-        "top_n": 12,
+        "top_n": 30,   # 召回上限，交给模型预筛与评分；最终推送数见 selection/config.json
         "max_pages": 3,
     },
     # ---- 交叉方向：激光增材制造在线监测 × 光学精密测量/ML ----
@@ -89,24 +104,32 @@ PROFILES = {
             'abs:"process monitoring"', 'abs:"in-situ monitoring"',
             'abs:"in situ monitoring"', 'abs:"physics-informed neural"',
             'abs:"nondestructive"', 'abs:"non-destructive"',
+            # 2026-10-03 补：词形变体与激光加工
+            'abs:"additively manufactured"', 'abs:"waterjet"', 'abs:"laser machining"',
         ],
-        "keywords": [
-            "additive manufacturing", "directed energy deposition", "powder bed fusion",
-            "selective laser melting", "laser metal deposition", "laser cladding",
-            "melt pool", "meltpool", "laser ultrasonic", "laser welding", "keyhole",
-            "in-situ monitoring", "in situ monitoring", "process monitoring",
-            "online monitoring", "thermal imaging", "pyrometry", "spatter",
-            "porosity", "lack of fusion", "layer height", "surface roughness",
+        "keywords_core": [
+            "additive manufacturing", "additively manufactured", "directed energy deposition",
+            "powder bed fusion", "selective laser melting", "laser metal deposition",
+            "laser cladding", "melt pool", "meltpool", "melt-pool", "laser ultrasonic",
+            "laser welding", "keyhole", "spatter", "in-situ monitoring", "in situ monitoring",
+            "process monitoring", "online monitoring", "layer height", "waterjet",
+            "water jet guided", "water-jet guided", "laser machining",
+        ],
+        "keywords_generic": [
+            "thermal imaging", "pyrometry", "porosity", "lack of fusion", "surface roughness",
             "closed-loop", "feedback control", "physics-informed", "digital twin",
-            "nondestructive", "non-destructive", "ultrasonic",
-            "defect detection", "anomaly detection", "quality control",
-            "optical coherence tomography", "fringe projection", "structured light",
-            "profilometry", "interferometry", "edge detection", "subpixel", "metrology",
-            "cnn", "convolutional", "deep learning", "machine learning",
-            "u-net", "segmentation",
+            "nondestructive", "non-destructive", "ultrasonic", "defect detection",
+            "anomaly detection", "quality control", "optical coherence tomography",
+            "fringe projection", "structured light", "profilometry", "interferometry",
+            "edge detection", "subpixel", "metrology", "cnn", "convolutional",
+            "deep learning", "machine learning", "u-net", "segmentation",
+        ],
+        "keywords_negative": [
+            "lidar", "remote sensing", "medical", "battery", "power electronics",
+            "converter", "wireless",
         ],
         "window_hours": 72,
-        "top_n": 12,
+        "top_n": 30,   # 召回上限，交给模型预筛与评分；最终推送数见 selection/config.json
         "max_pages": 3,
     },
 }
@@ -139,12 +162,20 @@ MAX_LAG_HOURS = 240
 
 
 def load_past_reported_ids():
+    """历史简报里出现过的 ID，加上此前各天已评过分的 ID（selection_log/）。
+
+    评过分但没入选的论文也算「已处理」：72h 窗口每天交叠，否则同一篇会被连续几天重复评分。
+    当天的评分日志不计入，这样同一天重跑时能拿回同一批候选。
+    """
     ids = set()
-    for d in DEDUP_DIRS:
+    today = datetime.now(LOCAL_TZ).strftime("%Y-%m-%d")
+    for d in DEDUP_DIRS + [SELECTION_LOG_DIR]:
         if not os.path.isdir(d):
             continue
         for fn in os.listdir(d):
-            if fn.endswith(".md"):
+            if d == SELECTION_LOG_DIR and fn.startswith(today):
+                continue
+            if fn.endswith((".md", ".jsonl")):
                 try:
                     with open(os.path.join(d, fn), encoding="utf-8") as f:
                         ids |= set(ARXIV_ID_RE.findall(f.read()))
@@ -287,16 +318,25 @@ def compute_cutoff(cfg):
     return anchor - timedelta(hours=cfg["window_hours"]), frontier, lag
 
 
-def relevance_score(paper, keywords):
+def keyword_score(paper, cfg):
+    """分层关键词分，只用于召回与排序（2026-10-03 起不再决定是否推送）。
+
+    - 核心词：标题 +3、摘要 +1（与旧版打分口径一致）
+    - 泛化词：标题 +1、摘要 +1；没有任何核心词命中时，泛化词合计最多 1 分
+    - 负面词：每命中一个 −2，只压低排序，不剔除——是否相关由模型预筛判断
+    返回 (分数, 是否有任何正向命中)。没有正向命中的论文不进入候选。
+    """
     title = paper["title"].lower()
     summary = paper["summary"].lower()
-    score = 0
-    for kw in keywords:
-        if kw in title:
-            score += 3
-        if kw in summary:
-            score += 1
-    return score
+    core = sum((3 if kw in title else 0) + (1 if kw in summary else 0)
+               for kw in cfg["keywords_core"])
+    generic = sum((1 if kw in title else 0) + (1 if kw in summary else 0)
+                  for kw in cfg["keywords_generic"])
+    if core == 0:
+        generic = min(generic, 1)
+    negative = sum(2 for kw in cfg["keywords_negative"]
+                   if re.search(r"\b" + re.escape(kw), title + " " + summary))
+    return core + generic - negative, core + generic > 0
 
 
 def main():
@@ -335,8 +375,8 @@ def main():
             if p["arxiv_id"] in past:
                 skipped_past += 1
                 continue
-            p["score"] = relevance_score(p, cfg["keywords"])
-            if p["score"] > 0:
+            p["score"], hit = keyword_score(p, cfg)
+            if hit:
                 collected.append(p)
         if oldest is not None and oldest < cutoff:
             break
@@ -379,7 +419,7 @@ def main():
                      f"其中 {skipped_past} 条为历史已报道。此为真实空结果。")
     for i, p in enumerate(top, 1):
         lines.append(f"## {i}. {p['title']}")
-        lines.append(f"- arXiv: {p['arxiv_id']}  |  分类: {p['primary_category']}  |  相关度: {p['score']}")
+        lines.append(f"- arXiv: {p['arxiv_id']}  |  分类: {p['primary_category']}  |  关键词分: {p['score']}")
         lines.append(f"- 作者: {', '.join(p['authors'])}")
         lines.append(f"- 链接: {p['link']}")
         lines.append(f"- 摘要原文: {p['summary']}\n")
