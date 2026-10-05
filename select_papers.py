@@ -274,9 +274,15 @@ def cmd_merge(args):
              f"> 门槛：两次评分之和 ≥ 2×{threshold}（{tier}），且方向贴近度均值 ≥ {cfg['min_fit']}；"
              f"备选为贴近度达标、均分 ≥ {cfg['shortlist_floor']} 的未入选论文。提示词版本 {version}。",
              f"> 抓取健康：成功 {data.get('pages_ok')} 页 / 失败 {data.get('pages_failed')} 页 / "
-             f"entry {data.get('entries_seen')} 条，跳过历史重复 {data.get('skipped_past')} 篇。\n"]
+             f"entry {data.get('entries_seen')} 条，跳过历史重复 {data.get('skipped_past')} 篇。"]
+    if data.get("index_note"):
+        lines.append(f"> 索引状态：{data['index_note']}。")
+    lines.append("")
     if not records:
-        lines.append("今日无匹配新论文（抓取正常，召回为空）。\n")
+        if data.get("index_status") == "in_sync":
+            lines.append("今日无匹配新论文（抓取正常，索引与 arXiv 公告同步，召回为空，不是故障）。\n")
+        else:
+            lines.append("今日无匹配新论文（抓取正常，召回为空）。\n")
     elif not selected:
         lines.append("今日没有论文达到入选门槛。简报中如实写明，并列出下方备选。\n")
     lines.append("## 入选论文（按评分排序，简报只详写这些）\n")

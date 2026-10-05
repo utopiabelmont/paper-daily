@@ -19,6 +19,10 @@
     窗口的新鲜端是空的，而真正待召回的论文补进索引时已滑出窗口，造成静默漏检。
     改为先探测索引前沿、再以它为基准往回推，索引滞后多久窗口就自动后移多久。
     放宽窗口不会带来重复推送——跨天去重是按 arXiv ID 做的。
+  - 「滞后」小时数本身不说明索引是否异常（2026-10-05 补）：arXiv 只在周日至周四
+    20:00 ET 公告，定时任务在公告前运行时，周日、周一（JST）必然没有新批次，
+    滞后会涨到 51h、75h。脚本按公告时间表判断索引是否已收录最近一次公告，
+    在输出里写明「无新批次」还是「索引落后」，避免把周末空窗误报成故障。
 """
 
 import argparse
@@ -31,6 +35,12 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
+
+try:
+    from zoneinfo import ZoneInfo
+    NY_TZ = ZoneInfo("America/New_York")   # arXiv 公告时间表按美东时间（含夏令时）
+except Exception:
+    NY_TZ = None
 
 LOCAL_TZ = timezone(timedelta(hours=9))
 DEDUP_DIRS = ["digests", "digests_am"]          # 两个方向共用，互相防重复
@@ -48,6 +58,7 @@ PROFILES = {
         "label": "主方向候选论文",
         "out_json": "papers.json",
         "out_md": "candidates.md",
+        "digest_dir": "digests",
         "categories": ["physics.optics", "eess.IV", "cs.CV", "eess.SP"],
         "server_terms": [
             'abs:"edge localization"', 'abs:"edge detection"',
@@ -94,6 +105,7 @@ PROFILES = {
         "label": "交叉方向候选论文",
         "out_json": "papers_am.json",
         "out_md": "candidates_am.md",
+        "digest_dir": "digests_am",
         "categories": ["physics.app-ph", "cond-mat.mtrl-sci", "eess.IV",
                        "cs.CV", "eess.SY", "physics.optics"],
         "server_terms": [
@@ -162,11 +174,13 @@ except ImportError:
 MAX_LAG_HOURS = 240
 
 
-def load_past_reported_ids():
+def load_past_reported_ids(own_digest_dir):
     """历史简报里出现过的 ID，加上此前各天已评过分的 ID（selection_log/）。
 
     评过分但没入选的论文也算「已处理」：72h 窗口每天交叠，否则同一篇会被连续几天重复评分。
-    当天的评分日志不计入，这样同一天重跑时能拿回同一批候选。
+    当天的评分日志和本方向当天的简报都不计入，这样同一天重跑时能拿回同一批候选；
+    只算评分日志而不算简报的话，重跑会把首次运行已写进简报的论文当成历史重复剔掉，
+    简报被覆盖后这几篇就丢了。另一方向当天的简报照常计入，两条推送互不重复。
     """
     ids = set()
     today = datetime.now(LOCAL_TZ).strftime("%Y-%m-%d")
@@ -174,7 +188,7 @@ def load_past_reported_ids():
         if not os.path.isdir(d):
             continue
         for fn in os.listdir(d):
-            if d == SELECTION_LOG_DIR and fn.startswith(today):
+            if d in (SELECTION_LOG_DIR, own_digest_dir) and fn.startswith(today):
                 continue
             if fn.endswith((".md", ".jsonl")):
                 try:
@@ -300,6 +314,56 @@ def probe_index_frontier(cfg):
     return max(stamps) if stamps else None
 
 
+def _announcement(day):
+    """day（美东日期）若是公告日，返回 (公告时刻, 本批收稿截止)，否则 None。
+
+    arXiv 周日至周四 20:00 ET 公告，周五、周六不公告。每批收录截至当日 14:00 ET
+    的投稿；周日那批截至周五 14:00 ET（周五下午至周一 14:00 ET 的投稿进周一那批）。
+    不含 arXiv 节假日停更，节假日时会显示为「索引落后」，需要人工判断。
+    """
+    wd = day.weekday()  # 周一 = 0 … 周日 = 6
+    if wd in (4, 5):
+        return None
+    cut_day = day - timedelta(days=2) if wd == 6 else day
+    ann = datetime(day.year, day.month, day.day, 20, tzinfo=NY_TZ)
+    cut = datetime(cut_day.year, cut_day.month, cut_day.day, 14, tzinfo=NY_TZ)
+    return ann, cut
+
+
+def arxiv_schedule_status(frontier, now):
+    """对照公告时间表判断索引前沿是否正常，返回 (状态, 说明)。
+
+    状态：in_sync＝索引已收录最近一次公告；behind＝最近一次公告已发出但索引还停在
+    上一批；unknown＝无法判断（缺时区数据或探测失败）。
+    """
+    if NY_TZ is None or frontier is None:
+        return "unknown", ""
+    local = now.astimezone(NY_TZ)
+    past = []          # 已发生的公告，由近到远
+    for back in range(10):
+        a = _announcement((local - timedelta(days=back)).date())
+        if a and a[0] <= local:
+            past.append(a)
+        if len(past) == 2:
+            break
+    nxt = None
+    for ahead in range(8):
+        a = _announcement((local + timedelta(days=ahead)).date())
+        if a and a[0] > local:
+            nxt = a[0]
+            break
+    if len(past) < 2 or nxt is None:
+        return "unknown", ""
+    (last_ann, _), (_, prev_cut) = past
+    jst = lambda d: d.astimezone(LOCAL_TZ).strftime("%m-%d %H:%M")
+    next_note = f"下一次公告 JST {jst(nxt)}"
+    if frontier > prev_cut:
+        return "in_sync", (f"索引已收录最近一次 arXiv 公告（JST {jst(last_ann)}），"
+                           f"此后尚无新批次，{next_note}")
+    return "behind", (f"最近一次 arXiv 公告（JST {jst(last_ann)}）已发出，"
+                      f"但索引仍停在上一批，属于索引延迟；{next_note}")
+
+
 def compute_cutoff(cfg):
     """返回 (窗口起点, 索引前沿, 滞后小时数)。"""
     now = datetime.now(timezone.utc)
@@ -347,8 +411,9 @@ def main():
     args = ap.parse_args()
     cfg = PROFILES[args.profile]
 
-    past = load_past_reported_ids()
+    past = load_past_reported_ids(cfg["digest_dir"])
     cutoff, frontier, lag = compute_cutoff(cfg)
+    index_status, index_note = arxiv_schedule_status(frontier, datetime.now(timezone.utc))
     seen, collected, skipped_past = set(), [], 0
     pages_ok, pages_failed, entries_seen = 0, 0, 0
     for page in range(cfg["max_pages"]):
@@ -397,7 +462,11 @@ def main():
         json.dump({"date": today, "profile": args.profile, "count": len(top),
                    "fetch_failed": fetch_failed, "pages_ok": pages_ok,
                    "pages_failed": pages_failed, "entries_seen": entries_seen,
-                   "skipped_past": skipped_past, "papers": top},
+                   "skipped_past": skipped_past,
+                   "index_frontier": frontier.strftime("%Y-%m-%dT%H:%M:%SZ") if frontier else None,
+                   "index_lag_hours": round(lag, 1) if lag is not None else None,
+                   "index_status": index_status, "index_note": index_note,
+                   "papers": top},
                   f, ensure_ascii=False, indent=2)
 
     if frontier is None:
@@ -407,6 +476,8 @@ def main():
         anchor_note = (f"索引前沿 {frontier.strftime('%Y-%m-%dT%H:%M:%SZ')}"
                        f"（滞后 {lag:.1f}h），窗口起点 "
                        f"{cutoff.strftime('%Y-%m-%dT%H:%M:%SZ')}")
+    if index_note:
+        anchor_note += f"；{index_note}"
 
     # candidates.md 是旧版定时任务直接据以写简报的清单，保持旧版的 12 篇上限，
     # 这样定时任务说明未切换时行为不变；新流程读取 papers.json 里的全部候选。
