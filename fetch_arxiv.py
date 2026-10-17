@@ -95,22 +95,34 @@ PROFILES = {
         "out_json": "papers_am.json",
         "out_md": "candidates_am.md",
         "categories": ["physics.app-ph", "cond-mat.mtrl-sci", "eess.IV",
-                       "cs.CV", "eess.SY", "physics.optics"],
+                       "cs.CV", "eess.SY", "physics.optics",
+                       # 2026-10-17 补：机器人焊接、超声 NDT 信号处理常在这两类
+                       "cs.RO", "eess.SP"],
+        # 2026-10-17：增材与激光加工的专有词组不再受分类限制。此前召回长期只有 0–4 篇，
+        # 回查 10-03 至 10-16 发现 2610.06250（熔池世界模型预测控制）、2610.09126
+        # （金属增材 PINN）等正中论文主分类是 cs.LG，被分类条件整篇挡在召回之外。
+        # 这些词组本身足够专指，跨分类召回进来的噪声交给预筛处理。
+        "domain_terms": [
+            'abs:"additive manufacturing"', 'abs:"additively manufactured"',
+            'abs:"directed energy deposition"', 'abs:"powder bed fusion"',
+            'abs:"selective laser melting"', 'abs:"laser metal deposition"',
+            'abs:"laser cladding"', 'abs:"melt pool"', 'abs:"molten pool"', 'abs:"weld pool"',
+            'abs:"laser ultrasonic"', 'abs:"laser ultrasonics"', 'abs:"laser welding"',
+            'abs:"wire arc additive"', 'abs:"laser machining"',
+        ],
+        # 泛化词组仍需落在上面的分类里才召回
         "server_terms": [
-            'abs:"additive manufacturing"', 'abs:"directed energy deposition"',
-            'abs:"powder bed fusion"', 'abs:"selective laser melting"',
-            'abs:"laser metal deposition"', 'abs:"laser cladding"',
-            'abs:"melt pool"', 'abs:"laser ultrasonic"', 'abs:"laser welding"',
             'abs:"process monitoring"', 'abs:"in-situ monitoring"',
-            'abs:"in situ monitoring"', 'abs:"physics-informed neural"',
-            'abs:"nondestructive"', 'abs:"non-destructive"',
-            # 2026-10-03 补：词形变体与激光加工
-            'abs:"additively manufactured"', 'abs:"waterjet"', 'abs:"laser machining"',
+            'abs:"in situ monitoring"', 'abs:"online monitoring"',
+            'abs:"physics-informed neural"', 'abs:"nondestructive"', 'abs:"non-destructive"',
+            'abs:"waterjet"', 'abs:"keyhole"', 'abs:"spatter"', 'abs:"laser processing"',
+            'abs:"welding"',
         ],
         "keywords_core": [
             "additive manufacturing", "additively manufactured", "directed energy deposition",
             "powder bed fusion", "selective laser melting", "laser metal deposition",
-            "laser cladding", "melt pool", "meltpool", "melt-pool", "laser ultrasonic",
+            "laser cladding", "melt pool", "meltpool", "melt-pool", "molten pool", "weld pool",
+            "wire arc", "waam", "l-pbf", "lpbf", "laser ultrasonic",
             "laser welding", "keyhole", "spatter", "in-situ monitoring", "in situ monitoring",
             "process monitoring", "online monitoring", "layer height", "waterjet",
             "water jet guided", "water-jet guided", "laser machining",
@@ -123,6 +135,7 @@ PROFILES = {
             "fringe projection", "structured light", "profilometry", "interferometry",
             "edge detection", "subpixel", "metrology", "cnn", "convolutional",
             "deep learning", "machine learning", "u-net", "segmentation",
+            "welding", "laser processing",
         ],
         "keywords_negative": [
             "lidar", "remote sensing", "medical", "battery", "power electronics",
@@ -186,9 +199,13 @@ def load_past_reported_ids():
 
 
 def build_search_query(cfg):
+    """(分类) AND (泛化词组)；配置了 domain_terms 的方向再并上不限分类的专有词组。"""
     cat_q = " OR ".join(f"cat:{c}" for c in cfg["categories"])
     term_q = " OR ".join(cfg["server_terms"])
-    return f"({cat_q}) AND ({term_q})"
+    gated = f"({cat_q}) AND ({term_q})"
+    if not cfg.get("domain_terms"):
+        return gated
+    return f"({' OR '.join(cfg['domain_terms'])}) OR ({gated})"
 
 
 def api_get(url, timeout=90):
