@@ -1,14 +1,19 @@
 {
   "_comment": "精选门槛与权重。改动后用 select_papers.py eval 在标注样本上重跑，再决定上线（见 selection/README.md）。",
   "thresholds": {
-    "preprint": 50,
-    "journal": 50
+    "preprint": 45,
+    "journal": 45
+  },
+  "_fast_track": "方向直通（2026-10-17 起）：两次评分的方向贴近度均值 ≥ min_fit、且均分 ≥ threshold 时也入选。贴近度 5 起即读者声明的「关注方向」，这类论文不再因证据或新颖性一般被挡在备选里。",
+  "fast_track": {
+    "min_fit": 5,
+    "threshold": 40
   },
   "source_tier": {
     "arxiv": "preprint"
   },
   "min_fit": 4,
-  "shortlist_floor": 40,
+  "shortlist_floor": 35,
   "max_selected": {
     "main": 8,
     "am": 6
