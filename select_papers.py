@@ -5,6 +5,7 @@
 思路改编自 AIHOT（github.com/KKKKhazix/AIHOT，MIT）的精选流程：
   - 预筛只判方向相关（PASS / BLOCK / UNKNOWN），宽进；BLOCK 要有正面依据。
   - 同一评分标准独立打两次，两次之和 ≥ 2 × 门槛才入选；门槛按信源分级区分。
+    另设方向直通：贴近度均值够高的论文用较低的直通门槛（2026-10-17 起，见 config.json）。
   - 评分模型只给内容类型和五维整数分，合成总分由本脚本按 selection/config.json 的权重完成，
     评分时看不到关键词得分和门槛。
   - 每天把全部候选的评分写进 selection_log/，人工标注后用 eval 子命令校准门槛。
@@ -184,15 +185,39 @@ def weighted(r, weights):
     return sum(r[ax] * w[ax] for ax in AXES)
 
 
+def fast_track(cfg):
+    """方向直通的 (贴近度下限, 门槛)；config.json 未配置时返回 None。"""
+    ft = cfg.get("fast_track")
+    return (ft["min_fit"], ft["threshold"]) if ft else None
+
+
+def meets_bar(total, fit_avg, threshold, min_fit, ft):
+    """入选判定：两次之和 ≥ 2 × 门槛；或贴近度达到直通下限、两次之和 ≥ 2 × 直通门槛。
+    贴近度低于 min_fit 的一律不入选。"""
+    if fit_avg < min_fit:
+        return False
+    if total >= 2 * threshold:
+        return True
+    return ft is not None and fit_avg >= ft[0] and total >= 2 * ft[1]
+
+
 def decide(total, fit_avg, threshold, cfg):
-    """与 AIHOT 相同的入选规则：两次之和 ≥ 2 × 门槛；另加方向贴近度下限。"""
+    """AIHOT 的入选规则（两次之和 ≥ 2 × 门槛），另加方向贴近度下限与方向直通。"""
     if fit_avg < cfg["min_fit"]:
         return "rejected"
-    if total >= 2 * threshold:
+    if meets_bar(total, fit_avg, threshold, cfg["min_fit"], fast_track(cfg)):
         return "selected"
     if total // 2 >= cfg["shortlist_floor"]:
         return "shortlist"
     return "rejected"
+
+
+def rule_text(threshold, tier, cfg):
+    ft = fast_track(cfg)
+    text = f"两次评分之和 ≥ 2×{threshold}（{tier}），且方向贴近度均值 ≥ {cfg['min_fit']}"
+    if ft:
+        text += f"；方向直通：贴近度均值 ≥ {ft[0]:g} 时门槛降为 2×{ft[1]}"
+    return text
 
 
 def cmd_merge(args):
@@ -231,6 +256,7 @@ def cmd_merge(args):
                 "published": p.get("published", ""), "keyword_score": p.get("score"),
                 "prefilter": {"label": pre[pid]["label"], "reason": pre[pid].get("reason", "")},
                 "tier": tier, "threshold": threshold, "min_fit": cfg["min_fit"],
+                "fast_track": cfg.get("fast_track"),
                 "prompt_version": version, "independent": not args.not_independent,
             }
             if pre[pid]["label"] == "BLOCK":
@@ -271,7 +297,7 @@ def cmd_merge(args):
     lines = [f"# {label}精选结果 {today}\n",
              f"> 候选 {len(records)} 篇 ｜ 预筛 BLOCK {counts['blocked']} ｜ 入选 {len(selected)} ｜ "
              f"备选 {counts['shortlist']} ｜ 未入选 {counts['rejected']}",
-             f"> 门槛：两次评分之和 ≥ 2×{threshold}（{tier}），且方向贴近度均值 ≥ {cfg['min_fit']}；"
+             f"> 门槛：{rule_text(threshold, tier, cfg)}；"
              f"备选为贴近度达标、均分 ≥ {cfg['shortlist_floor']} 的未入选论文。提示词版本 {version}。",
              f"> 抓取健康：成功 {data.get('pages_ok')} 页 / 失败 {data.get('pages_failed')} 页 / "
              f"entry {data.get('entries_seen')} 条，跳过历史重复 {data.get('skipped_past')} 篇。\n"]
@@ -318,10 +344,10 @@ def load_scored(paths):
     return out
 
 
-def predict(rec, threshold, min_fit):
+def predict(rec, threshold, min_fit, ft=None):
     if rec.get("decision") == "blocked" or rec.get("total") is None:
         return "reject"
-    return "select" if rec["total"] >= 2 * threshold and rec["fit_avg"] >= min_fit else "reject"
+    return "select" if meets_bar(rec["total"], rec["fit_avg"], threshold, min_fit, ft) else "reject"
 
 
 def metrics(pairs):
@@ -361,9 +387,10 @@ def cmd_eval(args):
     unscored = [g["arxiv_id"] for g in gold if g["arxiv_id"] not in scored]
     either = sum(1 for g in gold if g.get("gold") == "either")
     min_fit = cfg["min_fit"] if args.min_fit is None else args.min_fit
+    ft = None if args.no_fast_track else fast_track(cfg)
     versions = sorted({r.get("prompt_version", "?") for _, r in cases})
     print(f"样本 {len(cases)} 条（两可 {either} 条不计；无评分记录 {len(unscored)} 条）｜ "
-          f"方向贴近度下限 {min_fit} ｜ 提示词版本 {', '.join(versions) or '-'}")
+          f"方向贴近度下限 {min_fit} ｜ 方向直通 {'贴近度 ≥ %g 时门槛 %d' % ft if ft else '关闭'} ｜ 提示词版本 {', '.join(versions) or '-'}")
     if not cases:
         return
     sel = sum(1 for g, _ in cases if g["gold"] == "select")
@@ -371,11 +398,11 @@ def cmd_eval(args):
     print(" 门槛  入选数  准确率  查准率  查全率    F1")
     current = cfg["thresholds"][cfg["source_tier"]["arxiv"]]
     for t in range(args.lo, args.hi + 1, 2):
-        m = metrics([(g["gold"], predict(r, t, min_fit)) for g, r in cases])
+        m = metrics([(g["gold"], predict(r, t, min_fit, ft)) for g, r in cases])
         mark = "  ← 当前" if t == current else ""
         print(f" {t:>4}  {m['selected']:>6}  {m['acc']:.3f}  {m['prec']:.3f}  {m['rec']:.3f}  {m['f1']:.3f}{mark}")
     t = args.threshold or current
-    errs = [(g, r) for g, r in cases if predict(r, t, min_fit) != g["gold"]]
+    errs = [(g, r) for g, r in cases if predict(r, t, min_fit, ft) != g["gold"]]
     print(f"\n门槛 {t} 下判错 {len(errs)} 条：")
     for g, r in sorted(errs, key=lambda x: -(x[1].get("total") or 0)):
         kind = "误选" if g["gold"] == "reject" else "漏选"
@@ -401,6 +428,7 @@ def main():
     ev.add_argument("--split", help="只评某个子集，如 development 或 holdout")
     ev.add_argument("--min-fit", type=float, help="覆盖 config.json 的方向贴近度下限")
     ev.add_argument("--threshold", type=int, help="列出判错样本时用的门槛（默认用 config.json）")
+    ev.add_argument("--no-fast-track", action="store_true", help="评测时关闭方向直通，只看总分门槛")
     ev.add_argument("--lo", type=int, default=30)
     ev.add_argument("--hi", type=int, default=80)
     args = ap.parse_args()
