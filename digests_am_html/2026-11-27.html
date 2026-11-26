@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交叉方向论文图卡 2026-11-27</title>
+<style>
+:root{--bg:#FAF9F5;--surface:#FFFFFF;--border:#E3E1D9;--rule:#EFEDE6;--ink:#22221F;--ink2:#55544E;--ink3:#8A8880;--accent:#1C5CAB;--bar:#2A78D6;--track:#CDE2FB;--barmute:#A9A79F;--trackmute:#ECEBE5;--ledebg:#FCF5E8;--ledebar:#E09A2E;--tagbg:#F1EFE8;--good:#0CA30C;--warn:#FAB219;--bad:#D03B3B;--onstatus:#FFFFFF;--onwarn:#22221F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141413;--surface:#1D1D1B;--border:#34332F;--rule:#2A2A27;--ink:#F0EFEC;--ink2:#C3C2B7;--ink3:#8F8E86;--accent:#86B6EF;--bar:#3987E5;--track:#1F3556;--barmute:#77756E;--trackmute:#2C2C29;--ledebg:#2A2418;--ledebar:#C98500;--tagbg:#2A2A27;--good:#0CA30C;--warn:#FAB219;--bad:#D03B3B;--onstatus:#FFFFFF;--onwarn:#22221F}}
+:root[data-theme="dark"]{--bg:#141413;--surface:#1D1D1B;--border:#34332F;--rule:#2A2A27;--ink:#F0EFEC;--ink2:#C3C2B7;--ink3:#8F8E86;--accent:#86B6EF;--bar:#3987E5;--track:#1F3556;--barmute:#77756E;--trackmute:#2C2C29;--ledebg:#2A2418;--ledebar:#C98500;--tagbg:#2A2A27;--good:#0CA30C;--warn:#FAB219;--bad:#D03B3B;--onstatus:#FFFFFF;--onwarn:#22221F}
+
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);
+     color:var(--ink);max-width:720px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 2px}
+.date{color:var(--ink3);font-size:13px;margin-bottom:16px}
+
+.ov,.pc,.pc-head,.sc,.mt,.kp,.dm,.kpi{border-collapse:collapse;border-spacing:0}
+.kpi{margin:0 0 6px}
+.kpi-c{padding:0 30px 0 0;vertical-align:bottom}
+.kpi-v{font-size:22px;font-weight:600;color:var(--ink);line-height:1.2}
+.kpi-l{font-size:12px;color:var(--ink3)}
+.note{font-size:13px;color:var(--ink2);margin:8px 0 0}
+.sec{font-size:13px;font-weight:600;color:var(--ink3);margin:26px 0 10px;letter-spacing:.04em}
+.ov{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px}
+.ov-c{padding:10px 10px;vertical-align:top}
+.sep{border-top:1px solid var(--rule)}
+.ov-no{width:22px;font-size:12px;color:var(--ink3);padding-top:12px}
+.ov-ti a{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none}
+.ov-q{font-size:12px;color:var(--ink2);margin-top:2px;line-height:1.55}
+.ov-sc{width:96px;padding-top:12px}
+.sc-c{padding:0;vertical-align:middle}
+.sc-num{font-size:13px;font-weight:600;color:var(--ink);padding-left:8px;white-space:nowrap}
+.mt-on,.mt-off,.mt-mon,.mt-moff{padding:0;height:6px;line-height:0;font-size:0}
+.mt-on{background:var(--bar)}
+.mt-off{background:var(--track)}
+.mt-mon{background:var(--barmute)}
+.mt-moff{background:var(--trackmute)}
+.pc{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:0 0 16px}
+.pc-in{padding:16px 18px 14px}
+.pc-head{width:100%;margin:0 0 8px}
+.ph-c{padding:0;vertical-align:middle}
+.pc-no{font-size:12px;font-weight:600;color:var(--ink3);margin-right:8px}
+.pc-tag{font-size:12px;color:var(--ink2);background:var(--tagbg);border-radius:10px;padding:2px 9px}
+.pc-title{font-size:17px;font-weight:600;line-height:1.45;margin:0;color:var(--ink)}
+.pc-title a{color:var(--ink);text-decoration:none}
+.pc-en{font-size:12px;color:var(--ink3);margin:3px 0 12px;line-height:1.5}
+.pc-en a{color:var(--accent);text-decoration:none}
+.lede{background:var(--ledebg);border-left:3px solid var(--ledebar);border-radius:0 8px 8px 0;padding:9px 12px;margin:0 0 12px}
+.lede-l{font-size:12px;font-weight:600;color:var(--ink3);margin:0 0 2px}
+.lede-t{font-size:15px;color:var(--ink);line-height:1.65}
+.lede-r{font-size:13px;color:var(--ink2);line-height:1.6;margin-top:4px}
+a.ask{color:inherit;text-decoration:none}
+.go{color:var(--accent);font-size:12px;padding-left:3px}
+.kp{width:100%}
+.kp-k{width:44px;font-size:12px;font-weight:600;color:var(--ink3);padding:9px 0 7px;vertical-align:top}
+.kp-v{font-size:14px;color:var(--ink);line-height:1.65;padding:7px 0;vertical-align:top}
+.kp-li{margin:0 0 4px}
+.kp-b{font-weight:600}
+.kp-s{color:var(--ink2)}
+.dot{color:var(--ink3);padding-right:6px}
+.st{display:inline-block;width:16px;height:16px;line-height:16px;border-radius:8px;text-align:center;
+    font-size:11px;font-weight:700;margin-right:6px;vertical-align:1px}
+.st-good{background:var(--good);color:var(--onstatus)}
+.st-warn{background:var(--warn);color:var(--onwarn)}
+.st-bad{background:var(--bad);color:var(--onstatus)}
+.st-info{background:var(--tagbg);color:var(--ink2)}
+.dm-c{padding:2px 14px 0 0;vertical-align:top}
+.dm-l{font-size:12px;color:var(--ink3);white-space:nowrap;margin-bottom:3px}
+.dm-l b{color:var(--ink);font-weight:600}
+.dm-hi b{color:var(--accent)}
+.terms{margin-top:10px;border-top:1px solid var(--rule);padding-top:8px}
+.terms summary{cursor:pointer;font-size:12px;color:var(--ink3)}
+.term{font-size:13px;color:var(--ink2);line-height:1.6;margin-top:6px}
+.term b{color:var(--ink)}
+.nw-it{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 14px;margin:0 0 10px}
+.nw-t{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none}
+.nw-m{font-size:12px;color:var(--ink3);margin:2px 0 4px}
+.nw-b{font-size:13px;color:var(--ink2);line-height:1.6}
+.notice{background:var(--surface);border:1px dashed var(--border);border-radius:10px;padding:12px 14px;
+        font-size:14px;color:var(--ink2);margin:0 0 10px}
+.notice b{color:var(--ink)}
+.legend{font-size:12px;color:var(--ink3);line-height:1.8}
+.legend .st{width:14px;height:14px;line-height:14px;font-size:10px;margin:0 3px 0 0}
+
+.foot{margin-top:28px;border-top:1px solid var(--rule);padding-top:12px}
+/* 解析不了的卡片按旧版样式原样显示 */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.card .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.card .pill{background:var(--tagbg);color:var(--ink2);border-radius:12px;padding:2px 10px}
+.card .meta a{color:var(--accent);text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.card .en{color:var(--ink3);font-size:12px;margin-bottom:10px}
+.card a.blk{display:block;text-decoration:none;color:inherit}
+.card .q,.card .m,.card .res,.card .conc,.card .news{border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:8px;
+     background:var(--tagbg);color:var(--ink)}
+.card .m span,.card .res span{display:block;font-weight:400;font-size:12px;color:var(--ink2);margin-top:2px}
+.card .term{font-size:12px;margin-top:8px}
+</style>
+</head>
+<body>
+<h1>交叉方向论文图卡</h1>
+<div class="date">2026-11-27</div>
+<table class="kpi" role="presentation" cellpadding="0" cellspacing="0"><tr><td class="kpi-c"><div class="kpi-v">2</div><div class="kpi-l">候选</div></td><td class="kpi-c"><div class="kpi-v">1</div><div class="kpi-l">预筛排除</div></td><td class="kpi-c"><div class="kpi-v">0</div><div class="kpi-l">入选</div></td><td class="kpi-c"><div class="kpi-v">0</div><div class="kpi-l">备选</div></td></tr></table><div class="sec">论文图卡</div>
+<div class="notice"><b>今日没有论文达到入选门槛</b><br>备选论文见邮件正文。</div>
+<div class="sec">行业与商业动态 · 7 条</div>
+<div class="nw-it"><a class="nw-t" href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPOWktM3NNcnRpYjJZZFNzZnlGaFJzd0plSGpWRDdVazctUF9zakxTQTRwSXRNYURqeVk0eFJjYlE4b2RyYks1YjJfc1VNNjFMSkNWbzdNb3FYcXJaUDRXbUdaSUctSlNKOXJpTDJwdE8ySm1XOERlem83MW1LWW9OQ3gwRWdsS0h5emRCd3ZDcnVXZFBSd0dFOE9TZkVCTmpxX2gyUEIzdllIT2I4RWdUUFFmdGw?oc=5" target="_blank">线材定向能量沉积模型揭示偏置不敏感性与吸收率极小值</a><div class="nw-m">Bioengineer.org · 2026-11-26</div><div class="nw-b">RSS 摘要仅给出标题级信息：一个线材定向能量沉积（wire DED）模型指出了偏置不敏感性与吸收率极小值。摘要未提供模型形式、工艺窗口与验证数据。</div></div>
+<div class="nw-it"><a class="nw-t" href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPTlFzVGtUR0RHUnppc09NakR6Zkx1SUxnZkU2SHA4TFphZ1FLcnhWUEt3TVM2dklzUGNXUkZXRmRQeVdWTmNLc2tGMEROXzFYb1JGNXVhb0NYVXFoTE1RaEcyX0o2M2JhZFJySlY5WUpxLXo1OHVmWEMzcjlkNlZHdDVtb2hiTVFlRm1MVGRPbmxfcHh3VThsMkRuU0E4bmljQTRuRzJaQkFWbmtaVUUzV3FTSTNtdVVVMVhGSW5ldjlFeVNu?oc=5" target="_blank">金属3D打印：美国陆军推进 LPBF 系统的统一质量标准</a><div class="nw-m">3Druck.com · 2026-11-26</div><div class="nw-b">RSS 摘要仅给出标题级信息：美国陆军正在为激光粉末床熔融（LPBF）系统制定统一的质量标准。摘要未提供标准内容、覆盖设备与时间表。</div></div>
+<div class="nw-it"><a class="nw-t" href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPU2x6X21sR3l6eXBOS0FURzE1MV9ETUdjU2tUckkwZWNmVW5rbnFsTmNNdW5PZkZnTGNjNHBiY2cyNjZkUWJDcVZ3dTQ4RWR0aElqQkhZQXJhMW1nOF8zZDQ1VlM1aENyVlFBQVR1MXlSYXpWSjNBSUVieDlrb3lkeFZ4VHRZOFdBNTJmdjFxTmQxY3o1by03aDl3cFdKWHNsWDFTLUJwSFZobFYxM0JXRm5ZYXQ?oc=5" target="_blank">金属3D打印：JEOL 发布 JAM-5200EBMPlus 电子束打印机</a><div class="nw-m">3Druck.com · 2026-11-25</div><div class="nw-b">RSS 摘要仅给出标题级信息：JEOL 发布了名为 JAM-5200EBMPlus 的电子束增材制造设备。摘要未提供成形尺寸、监测配置与价格。</div></div>
+<div class="nw-it"><a class="nw-t" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNYkVGbUE4bzdQTHZxQzFpTnJYaTNNRjdWdkNuTVJEbGlUeVRXX25NdFpZaTFDcWdxMFh4Zzg0dlN0aFdHZUl2aE5rV09NS21LOXhOUUdNT2lBZVB3b1EyYzVhaDBlS0UwdzE2U3JXR1pqZU84ZDZSaHZ0eUlNRWlMSm9lbVJyOVEtTlNaUHFfQzR3MUtyZ0U5TDBaZjBxcTg?oc=5" target="_blank">AMiquam 推进金属增材制造的在位缺陷检测</a><div class="nw-m">Metrology and Quality News · 2026-11-24</div><div class="nw-b">RSS 摘要仅给出标题级信息：AMiquam 在金属增材制造的在位（in-situ）缺陷检测方面取得进展。摘要未提供传感原理、缺陷类型与检测指标。</div></div>
+<div class="nw-it"><a class="nw-t" href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNY3BnR3dDd2kyR3FMeDFpZWJXQmJweUl0cFFFMFFSUENxYlJrUEJKc2djNXNsQWRHc29CZ2wzMDFVQnN1Wi1kamxGVzh4S0UyX0FLYkRrNFhPZFJZU1dTSmFlYjg0S01zMi1mNURBMVpDTTJCZDBSSHg1cE12WFFLS0NYRWNrQTRLbnBSMXoyek9LUEdsX0UzYzlYbzNqZEVBNm5XcjdnZm1Nd0ZldzN0UVNfTUNVa2N0UnR0UFJHcEN5R0dE?oc=5" target="_blank">大型金属构件的激光3D打印成为萨克森州多个研究项目的重点</a><div class="nw-m">3Druck.com · 2026-11-23</div><div class="nw-b">RSS 摘要仅给出标题级信息：萨克森州的多个研究项目把大型金属构件的激光 3D 打印作为重点方向。摘要未提供项目名称、参与机构与经费。</div></div>
+<div class="nw-it"><a class="nw-t" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNN2RQX0RtOVpUZjdHdkpQWHUxRmdiRG5ETE9PWkpWbHItMVNKbTZqdThBQ3MtS2dRcFVmWE9Kel9oS1RDQmZ4LXdFRG1fZ2tUME1kcVU4cW1ITUJkcFlGaTFqNVVHUnR0anlNY3QyNUNwSElMNXlXMTI5cTVCRDliX2hVc19lX1UzV3hPT1BkeHFDb1pQUmxvMWtjdw?oc=5" target="_blank">Mastrex 与 Autodesk 合作降低金属3D打印门槛</a><div class="nw-m">Yahoo Finance · 2026-11-22</div><div class="nw-b">RSS 摘要仅给出标题级信息：Mastrex 与 Autodesk 合作，使金属 3D 打印更易获得。摘要未提供合作形式、软件产品与落地时间。</div></div>
+<div class="nw-it"><a class="nw-t" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE5YOHBDSTZqUlA5a3pnQUVsekxaZ3poUTkyYnFzYVIwc2ZOTDYycDRYSnJjVHkxbTBObXFjSEcxckhZYkVFcWItRWZjUmd1bEpYYkp1SkJ3WFVtTlN0cEFj?oc=5" target="_blank">新能源汽车电池检测怎么做？2026新国标3大路径与技术突破</a><div class="nw-m">手机新浪网 · 2026-11-21</div><div class="nw-b">RSS 摘要仅给出标题级信息：围绕 2026 新国标，给出新能源汽车电池检测的三大路径与技术突破，并附 FAQ。摘要未提供标准编号、检测项目与执行细节。</div></div>
+<template id="cards-src"><div class="card"><div class="meta"><span class="pill">今日无入选论文</span></div><h2>今日没有论文达到入选门槛</h2><div class="news">备选论文见邮件正文。</div></div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPOWktM3NNcnRpYjJZZFNzZnlGaFJzd0plSGpWRDdVazctUF9zakxTQTRwSXRNYURqeVk0eFJjYlE4b2RyYks1YjJfc1VNNjFMSkNWbzdNb3FYcXJaUDRXbUdaSUctSlNKOXJpTDJwdE8ySm1XOERlem83MW1LWW9OQ3gwRWdsS0h5emRCd3ZDcnVXZFBSd0dFOE9TZkVCTmpxX2gyUEIzdllIT2I4RWdUUFFmdGw?oc=5">原文</a></div>
+  <h2>线材定向能量沉积模型揭示偏置不敏感性与吸收率极小值</h2><div class="en">Bioengineer.org · 2026-11-26</div>
+  <div class="news">RSS 摘要仅给出标题级信息：一个线材定向能量沉积（wire DED）模型指出了偏置不敏感性与吸收率极小值。摘要未提供模型形式、工艺窗口与验证数据。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPTlFzVGtUR0RHUnppc09NakR6Zkx1SUxnZkU2SHA4TFphZ1FLcnhWUEt3TVM2dklzUGNXUkZXRmRQeVdWTmNLc2tGMEROXzFYb1JGNXVhb0NYVXFoTE1RaEcyX0o2M2JhZFJySlY5WUpxLXo1OHVmWEMzcjlkNlZHdDVtb2hiTVFlRm1MVGRPbmxfcHh3VThsMkRuU0E4bmljQTRuRzJaQkFWbmtaVUUzV3FTSTNtdVVVMVhGSW5ldjlFeVNu?oc=5">原文</a></div>
+  <h2>金属3D打印：美国陆军推进 LPBF 系统的统一质量标准</h2><div class="en">3Druck.com · 2026-11-26</div>
+  <div class="news">RSS 摘要仅给出标题级信息：美国陆军正在为激光粉末床熔融（LPBF）系统制定统一的质量标准。摘要未提供标准内容、覆盖设备与时间表。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPU2x6X21sR3l6eXBOS0FURzE1MV9ETUdjU2tUckkwZWNmVW5rbnFsTmNNdW5PZkZnTGNjNHBiY2cyNjZkUWJDcVZ3dTQ4RWR0aElqQkhZQXJhMW1nOF8zZDQ1VlM1aENyVlFBQVR1MXlSYXpWSjNBSUVieDlrb3lkeFZ4VHRZOFdBNTJmdjFxTmQxY3o1by03aDl3cFdKWHNsWDFTLUJwSFZobFYxM0JXRm5ZYXQ?oc=5">原文</a></div>
+  <h2>金属3D打印：JEOL 发布 JAM-5200EBMPlus 电子束打印机</h2><div class="en">3Druck.com · 2026-11-25</div>
+  <div class="news">RSS 摘要仅给出标题级信息：JEOL 发布了名为 JAM-5200EBMPlus 的电子束增材制造设备。摘要未提供成形尺寸、监测配置与价格。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNYkVGbUE4bzdQTHZxQzFpTnJYaTNNRjdWdkNuTVJEbGlUeVRXX25NdFpZaTFDcWdxMFh4Zzg0dlN0aFdHZUl2aE5rV09NS21LOXhOUUdNT2lBZVB3b1EyYzVhaDBlS0UwdzE2U3JXR1pqZU84ZDZSaHZ0eUlNRWlMSm9lbVJyOVEtTlNaUHFfQzR3MUtyZ0U5TDBaZjBxcTg?oc=5">原文</a></div>
+  <h2>AMiquam 推进金属增材制造的在位缺陷检测</h2><div class="en">Metrology and Quality News · 2026-11-24</div>
+  <div class="news">RSS 摘要仅给出标题级信息：AMiquam 在金属增材制造的在位（in-situ）缺陷检测方面取得进展。摘要未提供传感原理、缺陷类型与检测指标。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNY3BnR3dDd2kyR3FMeDFpZWJXQmJweUl0cFFFMFFSUENxYlJrUEJKc2djNXNsQWRHc29CZ2wzMDFVQnN1Wi1kamxGVzh4S0UyX0FLYkRrNFhPZFJZU1dTSmFlYjg0S01zMi1mNURBMVpDTTJCZDBSSHg1cE12WFFLS0NYRWNrQTRLbnBSMXoyek9LUEdsX0UzYzlYbzNqZEVBNm5XcjdnZm1Nd0ZldzN0UVNfTUNVa2N0UnR0UFJHcEN5R0dE?oc=5">原文</a></div>
+  <h2>大型金属构件的激光3D打印成为萨克森州多个研究项目的重点</h2><div class="en">3Druck.com · 2026-11-23</div>
+  <div class="news">RSS 摘要仅给出标题级信息：萨克森州的多个研究项目把大型金属构件的激光 3D 打印作为重点方向。摘要未提供项目名称、参与机构与经费。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNN2RQX0RtOVpUZjdHdkpQWHUxRmdiRG5ETE9PWkpWbHItMVNKbTZqdThBQ3MtS2dRcFVmWE9Kel9oS1RDQmZ4LXdFRG1fZ2tUME1kcVU4cW1ITUJkcFlGaTFqNVVHUnR0anlNY3QyNUNwSElMNXlXMTI5cTVCRDliX2hVc19lX1UzV3hPT1BkeHFDb1pQUmxvMWtjdw?oc=5">原文</a></div>
+  <h2>Mastrex 与 Autodesk 合作降低金属3D打印门槛</h2><div class="en">Yahoo Finance · 2026-11-22</div>
+  <div class="news">RSS 摘要仅给出标题级信息：Mastrex 与 Autodesk 合作，使金属 3D 打印更易获得。摘要未提供合作形式、软件产品与落地时间。</div>
+</div>
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE5YOHBDSTZqUlA5a3pnQUVsekxaZ3poUTkyYnFzYVIwc2ZOTDYycDRYSnJjVHkxbTBObXFjSEcxckhZYkVFcWItRWZjUmd1bEpYYkp1SkJ3WFVtTlN0cEFj?oc=5">原文</a></div>
+  <h2>新能源汽车电池检测怎么做？2026新国标3大路径与技术突破</h2><div class="en">手机新浪网 · 2026-11-21</div>
+  <div class="news">RSS 摘要仅给出标题级信息：围绕 2026 新国标，给出新能源汽车电池检测的三大路径与技术突破，并附 FAQ。摘要未提供标准编号、检测项目与执行细节。</div>
+</div>
+</template>
+<div class="foot legend"><span class="st st-good">✓</span>达标或正面　<span class="st st-warn">!</span>背离或意外　<span class="st st-bad">✗</span>失效或未达标<br>↗ 点击可跳转 claude.ai 继续追问（需登录）。评分条为两名评分者均分（0–100）；分项为两人均值（0–10），只高亮最关键的方向贴近度。</div>
+</body>
+</html>
