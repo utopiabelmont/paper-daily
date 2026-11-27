@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交叉方向论文图卡 2026-11-28</title>
+<style>
+:root{--bg:#FAF9F5;--surface:#FFFFFF;--border:#E3E1D9;--rule:#EFEDE6;--ink:#22221F;--ink2:#55544E;--ink3:#8A8880;--accent:#1C5CAB;--bar:#2A78D6;--track:#CDE2FB;--barmute:#A9A79F;--trackmute:#ECEBE5;--ledebg:#FCF5E8;--ledebar:#E09A2E;--tagbg:#F1EFE8;--good:#0CA30C;--warn:#FAB219;--bad:#D03B3B;--onstatus:#FFFFFF;--onwarn:#22221F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141413;--surface:#1D1D1B;--border:#34332F;--rule:#2A2A27;--ink:#F0EFEC;--ink2:#C3C2B7;--ink3:#8F8E86;--accent:#86B6EF;--bar:#3987E5;--track:#1F3556;--barmute:#77756E;--trackmute:#2C2C29;--ledebg:#2A2418;--ledebar:#C98500;--tagbg:#2A2A27;--good:#0CA30C;--warn:#FAB219;--bad:#D03B3B;--onstatus:#FFFFFF;--onwarn:#22221F}}
+:root[data-theme="dark"]{--bg:#141413;--surface:#1D1D1B;--border:#34332F;--rule:#2A2A27;--ink:#F0EFEC;--ink2:#C3C2B7;--ink3:#8F8E86;--accent:#86B6EF;--bar:#3987E5;--track:#1F3556;--barmute:#77756E;--trackmute:#2C2C29;--ledebg:#2A2418;--ledebar:#C98500;--tagbg:#2A2A27;--good:#0CA30C;--warn:#FAB219;--bad:#D03B3B;--onstatus:#FFFFFF;--onwarn:#22221F}
+
+body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);
+     color:var(--ink);max-width:720px;margin:0 auto;padding:24px 16px;line-height:1.6}
+h1{font-size:20px;font-weight:600;margin:0 0 2px}
+.date{color:var(--ink3);font-size:13px;margin-bottom:16px}
+
+.ov,.pc,.pc-head,.sc,.mt,.kp,.dm,.kpi{border-collapse:collapse;border-spacing:0}
+.kpi{margin:0 0 6px}
+.kpi-c{padding:0 30px 0 0;vertical-align:bottom}
+.kpi-v{font-size:22px;font-weight:600;color:var(--ink);line-height:1.2}
+.kpi-l{font-size:12px;color:var(--ink3)}
+.note{font-size:13px;color:var(--ink2);margin:8px 0 0}
+.sec{font-size:13px;font-weight:600;color:var(--ink3);margin:26px 0 10px;letter-spacing:.04em}
+.ov{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px}
+.ov-c{padding:10px 10px;vertical-align:top}
+.sep{border-top:1px solid var(--rule)}
+.ov-no{width:22px;font-size:12px;color:var(--ink3);padding-top:12px}
+.ov-ti a{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none}
+.ov-q{font-size:12px;color:var(--ink2);margin-top:2px;line-height:1.55}
+.ov-sc{width:96px;padding-top:12px}
+.sc-c{padding:0;vertical-align:middle}
+.sc-num{font-size:13px;font-weight:600;color:var(--ink);padding-left:8px;white-space:nowrap}
+.mt-on,.mt-off,.mt-mon,.mt-moff{padding:0;height:6px;line-height:0;font-size:0}
+.mt-on{background:var(--bar)}
+.mt-off{background:var(--track)}
+.mt-mon{background:var(--barmute)}
+.mt-moff{background:var(--trackmute)}
+.pc{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:0 0 16px}
+.pc-in{padding:16px 18px 14px}
+.pc-head{width:100%;margin:0 0 8px}
+.ph-c{padding:0;vertical-align:middle}
+.pc-no{font-size:12px;font-weight:600;color:var(--ink3);margin-right:8px}
+.pc-tag{font-size:12px;color:var(--ink2);background:var(--tagbg);border-radius:10px;padding:2px 9px}
+.pc-title{font-size:17px;font-weight:600;line-height:1.45;margin:0;color:var(--ink)}
+.pc-title a{color:var(--ink);text-decoration:none}
+.pc-en{font-size:12px;color:var(--ink3);margin:3px 0 12px;line-height:1.5}
+.pc-en a{color:var(--accent);text-decoration:none}
+.lede{background:var(--ledebg);border-left:3px solid var(--ledebar);border-radius:0 8px 8px 0;padding:9px 12px;margin:0 0 12px}
+.lede-l{font-size:12px;font-weight:600;color:var(--ink3);margin:0 0 2px}
+.lede-t{font-size:15px;color:var(--ink);line-height:1.65}
+.lede-r{font-size:13px;color:var(--ink2);line-height:1.6;margin-top:4px}
+a.ask{color:inherit;text-decoration:none}
+.go{color:var(--accent);font-size:12px;padding-left:3px}
+.kp{width:100%}
+.kp-k{width:44px;font-size:12px;font-weight:600;color:var(--ink3);padding:9px 0 7px;vertical-align:top}
+.kp-v{font-size:14px;color:var(--ink);line-height:1.65;padding:7px 0;vertical-align:top}
+.kp-li{margin:0 0 4px}
+.kp-b{font-weight:600}
+.kp-s{color:var(--ink2)}
+.dot{color:var(--ink3);padding-right:6px}
+.st{display:inline-block;width:16px;height:16px;line-height:16px;border-radius:8px;text-align:center;
+    font-size:11px;font-weight:700;margin-right:6px;vertical-align:1px}
+.st-good{background:var(--good);color:var(--onstatus)}
+.st-warn{background:var(--warn);color:var(--onwarn)}
+.st-bad{background:var(--bad);color:var(--onstatus)}
+.st-info{background:var(--tagbg);color:var(--ink2)}
+.dm-c{padding:2px 14px 0 0;vertical-align:top}
+.dm-l{font-size:12px;color:var(--ink3);white-space:nowrap;margin-bottom:3px}
+.dm-l b{color:var(--ink);font-weight:600}
+.dm-hi b{color:var(--accent)}
+.terms{margin-top:10px;border-top:1px solid var(--rule);padding-top:8px}
+.terms summary{cursor:pointer;font-size:12px;color:var(--ink3)}
+.term{font-size:13px;color:var(--ink2);line-height:1.6;margin-top:6px}
+.term b{color:var(--ink)}
+.nw-it{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 14px;margin:0 0 10px}
+.nw-t{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none}
+.nw-m{font-size:12px;color:var(--ink3);margin:2px 0 4px}
+.nw-b{font-size:13px;color:var(--ink2);line-height:1.6}
+.notice{background:var(--surface);border:1px dashed var(--border);border-radius:10px;padding:12px 14px;
+        font-size:14px;color:var(--ink2);margin:0 0 10px}
+.notice b{color:var(--ink)}
+.legend{font-size:12px;color:var(--ink3);line-height:1.8}
+.legend .st{width:14px;height:14px;line-height:14px;font-size:10px;margin:0 3px 0 0}
+
+.foot{margin-top:28px;border-top:1px solid var(--rule);padding-top:12px}
+/* 解析不了的卡片按旧版样式原样显示 */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+.card .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px}
+.card .pill{background:var(--tagbg);color:var(--ink2);border-radius:12px;padding:2px 10px}
+.card .meta a{color:var(--accent);text-decoration:none}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.card .en{color:var(--ink3);font-size:12px;margin-bottom:10px}
+.card a.blk{display:block;text-decoration:none;color:inherit}
+.card .q,.card .m,.card .res,.card .conc,.card .news{border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:8px;
+     background:var(--tagbg);color:var(--ink)}
+.card .m span,.card .res span{display:block;font-weight:400;font-size:12px;color:var(--ink2);margin-top:2px}
+.card .term{font-size:12px;margin-top:8px}
+</style>
+</head>
+<body>
+<h1>交叉方向论文图卡</h1>
+<div class="date">2026-11-28</div>
+<div class="sec">论文图卡</div>
+<div class="notice"><b>今日没有论文达到入选门槛</b><br>备选论文见邮件正文。</div>
+<div class="sec">行业与商业动态 · 2 条</div>
+<div class="nw-it"><a class="nw-t" href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQek5fcWtUZnZ5Z3VkSVZuUXFWdHVyQl9GTXhmUktZSjJ3N2ppSUlXTHVhR2FjdFRrTDRnY2xxcFBJODBBYzBSNFlyeXNNNE5uRm9nTFgzSUMyZWYzUkdZcFRRM2VPbHVrRFlPc2tuVXdiNXhOdzhKU2tvYnV4WmlUZXZWZlpscVUzbTR5VURGYUh2RktnZDAyRlpQTEJVVVBKeTJkYVRTaVhiMENFV09yckhyMkpBWS1IRFhhNVFSVl9jZDFuM3BF?oc=5" target="_blank">金属3D打印：AMiRIS 试图通过过程监测简化质量检测</a><div class="nw-m">3Druck.com · 2026-11-27</div><div class="nw-b">RSS 摘要仅给出标题级信息：名为 AMiRIS 的工作希望借助过程监测来简化金属 3D 打印的质量检测。摘要未提供传感方案、监测量与验证结果。</div></div>
+<div class="nw-it"><a class="nw-t" href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPSFBvOHZfRG9ZZGZzY2pRSzlFTFpSMmRMREd1OWdmS3AxNVprR3c2UXItSGJseWhPQTFHcThFb19haVFXTmVqcl84dE9hbWxrc3gwLXM2cWEzRlh2cHNBT0FOZGFjNjA0c3hyQ25rYzNWMk0zUUlWZ2RSdEY5LWdMNGRrb0cwUThiLW1UaDhCNTZXd3NnektzWk1uUGxYQmpZUk5hWVRLX3dkQkNva0ZhM0N0U3ctU3lLckFLRmd0ck9iVDV3Wlo0?oc=5" target="_blank">高度规市场 2035 年展望：数字化集成与航空航天需求驱动增长</a><div class="nw-m">IndexBox · 2026-11-26</div><div class="nw-b">RSS 摘要仅给出标题级信息：一份市场展望把数字化集成与航空航天需求列为高度规（height gauge）市场到 2035 年的增长动因。摘要未提供市场规模、增速与数据来源。</div></div>
+<template id="cards-src"><div class="card"><div class="meta"><span class="pill">今日无入选论文</span></div><h2>今日没有论文达到入选门槛</h2><div class="news">备选论文见邮件正文。</div></div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxQek5fcWtUZnZ5Z3VkSVZuUXFWdHVyQl9GTXhmUktZSjJ3N2ppSUlXTHVhR2FjdFRrTDRnY2xxcFBJODBBYzBSNFlyeXNNNE5uRm9nTFgzSUMyZWYzUkdZcFRRM2VPbHVrRFlPc2tuVXdiNXhOdzhKU2tvYnV4WmlUZXZWZlpscVUzbTR5VURGYUh2RktnZDAyRlpQTEJVVVBKeTJkYVRTaVhiMENFV09yckhyMkpBWS1IRFhhNVFSVl9jZDFuM3BF?oc=5">原文</a></div>
+  <h2>金属3D打印：AMiRIS 试图通过过程监测简化质量检测</h2><div class="en">3Druck.com · 2026-11-27</div>
+  <div class="news">RSS 摘要仅给出标题级信息：名为 AMiRIS 的工作希望借助过程监测来简化金属 3D 打印的质量检测。摘要未提供传感方案、监测量与验证结果。</div>
+</div>
+
+<div class="card">
+  <div class="meta"><span class="pill">行业动态</span>
+    <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPSFBvOHZfRG9ZZGZzY2pRSzlFTFpSMmRMREd1OWdmS3AxNVprR3c2UXItSGJseWhPQTFHcThFb19haVFXTmVqcl84dE9hbWxrc3gwLXM2cWEzRlh2cHNBT0FOZGFjNjA0c3hyQ25rYzNWMk0zUUlWZ2RSdEY5LWdMNGRrb0cwUThiLW1UaDhCNTZXd3NnektzWk1uUGxYQmpZUk5hWVRLX3dkQkNva0ZhM0N0U3ctU3lLckFLRmd0ck9iVDV3Wlo0?oc=5">原文</a></div>
+  <h2>高度规市场 2035 年展望：数字化集成与航空航天需求驱动增长</h2><div class="en">IndexBox · 2026-11-26</div>
+  <div class="news">RSS 摘要仅给出标题级信息：一份市场展望把数字化集成与航空航天需求列为高度规（height gauge）市场到 2035 年的增长动因。摘要未提供市场规模、增速与数据来源。</div>
+</div>
+</template>
+<div class="foot legend"><span class="st st-good">✓</span>达标或正面　<span class="st st-warn">!</span>背离或意外　<span class="st st-bad">✗</span>失效或未达标<br>↗ 点击可跳转 claude.ai 继续追问（需登录）。评分条为两名评分者均分（0–100）；分项为两人均值（0–10），只高亮最关键的方向贴近度。</div>
+</body>
+</html>
